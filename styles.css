@@ -53,8 +53,10 @@ h2 {
     line-height: 120%;
     margin: 0;
     color: #461D7C;
-
     @media (min-width: 768px) {
+        font-size: 36px;
+    }
+    @media (min-width: 1024px) {
         font-size: 50px;
     }
 }
@@ -385,7 +387,7 @@ section.why-choose-us {
     justify-content: center;
     text-align: center;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
         padding: 104px 0;
     }
 }
@@ -684,7 +686,7 @@ a:hover h4 .arrow {
     flex-direction: column;
     gap: 24px;
     align-items: center;
-    @media (min-width: 768px) {
+    @media (min-width: 1394px) {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -699,7 +701,6 @@ a:hover h4 .arrow {
     flex-direction: column;
     @media (min-width: 768px) {
         flex-direction: row;
-        gap: 24px;
     }
 }
 
@@ -747,11 +748,14 @@ a:hover h4 .arrow {
 .learning-option p {    
     font-family: "peridot-pe-variable",sans-serif;
     font-variation-settings: 'wght' 800, 'wdth' 65, 'ital' 0;
-    font-size: 36px;
+    font-size: 26px;
     line-height: 100%;
     margin: 0;
     text-transform: uppercase;
     color: #FDD023;
+    @media (min-width: 1024px) {
+        font-size: 36px;
+    }
 }
 
 .learning-option img {
