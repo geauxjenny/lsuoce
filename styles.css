@@ -430,9 +430,13 @@ section.why-choose-us p {
     justify-content: center;
     text-align: center;
     width: fit-content;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 24px;
 
     @media (min-width: 1024px) {
         border-right: 1px solid #E0E0E0;
+        border-bottom: none;
+        padding-bottom: 0;
         padding-right: 24px;
         gap: 8px;
     }
@@ -451,8 +455,9 @@ section.why-choose-us p {
 }
 
 .selling-point:last-child {
-    border-right: none;
+    border: none;
     padding-right: 0;
+    padding-bottom: 0;
 }
 
 .why-choose-us .content {
