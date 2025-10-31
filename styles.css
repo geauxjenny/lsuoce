@@ -581,6 +581,12 @@ section.why-choose-us p {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+.ce-offering-community:hover {
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
 .ce-offering:has(.ce-offering-image-container) {
     cursor: default;
 }
