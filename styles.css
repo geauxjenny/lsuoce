@@ -929,6 +929,11 @@ section.testimonials {
 .testimonials-slider-controls.visible {
     display: flex;
     margin-left: auto;
+    padding-right: 20px;
+
+    @media (min-width: 768px) {
+        padding-right: 0;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1243,19 +1248,27 @@ section.learn-more {
 .slider-controls {
     display: none;
     gap: 8px;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     right: 20px;
     z-index: 10;
     
     @media (min-width: 768px) {
         right: 0;
+        position: absolute;
         margin-right: 64px;
     }
 }
 
 .slider-controls.visible {
     display: flex !important;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 20px;
+
+    @media (min-width: 768px) {
+        padding-right: 0;
+    }
 }
 
 .slider-btn {
