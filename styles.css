@@ -9,15 +9,17 @@ html {
 }
 
 body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  color: #111827;
-  background-color: #ffffff;
-  font-size: 16px;
+    margin: 0;
+    font-family: roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #111827;
+    background-color: #ffffff;
+    font-size: 16px;
 
-  @media (min-width: 768px) {
+    @media (min-width: 768px) {
     font-size: 18px;
-  }
+    }
 }
 
 a {
@@ -44,8 +46,9 @@ h1 .accent {
 }
 
 h2 {
-    font-family: 'Jubilat', serif;
-    font-weight: bold;
+    font-family: jubilat, serif;
+    font-style: normal;
+    font-weight: 700;
     font-size:26px;
     line-height: 120%;
     margin: 0;
@@ -63,7 +66,7 @@ h2 .accent {
 h3 {
     font-size: 20px;
     line-height: 130%;
-    font-weight: 800;
+    font-weight: 900;
     color: #461D7C;
     margin: 0;
 
@@ -75,14 +78,14 @@ h3 {
 h4 {
     font-size: 18px;
     line-height: 170%;
-    font-weight: 800;
+    font-weight: 900;
     color: #461D7C;
     margin: 0;
 }
 
 .label {
-    font-family: 'Peridot PE Variable', sans-serif;
-    font-weight: bold;
+    font-family: "peridot-pe-variable",sans-serif;
+    font-variation-settings: 'wght' 800, 'wdth' 65, 'ital' 0;
     text-transform: uppercase;
     margin: 0;
 }
@@ -135,8 +138,9 @@ h4 {
 }
 
 .header h1 {
-    font-family: 'Jubilat', serif;
-    font-weight: bold;
+    font-family: jubilat, serif;
+    font-style: normal;
+    font-weight: 700;
     font-size: 40px;
     line-height: 120%;
     margin: 0;
@@ -198,8 +202,9 @@ h4 {
 button {
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-weight: bold;
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 700;
     font-size: 16px;
     border-radius: 4px;
     padding: 16px 32px;
@@ -250,8 +255,9 @@ button.button-secondary a {
 button.button-tertiary {
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-weight: bold;
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 700;
     font-size: 16px;
     background-color: transparent;
     color: #fff;
@@ -287,9 +293,9 @@ section.stats h2 {
     padding: 0 0.2em;
     text-align: center;
     color: #461D7C;
-    font-family: 'Jubilat', serif;
-    font-weight: bold;
+    font-family: jubilat, serif;
     font-style: italic;
+    font-weight: 700;
     font-size: 50px;
     line-height: 55%;
     width: fit-content;
@@ -303,7 +309,7 @@ section.stats h2 {
 section.stats h3 {
     font-size: 16px;
     line-height: 130%;
-    font-weight: bold;
+    font-weight: 900;
     color: #461D7C;
     margin: 16px 0 8px 0;
 
@@ -732,7 +738,7 @@ a:hover h4 .arrow {
     }
 }
 
-.learning-option p {
+.learning-option p {    
     font-family: "peridot-pe-variable",sans-serif;
     font-variation-settings: 'wght' 800, 'wdth' 65, 'ital' 0;
     font-size: 36px;
