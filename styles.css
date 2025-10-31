@@ -793,13 +793,15 @@ section.custom-and-onsite {
     justify-content: center;
     text-align: center;
     @media (min-width: 768px) {
-        padding: 104px 0;
         background: url(images/custom-onsite-bg.jpg) no-repeat center center;
         background-size: cover;
         
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             background-image: url(images/custom-onsite-bg@2x.jpg);
         }
+    }
+    @media (min-width: 1394px) {
+        padding: 104px 0;
     }
 }
 
@@ -899,7 +901,7 @@ section.testimonials {
     gap: 24px;
     @media (min-width: 1024px) {
         flex-direction: row;
-        gap: 64px;
+        gap: 36px;
         padding: 0;
     }
 }
@@ -924,6 +926,7 @@ section.testimonials {
     overflow-x: auto;
     @media (min-width: 768px) {
         overflow-x: visible;
+        padding-right: 64px;
     }
 }
 
@@ -994,6 +997,10 @@ section.testimonials {
     @media (min-width: 768px) {
         max-width: none;
         width: 50%;
+        padding: 48px 36px;
+        background: url(images/open-quote.svg) #fff no-repeat 36px 24px;
+    }
+    @media (min-width: 1160px) {
         padding: 72px 48px;
         background: url(images/open-quote.svg) #fff no-repeat 48px 48px;
     }
