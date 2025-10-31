@@ -886,7 +886,7 @@ section.testimonials {
         background-image: url(images/testimonials-bg@2x.jpg);
     }
     text-align: center;
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
         padding: 104px 0;
         text-align: left;
     }
