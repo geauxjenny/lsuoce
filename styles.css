@@ -926,7 +926,6 @@ section.testimonials {
     overflow-x: auto;
     @media (min-width: 768px) {
         overflow-x: visible;
-        padding-right: 64px;
     }
 }
 
