@@ -634,7 +634,20 @@ section.why-choose-us p {
     border-radius: 4px;
 }
 
-.ce-offering a:hover img {
+/* Regular cards: hover anywhere on card triggers image hover */
+.ce-offering:not(.ce-offering-community):hover > a img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Community Programs: OLLI section hover triggers first image */
+.ce-offering-community:has(#offering-olli:hover) .ce-offering-image-container a:first-child img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Community Programs: Science Fair section hover triggers second image */
+.ce-offering-community:has(#offering-science-fair:hover) .ce-offering-image-container a:last-child img {
     transform: scale(1.05);
     opacity: 0.9;
 }
@@ -670,10 +683,17 @@ section.why-choose-us p {
     color: #683DA0;
 }
 
+/* Arrow animations - triggered by hover on card or link */
 .ce-offering-content h3 a:hover .arrow,
 a:hover .ce-offering h3 .arrow,
 a:hover h4 .arrow,
-.learn-more-link a:hover .arrow {
+.learn-more-link a:hover .arrow,
+/* Regular cards: hover anywhere on card triggers Learn More arrow */
+.ce-offering:not(.ce-offering-community):hover .learn-more-link .arrow,
+/* Community Programs: hover anywhere on OLLI section triggers OLLI arrow */
+.ce-offering-community:has(#offering-olli:hover) #offering-olli .arrow,
+/* Community Programs: hover anywhere on Science Fair section triggers Science Fair arrow */
+.ce-offering-community:has(#offering-science-fair:hover) #offering-science-fair .arrow {
     transform: translateX(4px);
 }
 
