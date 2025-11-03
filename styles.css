@@ -1050,7 +1050,7 @@ section.testimonials {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    @media (min-width: 1024px) {
+    @media (min-width: 1112px) {
         flex-direction: row;
         gap: calc(var(--spacing-md) + var(--spacing-sm));
         padding: 0;
@@ -1061,8 +1061,8 @@ section.testimonials {
     width: 100%;
     text-align: center;
     padding-right: 20px;
-   @media (min-width: 1024px) { 
-        max-width: 416px;
+   @media (min-width: 1112px) { 
+        max-width: 376px;
         text-align: left;
    }
 }
@@ -1391,7 +1391,7 @@ section.learn-more {
     justify-content: center;
     @media (min-width: 768px) {
         text-align: left;
-        max-width: 416px;
+        max-width: 376px;
         justify-content: space-between;
     }
 }
