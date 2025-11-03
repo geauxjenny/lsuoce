@@ -498,10 +498,15 @@ section.why-choose-us p {
     padding-top: 16px;
     margin-top: auto;
     font-weight: 700;
+    color: #461D7C;
 }
 
 .ce-offering .learn-more-link a {
     color: #461D7C;
+}
+
+.ce-offering .learn-more-link .arrow {
+    margin-left: 6px;
 }
 
 .ce-offerings-header {
@@ -619,37 +624,43 @@ section.why-choose-us p {
     }
 }
 
+/* Regular cards: make them display as blocks */
+a.ce-offering {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+.ce-offering-image-wrapper {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+}
+
 .ce-offering img {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-radius: 4px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.ce-offering > a {
     display: block;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 4px;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
 }
 
 /* Regular cards: hover anywhere on card triggers image hover */
-.ce-offering:not(.ce-offering-community):hover > a img {
-    transform: scale(1.05);
-    opacity: 0.9;
+a.ce-offering:hover .ce-offering-image-wrapper img {
+    transform: scale(1.1);
 }
 
 /* Community Programs: OLLI section hover triggers first image */
-.ce-offering-community:has(#offering-olli:hover) .ce-offering-image-container a:first-child img {
-    transform: scale(1.05);
-    opacity: 0.9;
+.ce-offering-community:has(#offering-olli:hover) .ce-offering-image-container .ce-offering-image-wrapper:first-child img {
+    transform: scale(1.1);
 }
 
 /* Community Programs: Science Fair section hover triggers second image */
-.ce-offering-community:has(#offering-science-fair:hover) .ce-offering-image-container a:last-child img {
-    transform: scale(1.05);
-    opacity: 0.9;
+.ce-offering-community:has(#offering-science-fair:hover) .ce-offering-image-container .ce-offering-image-wrapper:last-child img {
+    transform: scale(1.1);
 }
 
 .ce-offering-content {
@@ -689,7 +700,7 @@ a:hover .ce-offering h3 .arrow,
 a:hover h4 .arrow,
 .learn-more-link a:hover .arrow,
 /* Regular cards: hover anywhere on card triggers Learn More arrow */
-.ce-offering:not(.ce-offering-community):hover .learn-more-link .arrow,
+a.ce-offering:hover .learn-more-link .arrow,
 /* Community Programs: hover anywhere on OLLI section triggers OLLI arrow */
 .ce-offering-community:has(#offering-olli:hover) #offering-olli .arrow,
 /* Community Programs: hover anywhere on Science Fair section triggers Science Fair arrow */
@@ -730,25 +741,21 @@ a:hover h4 .arrow,
     display: flex;
 }
 
-.ce-offering-image-container a {
-    display: block;
-    cursor: pointer;
+.ce-offering-image-container .ce-offering-image-wrapper {
+    width: 47.5%;
+    height: 150px;
     overflow: hidden;
     border-radius: 4px;
-    width: 47.5%;
     flex-shrink: 0;
 }
 
-.ce-offering-image-container img {
+.ce-offering-image-container .ce-offering-image-wrapper img {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.ce-offering-image-container a:hover img {
-    transform: scale(1.05);
-    opacity: 0.9;
+    display: block;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
 }
 
 .learning-options {
@@ -863,6 +870,12 @@ a:hover h4 .arrow,
     @media (min-width: 768px) {
         padding: 16px 0;
     }
+}
+
+a.ce-offering-multiple {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .ce-offering-multiple li:first-child {
@@ -1304,12 +1317,25 @@ section.learn-more {
     position: relative;
 }
 
+.blog-card-image-wrapper {
+    width: 100%;
+    height: 133px;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
 .blog-card img {
     width: 100%;
     height: 133px;
     object-fit: cover;
-    border-radius: 4px;
-    position: relative;
+    display: block;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+}
+
+.blog-card:hover .blog-card-image-wrapper img {
+    transform: scale(1.1);
 }
 
 .blog-card::before {
