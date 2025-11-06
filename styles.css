@@ -1051,6 +1051,7 @@ section.testimonials {
     padding-right: 0;
     @media (min-width: 768px) {
         padding-left: var(--spacing-xl);
+        padding-right: 0;
     }
 }
 
@@ -1059,6 +1060,7 @@ section.testimonials {
     flex-direction: column;
     gap: var(--spacing-md);
     position: relative;
+    overflow: visible;
     @media (min-width: 768px) {
         flex-direction: row;
         gap: calc(var(--spacing-md) + var(--spacing-sm));
@@ -1088,6 +1090,9 @@ section.testimonials {
     @media (min-width: 768px) {
         padding-right: 0;
         margin-top: var(--spacing-lg);
+        width: 100vw;
+        margin-left: 0;
+        padding-right: calc((100vw - 1552px) / 2 + var(--spacing-xl));
     }
 }
 
