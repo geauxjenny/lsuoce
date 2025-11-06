@@ -33,7 +33,11 @@ html {
     --spacing-xl: 64px;
     --spacing-2xl: 104px;
     --section-padding-mobile: 48px;
+    --section-padding-tablet: 64px;
     --section-padding-desktop: 104px;
+    --container-padding-mobile: 20px;
+    --container-padding-desktop: 64px;
+    --border-radius: 4px;
     
     /* Font Families */
     --font-primary: roboto, sans-serif;
@@ -45,6 +49,15 @@ html {
     --transition-transform: transform var(--transition-base);
   }
   
+/* Utility Classes */
+.hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 
 body {
     margin: 0;
@@ -257,7 +270,7 @@ button {
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: var(--spacing-sm) calc(var(--spacing-sm) * 2);
     cursor: pointer;
     width: 100%;
@@ -271,7 +284,7 @@ button.button-primary {
     background-color: rgb(var(--purple));
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: var(--spacing-sm) calc(var(--spacing-sm) * 2);
     cursor: pointer;
     transition: all var(--transition-base);
@@ -290,7 +303,7 @@ button.button-secondary {
     background-color: rgb(var(--gold));
     color: rgb(var(--purple));
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: var(--spacing-sm) calc(var(--spacing-sm) * 2);
     cursor: pointer;
     transition: all var(--transition-base);
@@ -313,7 +326,7 @@ button.button-tertiary {
     background-color: transparent;
     color: #fff;
     border: 1px solid rgb(var(--gold));
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: var(--spacing-sm) calc(var(--spacing-sm) * 2);
     cursor: pointer;
     transition: all var(--transition-base);
@@ -556,8 +569,7 @@ section.why-choose-us p {
 }
 
 /* Shared slider controls base styles */
-.ce-slider-controls,
-.testimonials-slider-controls {
+.ce-slider-controls {
     display: none;
     gap: 8px;
 }
@@ -565,9 +577,12 @@ section.why-choose-us p {
 .ce-slider-controls.visible {
     display: flex;
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: var(--container-padding-mobile);
+    @media (min-width: 768px) {
+        margin-right: 32px;
+    }
     @media (min-width: 1498px) {
-        margin-right: 0;
+        margin-right: 64px;
     }
 }
 
@@ -641,8 +656,6 @@ section.why-choose-us p {
     width: 100%;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     align-items: stretch;
 
     @media (min-width: 768px) {
@@ -651,13 +664,9 @@ section.why-choose-us p {
     }
 }
 
-.ce-offerings-inner::-webkit-scrollbar {
-    display: none;
-}
-
 .ce-offering {
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
     display: flex;
     flex-direction: column;
@@ -684,7 +693,7 @@ a.ce-offering {
     width: 100%;
     height: 150px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     position: relative;
 }
 
@@ -768,7 +777,7 @@ a.ce-offering:hover .learn-more-link .arrow,
     font-size: 16px;
     line-height: 150%;
     margin: 8px 0;
-    padding-left: 20px;
+    padding-left: var(--container-padding-mobile);
     position: relative;
 }
 
@@ -794,7 +803,7 @@ a.ce-offering:hover .learn-more-link .arrow,
     width: 47.5%;
     height: 150px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     flex-shrink: 0;
 }
 
@@ -1038,11 +1047,10 @@ section.testimonials {
 }
 
 .testimonials .container {
-    padding-left: 20px;
+    padding-left: var(--container-padding-mobile);
     padding-right: 0;
     @media (min-width: 768px) {
         padding-left: var(--spacing-xl);
-        padding-right: var(--spacing-xl);
     }
 }
 
@@ -1050,7 +1058,8 @@ section.testimonials {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    @media (min-width: 1112px) {
+    position: relative;
+    @media (min-width: 768px) {
         flex-direction: row;
         gap: calc(var(--spacing-md) + var(--spacing-sm));
         padding: 0;
@@ -1060,10 +1069,11 @@ section.testimonials {
 .testimonials .section-title {
     width: 100%;
     text-align: center;
-    padding-right: 20px;
-   @media (min-width: 1112px) { 
-        max-width: 376px;
+    padding-right: var(--container-padding-mobile);
+   @media (min-width: 768px) { 
         text-align: left;
+        padding-top: var(--spacing-lg);
+        width: auto;
    }
 }
 
@@ -1071,35 +1081,29 @@ section.testimonials {
     display: flex;
     flex-direction: row;
     gap: var(--spacing-md);
-    padding-right: 20px;
+    padding-right: var(--container-padding-mobile);
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     width: 100%;
     overflow-x: auto;
     @media (min-width: 768px) {
-        overflow-x: visible;
         padding-right: 0;
+        margin-top: var(--spacing-lg);
     }
-}
-
-.testimonials-inner::-webkit-scrollbar {
-    display: none;
 }
 
 .testimonials-slider-controls.visible {
     display: flex;
     margin-left: auto;
-    padding-right: 20px;
+    gap: var(--spacing-xs);
+    padding-right: var(--container-padding-mobile);
 
     @media (min-width: 768px) {
-        padding-right: 0;
+        position: absolute;
+        right: 0;
+        padding-right: 32px;
     }
-}
-
-@media (min-width: 768px) {
-    .testimonials-slider-controls {
-        display: none !important;
+    @media (min-width: 1498px) {
+        padding-right: 64px;
     }
 }
 
@@ -1112,14 +1116,13 @@ section.testimonials {
     text-align: left;
     gap: 0;
     padding: 36px 24px;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     background: url(images/open-quote.svg) #fff no-repeat 24px 16px;
     flex-shrink: 0;
     @media (min-width: 768px) {
-        max-width: none;
-        width: 50%;
         padding: 48px 36px;
         background: url(images/open-quote.svg) #fff no-repeat 36px 24px;
+        max-width: 412px;
     }
     @media (min-width: 1160px) {
         padding: 72px 48px;
@@ -1253,15 +1256,16 @@ section.learn-more {
     }
 }
 
-.learn-more .section-title h2 {
+.learn-more .section-title {
     text-align: center;
     @media (min-width: 768px) {
         text-align: left;
         padding-top: 48px;
+        width: auto;
     }
 }
 .learn-more .container {
-    padding-left: 20px;
+    padding-left: var(--container-padding-mobile);
     padding-right: 0;
     @media (min-width: 768px) {
         padding-left: var(--spacing-xl);
@@ -1290,9 +1294,7 @@ section.learn-more {
     min-width: 0;
     @media (min-width: 768px) {
         margin-top: var(--spacing-lg);
-        margin-left: -64px;
         margin-right: 0;
-        padding-left: 0;
         padding-right: 0;
     }
 }
@@ -1305,12 +1307,6 @@ section.learn-more {
     padding-right: 0;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.blog-cards::-webkit-scrollbar {
-    display: none;
 }
 
 @media (min-width: 1200px) {
@@ -1327,7 +1323,7 @@ section.learn-more {
     gap: var(--spacing-sm);
     cursor: pointer;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: 0;
     width: 264px;
     flex-shrink: 0;
@@ -1391,8 +1387,8 @@ section.learn-more {
     justify-content: center;
     @media (min-width: 768px) {
         text-align: left;
-        max-width: 376px;
         justify-content: space-between;
+        width: auto;
     }
 }
 
@@ -1411,11 +1407,24 @@ section.learn-more {
     }
 }
 
+/* Combined max-width for section titles */
+@media (min-width: 768px) {
+    .learn-more .section-title {
+        max-width: 376px;
+    }
+}
+
+@media (min-width: 1112px) {
+    .testimonials .section-title {
+        max-width: 376px;
+    }
+}
+
 .slider-controls.visible {
     display: flex !important;
     justify-content: flex-end;
     width: 100%;
-    padding-right: 20px;
+    padding-right: var(--container-padding-mobile);
 
     @media (min-width: 768px) {
         padding-right: 0;
