@@ -1224,9 +1224,10 @@ section.partners {
     gap: 40px;
     align-items: center;
     width: fit-content;
-    animation: scroll-logos 30s linear infinite;
+    animation: scroll-logos 15s linear infinite;
     @media (min-width: 768px) {
         gap: 120px;
+        animation: scroll-logos 30s linear infinite;
     }
 }
 
