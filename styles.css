@@ -1294,6 +1294,7 @@ section.learn-more {
     position: relative;
     width: 100%;
     max-width: 100%;
+    overflow: visible;
     @media (min-width: 768px) {
         flex-direction: row;
         gap: var(--spacing-lg);
@@ -1301,7 +1302,7 @@ section.learn-more {
 }
 
 .blog-cards-wrapper {
-    flex: 1;
+    flex: 0 0 100%;
     position: relative;
     margin-top: var(--spacing-md);
     overflow: hidden;
@@ -1320,19 +1321,27 @@ section.learn-more {
     gap: var(--spacing-md);
     width: 100%;
     max-width: 100%;
-    padding-right: 0;
+    padding-right: var(--container-padding-mobile);
     overflow-x: auto;
     scroll-behavior: smooth;
+    @media (min-width: 768px) {
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: calc(-1 * ((100vw - 1552px) / 2 + var(--spacing-xl)));
+        padding-right: calc((100vw - 1552px) / 2 + var(--spacing-xl));
+    }
 }
 
-@media (min-width: 1200px) {
+/* Removed grid layout at 1200px - now always uses slider */
+/* @media (min-width: 1200px) {
     .blog-cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         padding-right: 0;
     }
-}
+} */
 
+a.blog-card,
 .blog-card {
     display: flex;
     flex-direction: column;
@@ -1344,6 +1353,8 @@ section.learn-more {
     width: 264px;
     flex-shrink: 0;
     position: relative;
+    text-decoration: none;
+    color: inherit;
 }
 
 .blog-card-image-wrapper {
@@ -1403,8 +1414,8 @@ section.learn-more {
     justify-content: center;
     @media (min-width: 768px) {
         text-align: left;
-        justify-content: space-between;
         width: auto;
+        flex: 0 0 auto;
     }
 }
 
@@ -1444,6 +1455,9 @@ section.learn-more {
 
     @media (min-width: 768px) {
         padding-right: 0;
+        width: auto;
+        flex: 0 0 auto;
+        margin-left: auto;
     }
 }
 

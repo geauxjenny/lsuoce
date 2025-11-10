@@ -346,7 +346,7 @@
             </div>
             <div class="blog-cards-wrapper">
                 <div class="blog-cards hide-scrollbar" id="blogCards">
-                    <div class="blog-card">
+                    <a href="https://ce.lsu.edu/news/publicNews.do?method=displayStory&activity=public&storyId=39097148" class="blog-card">
                         <div class="blog-card-image-wrapper">
                             <img src="images/blog-img-1.jpg" alt="Blog Entry">
                         </div>
@@ -354,8 +354,8 @@
                             <p class="blog-subhead">News &amp; Media</p>
                             <h3 class="blog-title header-xs">How Do I Get My Company to Pay for Professional Development and Training?</h3>
                         </div>
-                    </div>
-                    <div class="blog-card">
+                    </a>
+                    <a href="https://ce.lsu.edu/news/publicNews.do?method=displayStory&activity=public&storyId=37524575" class="blog-card">
                         <div class="blog-card-image-wrapper">
                             <img src="images/blog-img-2.jpg" alt="Blog Entry">
                         </div>
@@ -363,8 +363,8 @@
                             <p class="blog-subhead">News &amp; Media</p>
                             <h3 class="blog-title header-xs">Transform Your Interests into Career Advancement with LSU Online</h3>
                         </div>
-                    </div>
-                    <div class="blog-card">
+                    </a>
+                    <a href="https://ce.lsu.edu/news/publicNews.do?method=displayStory&activity=public&storyId=34413215" class="blog-card">
                         <div class="blog-card-image-wrapper">
                             <img src="images/blog-img-3.jpg" alt="Blog Entry">
                         </div>
@@ -372,8 +372,8 @@
                             <p class="blog-subhead">News &amp; Media</p>
                             <h3 class="blog-title header-xs">Invest in Your People, Invest in Your Business: Why Offer Employee Education Benefits</h3>
                         </div>
-                    </div>
-                    <div class="blog-card">
+                    </a>
+                    <a href="https://ce.lsu.edu/news/publicNews.do?method=displayStory&activity=public&storyId=33402316" class="blog-card">
                         <div class="blog-card-image-wrapper">
                             <img src="images/blog-img-4.jpg" alt="Blog Entry">
                         </div>
@@ -381,7 +381,25 @@
                             <p class="blog-subhead">News &amp; Media</p>
                             <h3 class="blog-title header-xs">How to Use Digital Badges in Your Employment Search</h3>
                         </div>
-                    </div>
+                    </a>
+                    <a href="https://ce.lsu.edu/news/publicNews.do?method=displayStory&activity=public&storyId=25610577" class="blog-card">
+                        <div class="blog-card-image-wrapper">
+                            <img src="images/blog-military.jpg" alt="Blog Entry">
+                        </div>
+                        <div class="blog-card-content">
+                            <p class="blog-subhead">News &amp; Media</p>
+                            <h3 class="blog-title header-xs">Unlock Your Post-Military Career with LSU Online's Veteran Career Advantage Course</h3>
+                        </div>
+                    </a>
+                    <a href="https://ce.lsu.edu/news/publicNews.do?method=displayStory&activity=public&storyId=18998907" class="blog-card">
+                        <div class="blog-card-image-wrapper">
+                            <img src="images/blog-learn-online.jpg" alt="Blog Entry">
+                        </div>
+                        <div class="blog-card-content">
+                            <p class="blog-subhead">News &amp; Media</p>
+                            <h3 class="blog-title header-xs">What is it Like to Learn Online?</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -398,34 +416,11 @@
     const cardWidth = 264; // card width
     const gap = 24;
     
-    console.log('Elements found:', {
-        blogCards: !!blogCards,
-        prevBtn: !!prevBtn,
-        nextBtn: !!nextBtn,
-        controls: !!controls
-    });
-    
     if (blogCards && prevBtn && nextBtn && controls) {
         let scrollPosition = 0;
         
-        function checkOverflow() {
-            const hasOverflow = blogCards.scrollWidth > blogCards.clientWidth;
-            console.log('Blog cards overflow check:', {
-                scrollWidth: blogCards.scrollWidth,
-                clientWidth: blogCards.clientWidth,
-                hasOverflow: hasOverflow,
-                offsetWidth: blogCards.offsetWidth,
-                parentWidth: blogCards.parentElement?.offsetWidth,
-                windowWidth: window.innerWidth
-            });
-            if (hasOverflow) {
-                controls.classList.add('visible');
-                console.log('Added visible class to slider controls');
-            } else {
-                controls.classList.remove('visible');
-                console.log('Removed visible class from slider controls');
-            }
-        }
+        // Always show slider controls now that we have 5-6 cards
+        controls.classList.add('visible');
         
         function updateButtons() {
             const maxScroll = blogCards.scrollWidth - blogCards.clientWidth;
@@ -479,16 +474,10 @@
         });
         
         // Check on window resize
-        window.addEventListener('resize', () => {
-            updateButtons();
-            checkOverflow();
-        });
+        window.addEventListener('resize', updateButtons);
         
         // Initial state
-        setTimeout(() => {
-            checkOverflow();
-            updateButtons();
-        }, 100);
+        setTimeout(updateButtons, 100);
     }
 
     // CE Offerings Slider
