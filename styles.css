@@ -184,14 +184,14 @@ h4 {
 }
 
 .header {
-    background: url(images/home-cta-banner-mobile.jpg) no-repeat 0 0;
+    background: url(images/home-cta-banner-mobile2.jpg) no-repeat 0 0;
     background-size: cover;
     padding: var(--section-padding-mobile) 0;
     color: #fff;
     text-align: center;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(images/home-cta-banner-mobile@2x.jpg);
+        background-image: url(images/home-cta-banner-mobile2@2x.jpg);
     }
 
     @media (min-width: 768px) {
@@ -475,9 +475,9 @@ section.why-choose-us p {
     align-items: center;
     @media (min-width: 1024px) {
         flex-direction: row;
+        align-items: stretch;
         gap: var(--spacing-md);
         justify-content: space-between;
-        align-items:start;
     }
 }
 
@@ -486,9 +486,9 @@ section.why-choose-us p {
     flex-direction: column;
     gap: 0;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
-    width: fit-content;
+    flex: 1;
     border-bottom: 1px solid #E0E0E0;
     padding-bottom: var(--spacing-md);
 
@@ -499,6 +499,10 @@ section.why-choose-us p {
         padding-right: var(--spacing-md);
         gap: 8px;
     }
+}
+
+.selling-point h3 {
+    text-wrap: pretty;
 }
 
 .selling-point img {
