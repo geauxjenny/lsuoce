@@ -56,7 +56,7 @@
             <div class="custom-and-onsite-inner">
                 <p class="body-xl">For more than 100 years, LSU Continuing Education has expanded access to learning across Louisiana and beyond.</p>
                 <p class="body-lg">What began in 1924 as University Extension has grown into a modern portfolio of professional development, online learning, lifelong learning, and workforce training.</p>
-                <p class="body-lg">Today, LSU Online &amp; Continuing Education serves learners at every stage through flexible programs offered online, on campus, and on site.</p>
+                <p class="body-lg">Today, LSU Continuing Education serves learners at every stage through flexible programs offered online, on campus, and on site.</p>
                 <!-- <div class="buttons">
                     <a href="https://ce.lsu.edu/professional-development/custom-onsite-professional-development/"><button class="button-primary">Learn More</button></a>
                 </div> -->
@@ -121,7 +121,7 @@
                         <ul class="ce-offering-list">
                             <li>Louisiana's only <strong>ABA-approved non-credit Paralegal Certificate.</strong></li>
                             <li>Earn your certificate in as little as <strong>one&nbsp;year.</strong></li>
-                            <li>Take <strong>fully online classes</strong> while maintaining a structured learning experience.</li>
+                            <li>Take <strong>live-online classes</strong> while maintaining a structured learning experience.</li>
                         </ul>
                         <div class="learn-more-link">
                             Learn More <span class="arrow">›</span>
@@ -196,7 +196,7 @@
         <div class="content">
             <div class="learning-options-header">
                 <h2><span class="accent-dark">Three Ways</span> LSU Delivers Learning</h2>
-                <p class="learning-options-intro body-xl">LSU Online &amp; Continuing Education meets learners and organizations where they are through three flexible delivery models: <strong>online, on campus,</strong> and <strong>on site.</strong></p>
+                <p class="learning-options-intro body-xl">LSU Continuing Education meets learners and organizations where they are through three flexible delivery models: <strong>online, on campus,</strong> and <strong>on site.</strong></p>
             </div>
             <div class="lo-slider-controls">
                 <button class="lo-slider-btn lo-slider-btn-prev" aria-label="Previous">
@@ -278,7 +278,7 @@
                         <img src="images/headshot-johanna.png" srcset="images/headshot-johanna@2x.png 2x" alt="Testimonial Headshot">
                         <div class="testimonial-author-content">
                             <p class="label">Johanna F.</p>
-                            <p class="author-title">Paralegal Studies Certificate Program</p>
+                            <p class="author-title"><a href="https://ce.lsu.edu/paralegal-studies/">Paralegal Studies Certificate Program</a></p>
                         </div>
                     </div>  
                 </div>
@@ -288,7 +288,7 @@
                         <img src="images/headshot-logan.png" srcset="images/headshot-logan@2x.png 2x" alt="Testimonial Headshot">
                         <div class="testimonial-author-content">
                             <p class="label">Logan B.</p>
-                            <p class="author-title">Management and Leadership Series&nbsp;MicroCert</p>
+                            <p class="author-title"><a href="https://ce.lsu.edu/public/category/courseCategoryCertificateProfile.do?method=load&certificateId=1020572">Management and Leadership Series&nbsp;MicroCert</a></p>
                         </div>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
                         <img src="images/headshot-lisa.png" srcset="images/headshot-lisa@2x.png 2x" alt="Testimonial Headshot">
                         <div class="testimonial-author-content">
                             <p class="label">Lisa T.</p>
-                            <p class="author-title">Project Management Certificate</p>
+                            <p class="author-title"><a href="https://ce.lsu.edu/public/category/courseCategoryCertificateProfile.do?method=load&certificateId=24883186">Project Management Certificate</a></p>
                         </div>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                         <img src="images/headshot-benny@2x.png" srcset="images/headshot-benny@2x.png 2x" alt="Testimonial Headshot">
                         <div class="testimonial-author-content">
                             <p class="label">Benny D.</p>
-                            <p class="author-title">Project Management Certificate</p>
+                            <p class="author-title"><a href="https://ce.lsu.edu/public/category/courseCategoryCertificateProfile.do?method=load&certificateId=24883186">Project Management Certificate</a></p>
                         </div>
                     </div>
                 </div>
@@ -318,7 +318,7 @@
                         <img src="images/headshot-justin@2x.png" srcset="images/headshot-justin@2x.png 2x" alt="Testimonial Headshot">
                         <div class="testimonial-author-content">
                             <p class="label">Justin C.</p>
-                            <p class="author-title">Accounting Fundamentals Specialist Certificate</p>
+                            <p class="author-title"><a href="https://ce.lsu.edu/public/category/courseCategoryCertificateProfile.do?method=load&certificateId=1007519">Accounting Fundamentals Specialist Certificate</a></p>
                         </div>
                     </div>
                 </div>
@@ -622,7 +622,7 @@
         function ceUpdateButtons() {
             const maxScroll = ceOfferings.scrollWidth - ceOfferings.clientWidth;
             const isAtStart = ceScrollPosition <= 0;
-            const isAtEnd = ceScrollPosition >= maxScroll;
+            const isAtEnd = ceScrollPosition >= maxScroll - 2;
             
             cePrevBtn.disabled = isAtStart;
             ceNextBtn.disabled = isAtEnd;
@@ -795,25 +795,48 @@
         }
         
         tPrevBtn.addEventListener('click', () => {
-            const cardWidth = testimonials.querySelector('.testimonial')?.offsetWidth || 320;
-            tScrollPosition = Math.max(0, tScrollPosition - (cardWidth + 24));
-            testimonials.scrollTo({
-                left: tScrollPosition,
-                behavior: 'smooth'
-            });
-            setTimeout(tUpdateButtons, 300);
-        });
-        
+    const cards = Array.from(testimonials.querySelectorAll('.testimonial'));
+    const currentLeft = testimonials.scrollLeft;
+
+    let targetCard = null;
+
+    for (let i = cards.length - 1; i >= 0; i--) {
+        if (cards[i].offsetLeft < currentLeft - 2) {
+            targetCard = cards[i];
+            break;
+        }
+    }
+
+    testimonials.scrollTo({
+        left: targetCard ? targetCard.offsetLeft : 0,
+        behavior: 'smooth'
+    });
+
+    setTimeout(tUpdateButtons, 300);
+});
+
         tNextBtn.addEventListener('click', () => {
-            const cardWidth = testimonials.querySelector('.testimonial')?.offsetWidth || 320;
-            tScrollPosition = Math.min(
-                testimonials.scrollWidth - testimonials.clientWidth,
-                tScrollPosition + (cardWidth + 24)
-            );
-            testimonials.scrollTo({
-                left: tScrollPosition,
-                behavior: 'smooth'
-            });
+            const cards = Array.from(testimonials.querySelectorAll('.testimonial'));
+            const containerRect = testimonials.getBoundingClientRect();
+
+            let targetCard = null;
+            for (const card of cards) {
+                const cardRect = card.getBoundingClientRect();
+                if (cardRect.right > containerRect.right + 1) {
+                    targetCard = card;
+                    break;
+                }
+            }
+
+            const maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
+            if (targetCard) {
+                testimonials.scrollTo({
+                    left: Math.min(Math.max(0, targetCard.offsetLeft), maxScroll),
+                    behavior: 'smooth'
+                });
+            } else {
+                testimonials.scrollTo({ left: maxScroll, behavior: 'smooth' });
+            }
             setTimeout(tUpdateButtons, 300);
         });
         

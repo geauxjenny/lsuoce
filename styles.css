@@ -19,7 +19,7 @@ html {
   --gold: 253, 208, 35;
   --gold-100: #F9F8F0;
   --gold-divider: #F1EDDB;
-  --gold-light: 217, 182, 78;
+  --gold-light: 241, 237, 219;
   --gold-dark: 202, 165, 59;
   --gold-hover: #EEBD02;
 
@@ -1160,6 +1160,15 @@ section.testimonials {
   display: flex;
   text-align: center;
 
+  a {
+    color: var(--purple);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--purple-200);
+  }
+
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     background-image: url(images/testimonials-bg@2x.jpg);
   }
@@ -1213,7 +1222,7 @@ section.testimonials {
   }
   @media (min-width: 1024px) {
     padding-top: var(--spacing-lg);
-    flex: 0 0 100%;
+    flex: 0 0 auto;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -1237,7 +1246,9 @@ section.testimonials {
 
   @media (min-width: 1024px) {
     margin-top: var(--spacing-lg);
-    flex: 0 0 100%;
+    flex: 1;
+    min-width: 0;
+    width: auto;
   }
 }
 
