@@ -3080,30 +3080,32 @@ p.body-lead {
 
 .cert-pricing__highlights {
   list-style: none;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
-  text-align: left;
 }
 
 .cert-pricing__highlights li {
-  position: relative;
-  padding: 14px 0 14px calc(0.875em + 0.5em);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 14px 0;
   color: #000;
+  text-align: center;
   border-bottom: 1px solid var(--gold-divider);
 }
 
 .cert-pricing__highlights li::before {
   content: '';
-  position: absolute;
-  left: 0;
-  top: calc(14px + 0.35em);
+  flex-shrink: 0;
   width: 0.875em;
   height: 0.875em;
+  margin-top: 0.35em;
   background: url('images/check-circle-light-dark-purples.png') no-repeat center center;
   background-size: contain;
 }
@@ -3114,11 +3116,7 @@ p.body-lead {
 
 @media (min-width: 768px) {
   .cert-pricing__highlights li {
-    padding: 16px 0 16px calc(0.875em + 0.5em);
-  }
-
-  .cert-pricing__highlights li::before {
-    top: calc(16px + 0.35em);
+    padding: 16px 0;
   }
 }
 
