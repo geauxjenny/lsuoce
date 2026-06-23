@@ -206,6 +206,10 @@ h4 {
   font-size: 16px;
   line-height: 180%;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .body-lead {
@@ -846,6 +850,29 @@ a.ce-offering:hover .learn-more-link .arrow,
   width: 12px;
   height: 12px;
   background: url('images/bullet-check.svg') no-repeat center center;
+}
+
+.list-square-gold {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-square-gold li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.list-square-gold li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5lh;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 0;
+  background: rgb(var(--gold));
 }
 
 .ce-offering-image-container {
