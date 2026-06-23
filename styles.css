@@ -23,7 +23,7 @@ html {
   --gold-dark: 202, 165, 59;
   --gold-hover: #EEBD02;
 
-  --grey-light: 240, 240, 240;
+  --grey-light: 245, 245, 245;
   --grey: 118, 118, 118;
   --grey-dark: 71, 71, 71;
   --border-color: #E5E5E5;
@@ -171,11 +171,11 @@ h4 {
 }
 
 .label,
-.learning-option-top p,
 .testimonial-author-content .label {
-  font-family: var(--font-label);
-  font-variation-settings: 'wght' 800, 'wdth' 65, 'ital' 0;
-  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-variation-settings: normal;
+  text-transform: none;
   margin: 0;
 }
 
@@ -205,6 +205,7 @@ h4 {
 .body-default {
   font-size: 16px;
   line-height: 180%;
+  margin: 0;
 }
 
 .body-lead {
@@ -954,6 +955,10 @@ a.ce-offering:hover .learn-more-link .arrow,
 }
 
 .learning-option-top p {
+  font-family: var(--font-label);
+  font-variation-settings: 'wght' 800, 'wdth' 65, 'ital' 0;
+  text-transform: uppercase;
+  margin: 0;
   font-size: 26px;
   line-height: 100%;
   color: rgb(var(--purple));
