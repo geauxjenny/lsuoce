@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introduction to Contemporary Mathematics</title>
+    <meta name="description" content="Earn Louisiana's only ABA-approved non-credit Paralegal Certificate through LSU Continuing Education. Flexible live-online format, expert instruction, and internship opportunities." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="certificate.css" />
+    <link rel="stylesheet" href="course.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/gfh4svy.css" />
+  </head>
+  <body class="certificate-page course-page">
+
+    <!-- Site header (Skillshare-inspired) -->
+    <header class="cert-site-header">
+      <div class="container cert-site-header__bar">
+        <a href="index.html" class="cert-site-header__logo">
+          <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
+        </a>
+
+        <div class="cert-site-header__nav-tools">
+          <button type="button" class="cert-site-header__browse" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle>
+            <span>Browse</span>
+            <svg class="cert-site-header__chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M5.665 7.142L.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z" fill="currentColor"/></svg>
+          </button>
+
+          <form class="cert-site-header__search" action="https://ce.lsu.edu/corporate/landingPage.do" method="get" role="search">
+            <input type="hidden" name="method" value="load" />
+            <input type="hidden" name="corporateGroupId" value="51819353" />
+            <label class="visually-hidden" for="cert-site-search">Search programs and courses</label>
+            <svg class="cert-site-header__search-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.75" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M13.5 13.5 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <input type="search" id="cert-site-search" name="searchKeyword" class="cert-site-header__search-input" placeholder="Search programs, certificates, and courses" autocomplete="off" />
+          </form>
+        </div>
+
+        <div class="cert-site-header__actions">
+          <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-site-header__sign-in">Sign In</a>
+          <a href="https://ce.lsu.edu/portal/applications/applicationProfile.do?method=loadApplicationIndex&amp;applicationProfileId=1267675" class="cert-btn cert-btn--sm cert-site-header__apply">Register Now</a>
+        </div>
+
+        <button type="button" class="cert-site-header__menu-toggle" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle aria-label="Open menu">
+          <span class="cert-site-header__menu-bar" aria-hidden="true"></span>
+          <span class="cert-site-header__menu-bar" aria-hidden="true"></span>
+          <span class="cert-site-header__menu-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="cert-browse-panel" id="cert-browse-panel" hidden>
+        <div class="cert-browse-panel__inner">
+          <div class="cert-browse-panel__primary">
+            <p class="cert-browse-panel__label">Departments</p>
+            <ul class="cert-browse-panel__links">
+              <li><a href="https://ce.lsu.edu/professional-development/">Professional Development</a></li>
+              <li><a href="https://ce.lsu.edu/online-distance-learning/">Online College Credit</a></li>
+              <li><a href="https://ce.lsu.edu/paralegal-studies/">Paralegal Studies</a></li>
+              <li><a href="https://ce.lsu.edu/olli/">OLLI — Lifelong Learning (50+)</a></li>
+              <li><a href="https://ce.lsu.edu/professional-development/custom-onsite-professional-development/">Custom &amp; On-Site Training</a></li>
+            </ul>
+          </div>
+          <div class="cert-browse-panel__secondary">
+            <div class="cert-browse-panel__group">
+              <p class="cert-browse-panel__label">Courses & Certificates</p>
+              <ul class="cert-browse-panel__boxes">
+                <li><a href="certificate.html" class="cert-browse-panel__box">Certificates &amp; Bootcamps</a></li>
+                <li><a href="course.html" class="cert-browse-panel__box">Professional Courses</a></li>
+                <li><a href="course-college-credit.html" class="cert-browse-panel__box">Online College Credit Courses</a></li>
+                <li><a href="https://ce.lsu.edu/search/publicCourseAdvancedSearch.do?method=doPaginatedSearch&showInternal=false&courseSearch.courseDescriptionKeyword=&courseSearch.courseCategoryStringArray=0&courseSearch.programAreaStringArray=1007426&courseSearch.deliveryMethodString=&courseSearch.filterString=availforreg" class="cert-browse-panel__box">OLLI Courses</a></li>
+              </ul>
+            </div>
+            <div class="cert-browse-panel__group cert-browse-panel__group--mobile-actions">
+              <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-browse-panel__pill">Sign In</a>
+              <a href="https://ce.lsu.edu/portal/applications/applicationProfile.do?method=loadApplicationIndex&amp;applicationProfileId=1267675" class="cert-btn cert-btn--secondary cert-btn--sm">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Desktop sticky top CTA bar (shows after scrolling past quick facts) -->
+    <div class="cert-enroll-bar cert-enroll-bar--top course-enroll-bar--top" aria-hidden="true">
+      <div class="container cert-enroll-bar__inner">
+        <div class="cert-enroll-bar__program">
+          <p class="cert-enroll-bar__title">Introduction to Contemporary Mathematics</p>
+          <ul class="cert-enroll-bar__highlights" aria-label="Course highlights">
+            <li>MATH 1029 college credit course</li>
+            <li>Online Self-Paced</li>
+            <li>Course Fee: $904.70</li>
+            <li>3 units</li>
+          </ul>
+        </div>
+        <a href="#register" class="cert-btn cert-btn--primary cert-btn--sm cert-enroll-bar__cta">Register Now</a>
+      </div>
+    </div>
+
+    <!-- Mobile sticky enroll bar -->
+    <div class="cert-enroll-bar" aria-hidden="false">
+      <div class="cert-enroll-bar__inner">
+        <div class="cert-enroll-bar__info">
+          <span class="cert-enroll-bar__label">Introduction to Contemporary Mathematics</span>
+          <span class="cert-enroll-bar__price">$904.70</span>
+        </div>
+        <a href="#register" class="cert-btn cert-btn--primary cert-btn--sm">Register Now</a>
+      </div>
+    </div>
+
+    <!-- Sticky enroll track -->
+    <div class="cert-sticky-track">
+      <div class="container cert-sticky-track__grid">
+
+        <section class="cert-hero" id="top">
+          <div class="cert-hero__content">
+            <p class="cert-hero__eyebrow">College Credit Courses</p>
+            <h1 class="cert-hero__title">Introduction to Contemporary Mathematics</h1>
+            <p class="cert-hero__lead course-hero__code body-lead">
+              <span class="course-hero__code-id">MATH 1029</span>
+              <span class="course-hero__code-separator" aria-hidden="true"></span>
+              <span class="course-hero__code-ceus">3 units</span>
+            </p>
+            <ul class="cert-checklist">
+                <li>Develop practical math skills for everyday and professional decision-making</li>
+                <li>Understand probability, statistics, and how data is used in the real world</li>
+                <li>Learn to interpret graphs, networks, and quantitative information</li>
+                <li>Analyze trends using distributions, percentiles, and statistical measures</li>
+                <li>Apply mathematical models to solve planning and optimization problems</li>
+            <!-- </ul>
+            <div class="cert-hero__actions">
+              <a href="#request-info" class="cert-btn cert-btn--secondary cert-btn--lg">Request Info</a>
+              <a href="#syllabus-download" class="cert-btn cert-btn--outline-dark cert-btn--lg">Download Syllabus</a>
+            </div> -->
+          </div>
+
+          <aside class="cert-hero__aside" aria-label="Enroll">
+            <div class="cert-hero-card course-hero-card course-hero-card--subtle">
+              <div class="cert-hero-card__top">
+                <div class="course-hero-card__summary">
+                  <div class="course-hero-card__price-row">
+                    <p class="course-hero-card__price" aria-label="Nine hundred four dollars and seventy cents">$904.70</p>
+                    <span class="course-hero-card__units">MATH 1029</span>
+                  </div>
+                  <div class="course-hero-card__enrollment">
+                    <p class="course-hero-card__enrollment-label">Open Enrollment</p>
+                    <p class="course-hero-card__enrollment-value">Start anytime</p>
+                  </div>
+                </div>
+                <a href="#register" class="cert-btn cert-btn--primary cert-btn--lg course">Register Now</a>
+                <ul class="cert-hero-card__meta course-hero-card__meta course-hero-card__meta--details">
+                  <li>
+                    <span class="cert-hero-card__meta-icon" aria-hidden="true">
+                      <img src="images/credit-icon.svg" alt="" width="20" height="20" />
+                    </span>
+                    <div class="cert-hero-card__meta-body">
+                      <strong>3 Credit Units</strong>
+                      <span>Credit awarded by LSU</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="cert-hero-card__meta-icon" aria-hidden="true">
+                      <img src="images/assignment-icon.svg" alt="" width="20" height="20" />
+                    </span>
+                    <div class="cert-hero-card__meta-body">
+                      <strong>15 Modules + 2 Exams</strong>
+                      <span>Structured semester-equivalent coursework</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="cert-hero-card__meta-icon" aria-hidden="true">
+                      <img src="images/calendar-icon.svg" alt="" width="20" height="20" />
+                    </span>
+                    <div class="cert-hero-card__meta-body">
+                      <strong>180 Days</strong>
+                      <span>Time to complete</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="cert-hero-card__meta-icon" aria-hidden="true">
+                      <img src="images/laptop-icon.svg" alt="" width="20" height="20" />
+                    </span>
+                    <div class="cert-hero-card__meta-body">
+                      <strong>100% Online</strong>
+                      <span>Learn from anywhere</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="cert-facts cert-sticky-track__full" aria-label="Program at a glance">
+          <div class="container cert-facts__inner">
+            <dl class="cert-facts__grid">
+              <div class="cert-facts__item">
+                <dt>Learning Format</dt>
+                <dd>Online self-paced</dd>
+              </div>
+              <div class="cert-facts__item">
+                <dt>Next Start Date</dt>
+                <dd>Start anytime</span></dd>
+              </div>
+              <div class="cert-facts__item">
+                <dt>Credit Hours</dt>
+                <dd>3 units</dd>
+              </div>
+              <div class="cert-facts__item">
+                <dt>Course Fees</dt>
+                <dd>$904.70</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <!-- Jump links (disabled for now)
+        <nav class="cert-nav cert-sticky-track__full" aria-label="Page sections">
+          <div class="container cert-nav__inner">
+            <ul class="cert-nav__list hide-scrollbar">
+              <li><a href="#cohorts" class="cert-nav__link is-active">Cohorts</a></li>
+              <li><a href="#overview" class="cert-nav__link">Overview</a></li>
+              <li><a href="#curriculum" class="cert-nav__link">Curriculum</a></li>
+              <li><a href="#outcomes" class="cert-nav__link">Outcomes</a></li>
+              <li><a href="#pricing" class="cert-nav__link">Pricing</a></li>
+              <li><a href="#testimonials" class="cert-nav__link">Testimonials</a></li>
+              <li><a href="#faq" class="cert-nav__link">FAQ</a></li>
+              <li><a href="#request-info" class="cert-nav__link">Request Info</a></li>
+            </ul>
+            <a href="https://ce.lsu.edu/portal/applications/applicationProfile.do?method=loadApplicationIndex&amp;applicationProfileId=1267675" class="cert-btn cert-btn--primary cert-nav__cta">Register Now</a>
+          </div>
+        </nav>
+        -->
+
+        <main class="cert-sticky-track__main">
+
+
+        <!-- Key features -->
+        <section class="cert-section cert-section--white" id="overview">
+          <div class="cert-section__inner">
+            <header class="cert-section__header">
+              <h2>Why Choose LSU's Online College Credit Courses?</h2>
+              </header>
+            <div class="cert-features">
+              <article class="cert-feature">
+                <div class="cert-feature__icon" aria-hidden="true">
+                  <img src="images/impact-rocket-icon.png" alt="" width="48" height="48" />
+                </div>
+                <h3 class="header-xs">Fast-Track Completion</h3>
+                <p class="body-default">Earn your certificate in as little as one year with our full-time track, or pace your progress with part-time enrollment.</p>
+              </article>
+              <article class="cert-feature">
+                <div class="cert-feature__icon" aria-hidden="true">
+                  <img src="images/instruction-icon.svg" alt="" width="48" height="48" />
+                </div>
+                <h3 class="header-xs">Expert Instruction</h3>
+                <p class="body-default">Learn from experienced paralegals, attorneys, and judges who bring real-world legal practice into every class.</p>
+              </article>
+              <article class="cert-feature">
+                <div class="cert-feature__icon" aria-hidden="true">
+                  <img src="images/program-icon.svg" alt="" width="48" height="48" />
+                </div>
+                <h3 class="header-xs">Live-Online Format</h3>
+                <p class="body-default">Take evening classes remotely while maintaining a structured, synchronous learning experience.</p>
+              </article>
+              <article class="cert-feature">
+                <div class="cert-feature__icon" aria-hidden="true">
+                  <img src="images/handshake-icon.svg" alt="" width="48" height="48" />
+                </div>
+                <h3 class="header-xs">Internship Opportunities</h3>
+                <p class="body-default">Gain 150 hours of supervised experience in a law office, government agency, court, or nonprofit.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course outcomes & skills -->
+        <section class="cert-section cert-section--purple cert-outcomes" id="outcomes" aria-labelledby="outcomes-heading">
+          <div class="cert-section__inner">
+            <header class="cert-section__header">
+              <p class="label cert-outcomes__eyebrow">About This Course</p>
+              <h2 id="outcomes-heading">Prepare for smarter mathematical decisions in <span class="accent">everyday life</span></h2>
+            </header>
+            <div class="cert-outcomes__panel">
+              <div class="cert-outcomes__column">
+                <h3 class="cert-subheading cert-outcomes__heading">What You'll Learn</h3>
+                <ul class="cert-outcomes__list course-outcomes__list body-default">
+                    <li>Apply mathematical reasoning to solve practical problems in everyday life</li>
+                    <li>Use counting techniques and probability to evaluate possible outcomes</li>
+                    <li>Collect, organize, and interpret data using statistical methods</li>
+                    <li>Analyze distributions, percentiles, and measures of central tendency</li>
+                    <li>Model relationships and networks using graph theory concepts</li>
+                    <li>Solve routing and pathfinding problems using Euler and Hamilton methods</li>
+                    <li>Interpret data through graphs, charts, and statistical visualizations</li>
+                    <li>Apply linear programming techniques to optimize resources and outcomes</li>
+                    <li>Use mathematical models to support decision-making and planning</li>
+                    <li>Develop quantitative reasoning skills applicable across disciplines</li>
+                </ul>
+              </div>
+              <div class="cert-outcomes__column">
+                <h3 class="cert-subheading cert-outcomes__heading">Skills in this Course</h3>
+                <ul class="cert-skills cert-skills--wrap">
+                    <li>Probability &amp; counting techniques</li>  
+                    <li>Statistical analysis</li>
+                    <li>Data interpretation</li>
+                    <li>Quantitative reasoning</li>
+                    <li>Frequency distributions</li>
+                    <li>Measures of central tendency</li>
+                    <li>Measures of dispersion</li>
+                    <li>Normal distributions</li>
+                    <li>Percentile analysis</li>
+                    <li>Graph theory</li>
+                    <li>Euler paths &amp; circuits</li>
+                    <li>Hamilton paths &amp; circuits</li>
+                    <li>Trees &amp; spanning trees</li>
+                    <li>Linear programming</li>
+                    <li>Mathematical modeling</li>
+                    <li>Decision analysis</li>
+                    <li>Optimization techniques</li>
+                    <li>Problem solving</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About your instructor -->
+        <section class="cert-section cert-section--purple-dark course-instructor-section" id="instructor" aria-labelledby="instructor-heading">
+          <div class="cert-section__inner">
+            <div class="course-instructor__layout">
+              <div class="course-instructor__intro">
+                <h2 id="instructor-heading" class="heading-dark">About Your <span class="accent-dark">Instructor</span></h2>
+              </div>
+              <div class="course-instructor__panel">
+                <div class="course-instructor__card">
+                  <div class="course-instructor__avatar" role="img" aria-label="Julia Ledet">JL</div>
+                  <div class="course-instructor__content">
+                    <h3 class="course-instructor__name">Julia Ledet, PhD</h3>
+                    <p class="course-instructor__title">Distinguished Instructor, Department of Mathematics, Louisiana State University</p>
+                    <p class="course-instructor__bio body-default">Bio line goes here.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Curriculum -->
+        <section class="cert-section cert-section--white cert-curriculum" id="curriculum">
+          <div class="cert-section__inner">
+            <header class="cert-section__header cert-curriculum__header">
+              <p class="label cert-curriculum__eyebrow">Introduction to Contemporary Mathematics</p>
+              <h2>Course Outline</h2>
+            </header>
+
+            <div class="cert-curriculum__panel">
+              <div class="cert-curriculum__table-head" aria-hidden="true">
+                <span class="cert-curriculum__table-head-course">Topic</span>
+                <span class="cert-curriculum__table-head-format">Modules</span>
+              </div>
+              <div class="cert-curriculum__list cert-accordion cert-accordion--curriculum" data-accordion-group="curriculum">
+                <details class="cert-curriculum-module cert-accordion__item">
+                  <summary class="cert-curriculum-module__trigger cert-accordion__trigger">
+                    <span class="cert-curriculum-module__heading cert-accordion__heading">
+                      <span class="cert-curriculum-module__title-row">
+                        <span class="cert-accordion__icon" aria-hidden="true"></span>
+                        <span class="cert-curriculum-module__title cert-accordion__title">Counting Techniques & Mathematical Reasoning</span>
+                      </span>
+                      <span class="cert-curriculum-module__meta">
+                        <img src="images/assignment-icon.svg" alt="" width="16" height="16" class="cert-curriculum-module__meta-icon" />
+                        Modules 1-2
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="cert-curriculum-module__panel cert-accordion__panel body-default">
+                    <p>Learn the fundamental counting principle, permutations, combinations, and probability basics. Build the mathematical foundation needed to analyze outcomes and make informed decisions.</p>
+                  </div>
+                </details>
+
+                <details class="cert-curriculum-module cert-accordion__item">
+                  <summary class="cert-curriculum-module__trigger cert-accordion__trigger">
+                    <span class="cert-curriculum-module__heading cert-accordion__heading">
+                      <span class="cert-curriculum-module__title-row">
+                        <span class="cert-accordion__icon" aria-hidden="true"></span>
+                        <span class="cert-curriculum-module__title cert-accordion__title">Probability & Decision Making</span>
+                      </span>
+                      <span class="cert-curriculum-module__meta">
+                        <img src="images/assignment-icon.svg" alt="" width="16" height="16" class="cert-curriculum-module__meta-icon" />
+                        Modules 3-5
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="cert-curriculum-module__panel cert-accordion__panel body-default">
+                    <p>Explore conditional probability, odds, and events involving "and," "or," and "not." Apply probability concepts to real-world scenarios and everyday decision-making.</p>
+                  </div>
+                </details>
+
+                <details class="cert-curriculum-module cert-accordion__item">
+                  <summary class="cert-curriculum-module__trigger cert-accordion__trigger">
+                    <span class="cert-curriculum-module__heading cert-accordion__heading">
+                      <span class="cert-curriculum-module__title-row">
+                        <span class="cert-accordion__icon" aria-hidden="true"></span>
+                        <span class="cert-curriculum-module__title cert-accordion__title">Graph Theory & Networks</span>
+                      </span>
+                      <span class="cert-curriculum-module__meta">
+                        <img src="images/assignment-icon.svg" alt="" width="16" height="16" class="cert-curriculum-module__meta-icon" />
+                        Modules 6-8
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="cert-curriculum-module__panel cert-accordion__panel body-default">
+                    <p>Examine graphs, Euler paths, Hamilton circuits, trees, and spanning trees. Learn how mathematical networks can model relationships, routes, and connections.</p>
+                  </div>
+                </details>
+
+                <details class="cert-curriculum-module cert-accordion__item">
+                  <summary class="cert-curriculum-module__trigger cert-accordion__trigger">
+                    <span class="cert-curriculum-module__heading cert-accordion__heading">
+                      <span class="cert-curriculum-module__title-row">
+                        <span class="cert-accordion__icon" aria-hidden="true"></span>
+                        <span class="cert-curriculum-module__title cert-accordion__title">Data Collection & Statistical Analysis</span>
+                      </span>
+                      <span class="cert-curriculum-module__meta">
+                        <img src="images/assignment-icon.svg" alt="" width="16" height="16" class="cert-curriculum-module__meta-icon" />
+                        Modules 9-11
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="cert-curriculum-module__panel cert-accordion__panel body-default">
+                    <p>Learn how to collect, organize, and analyze data using sampling techniques, frequency distributions, measures of central tendency, and measures of dispersion.</p>
+                  </div>
+                </details>
+
+                <details class="cert-curriculum-module cert-accordion__item">
+                  <summary class="cert-curriculum-module__trigger cert-accordion__trigger">
+                    <span class="cert-curriculum-module__heading cert-accordion__heading">
+                      <span class="cert-curriculum-module__title-row">
+                        <span class="cert-accordion__icon" aria-hidden="true"></span>
+                        <span class="cert-curriculum-module__title cert-accordion__title">Understanding Data Distributions</span>
+                      </span>
+                      <span class="cert-curriculum-module__meta">
+                        <img src="images/assignment-icon.svg" alt="" width="16" height="16" class="cert-curriculum-module__meta-icon" />
+                        Module 12
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="cert-curriculum-module__panel cert-accordion__panel body-default">
+                    <p>Explore normal distributions, z-scores, percentiles, and the 68–95–99.7 rule. Develop the skills needed to interpret statistical information and evaluate trends.</p>
+                  </div>
+                </details>
+
+                <details class="cert-curriculum-module cert-accordion__item">
+                  <summary class="cert-curriculum-module__trigger cert-accordion__trigger">
+                    <span class="cert-curriculum-module__heading cert-accordion__heading">
+                      <span class="cert-curriculum-module__title-row">
+                        <span class="cert-accordion__icon" aria-hidden="true"></span>
+                        <span class="cert-curriculum-module__title cert-accordion__title">Linear Programming & Optimization</span>
+                      </span>
+                      <span class="cert-curriculum-module__meta">
+                        <img src="images/assignment-icon.svg" alt="" width="16" height="16" class="cert-curriculum-module__meta-icon" />
+                        Modules 13-14
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="cert-curriculum-module__panel cert-accordion__panel body-default">
+                    <p>Review essential algebra concepts and apply linear programming techniques to solve planning and optimization problems involving resources, constraints, and outcomes.</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="cert-section cert-section--gold cert-cohorts-section course-requirements" id="requirements" aria-labelledby="requirements-heading">
+          <div class="cert-section__inner">
+            <div class="cert-cohorts__layout">
+              <div class="cert-cohorts__intro">
+                <h2 id="requirements-heading">Requirements</h2>
+                <p class="body-xl cert-cohorts__lead">Review equipment, materials, and registration details before you enroll.</p>
+              </div>
+              <div class="cert-cohorts__list cert-cohorts__panel">
+                <div class="cert-cohorts__table-head" aria-hidden="true">
+                  <span class="cert-cohorts__table-head-dates">Requirement</span>
+                  <span class="cert-cohorts__table-head-sessions">Details</span>
+                </div>
+                <article class="cert-cohort-row">
+                  <div class="cert-cohort-row__date">
+                    <p class="cert-cohort-row__range">Special Requirements</p>
+                  </div>
+                  <div class="cert-cohort-row__sessions">
+                    <p class="cert-cohort-row__sessions-label">Special Requirements:</p>
+                    <ul class="course-requirements__equipment body-default">
+                      <li>
+                        <span class="course-requirements__icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM5 5h14c.55 0 1 .45 1 1v9c0 .55-.45 1-1 1H5c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1zm7 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+                        </span>
+                        <span>A computer with reliable internet access</span>
+                      </li>
+                      <li>
+                        <span class="course-requirements__icon" aria-hidden="true">
+                          <img src="images/camera-icon.svg" alt="" width="20" height="20" />
+                        </span>
+                        <span>A webcam</span>
+                      </li>
+                      <li>
+                        <span class="course-requirements__icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="-1 -1 22 22" fill="none" aria-hidden="true"><path d="M4.167 8.333v3.334h2.5L10 15.833V4.167L6.667 8.333H4.167z" stroke="currentColor" stroke-width="1.67" stroke-linejoin="round"/><path d="M12.5 7.5a2.5 2.5 0 010 5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round"/><path d="M14.583 5.417a5 5 0 010 9.166" stroke="currentColor" stroke-width="1.67" stroke-linecap="round"/></svg>
+                        </span>
+                        <span>A headset or speakers, and a microphone</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="cert-cohort-row">
+                  <div class="cert-cohort-row__date">
+                    <p class="cert-cohort-row__range">Required Materials</p>
+                  </div>
+                  <div class="cert-cohort-row__sessions">
+                    <p class="cert-cohort-row__sessions-label">Required Materials:</p>
+                    <p class="cert-cohort-row__schedule">You are also responsible for purchasing separately the required textbooks and any additional required materials for this course.</p>
+                    <p class="cert-cohort-row__schedule">Pearson&rsquo;s MyMathLab with eText access code and a nongraphing calculator are required. A small, dryerase white board is recommended for exams.</p>
+                  </div>
+                </article>
+                <article class="cert-cohort-row">
+                  <div class="cert-cohort-row__date">
+                    <p class="cert-cohort-row__range">Registration</p>
+                  </div>
+                  <div class="cert-cohort-row__sessions">
+                    <p class="cert-cohort-row__sessions-label">Registration:</p>
+                    <p class="cert-cohort-row__schedule">If you are interested in re-enrolling in a course that you have already taken through our program, please contact us before registering. If you have any questions about registration or payment, please contact our office.</p>
+                  </div>
+                </article>
+                <article class="cert-cohort-row">
+                  <div class="cert-cohort-row__date">
+                    <p class="cert-cohort-row__range">English Proficiency</p>
+                  </div>
+                  <div class="cert-cohort-row__sessions">
+                    <p class="cert-cohort-row__sessions-label">English Proficiency Requirements:</p>
+                    <p class="cert-cohort-row__schedule">Information on English Proficiency Requirements are located <a href="https://ce.lsu.edu/professional-development/policies-and-registration/" class="cert-link">here</a>.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course preview -->
+        <section class="cert-section cert-section--purple-dark" id="preview" aria-labelledby="preview-heading">
+          <div class="cert-section__inner">
+            <div class="course-preview">
+              <div class="course-preview__media">
+                <div class="course-preview__carousel" data-course-preview-carousel data-course-preview-text>
+                  <button type="button" class="course-preview__nav course-preview__nav--prev" data-course-preview-prev aria-label="Previous slide" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 9 12l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+
+                  <div class="course-preview__viewport" data-course-preview-viewport tabindex="0" role="region" aria-roledescription="carousel" aria-label="Course highlights">
+                    <div class="course-preview__track" data-course-preview-track>
+                      <figure class="course-preview__slide course-preview__slide--text" aria-label="100% Online">
+                        <div class="course-preview__text-slide">
+                          <span class="course-preview__text-slide-emoji" aria-hidden="true">💻</span>
+                          <p class="course-preview__text-slide-label">100% Online</p>
+                        </div>
+                      </figure>
+                      <figure class="course-preview__slide course-preview__slide--text" aria-label="180 Days Access">
+                        <div class="course-preview__text-slide">
+                          <span class="course-preview__text-slide-emoji" aria-hidden="true">📅</span>
+                          <p class="course-preview__text-slide-label">180 Days Access</p>
+                        </div>
+                      </figure>
+                      <figure class="course-preview__slide course-preview__slide--text" aria-label="15 Modules">
+                        <div class="course-preview__text-slide">
+                          <span class="course-preview__text-slide-emoji" aria-hidden="true">📚</span>
+                          <p class="course-preview__text-slide-label">15 Modules</p>
+                        </div>
+                      </figure>
+                      <figure class="course-preview__slide course-preview__slide--text" aria-label="2 Proctored Exams">
+                        <div class="course-preview__text-slide">
+                          <span class="course-preview__text-slide-emoji" aria-hidden="true">📝</span>
+                          <p class="course-preview__text-slide-label">2 Proctored Exams</p>
+                        </div>
+                      </figure>
+                      <figure class="course-preview__slide course-preview__slide--text" aria-label="3 Credit Hours">
+                        <div class="course-preview__text-slide">
+                          <span class="course-preview__text-slide-emoji" aria-hidden="true">🎓</span>
+                          <p class="course-preview__text-slide-label">3 Credit Hours</p>
+                        </div>
+                      </figure>
+                      <figure class="course-preview__slide course-preview__slide--text" aria-label="LSU Baton Rouge Credit">
+                        <div class="course-preview__text-slide">
+                          <span class="course-preview__text-slide-emoji" aria-hidden="true">🏛️</span>
+                          <p class="course-preview__text-slide-label">LSU Baton Rouge Credit</p>
+                        </div>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <button type="button" class="course-preview__nav course-preview__nav--next" data-course-preview-next aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5 15 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+
+                <div class="course-preview__dots" data-course-preview-dots role="tablist" aria-label="Course highlight slides"></div>
+              </div>
+
+              <div class="course-preview__content">
+                <header class="course-preview__header">
+                  <h2 id="preview-heading">Course Preview</h2>
+                  <p class="body-xl course-preview__lead">
+                    Explore the online learning experience for Introduction to Contemporary Mathematics before you enroll.
+                  </p>
+                </header>
+                <h3 class="header-xs course-preview__features-title">Key Features</h3>
+                <ul class="course-preview__features body-default">
+                    <li>Learn at your own pace within a flexible six-month completion window</li>
+                    <li>Interactive assignments and quizzes powered by Pearson MyMathLab</li>
+                    <li>Video examples, lecture notes, and guided practice activities</li>
+                    <li>Real-world applications of probability, statistics, and quantitative reasoning</li>
+                    <li>Multiple opportunities to practice concepts before graded exams</li>
+                    <li>Fully online coursework with remote proctoring for examinations</li>
+                    <li>LSU credit awarded upon successful completion</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        </main>
+
+      </div>
+    </div>
+
+    <!-- Testimonials (matches CE home page) -->
+    <section class="testimonials section-pad" id="testimonials">
+          <div class="container">
+            <div class="content">
+              <div class="section-title">
+                <h2 class="heading-dark">Hear From <span class="accent-dark">Our&nbsp;Learners</span></h2>
+              </div>
+              <div class="testimonials-slider-controls">
+                <button class="testimonials-slider-btn testimonials-slider-btn-prev" aria-label="Previous testimonial">
+                  <img src="images/prev-inactive.svg" alt="" />
+                </button>
+                <button class="testimonials-slider-btn testimonials-slider-btn-next" aria-label="Next testimonial">
+                  <img src="images/next-active-dark-bg.svg" alt="" />
+                </button>
+              </div>
+              <div class="testimonials-inner hide-scrollbar" id="testimonialsSlider">
+                <div class="testimonial">
+                  <p class="body-lg">It was such an easy decision. It <strong>accommodated my schedule</strong>, I was able to do it outside of my normal work hours, it was <strong>financially affordable</strong>, and at a <strong>flexible pace</strong>. I just loved the LSU&nbsp;program.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-johanna.png" srcset="images/headshot-johanna@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Johanna F.</p>
+                      <p class="author-title">Paralegal Studies Certificate&nbsp;Program</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial">
+                  <p class="body-lg">The live-online format let me keep working full-time while <strong>building the legal skills I needed</strong> to transition into a law firm role. Evening classes fit around my schedule without sacrificing instruction quality.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-logan.png" srcset="images/headshot-logan@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Jordan M.</p>
+                      <p class="author-title">Paralegal Studies Certificate&nbsp;Program</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial">
+                  <p class="body-lg">LSU's <strong>ABA-approved credential</strong> gave me confidence during interviews. The internship connected classroom learning to real casework and was the highlight of the program for me.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-lisa.png" srcset="images/headshot-lisa@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Taylor R.</p>
+                      <p class="author-title">Paralegal Studies Certificate&nbsp;Program</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial">
+                  <p class="body-lg"><strong>Expert instructors and practical assignments</strong> prepared me for real casework from day one in my new position. I felt supported by faculty who understand the paralegal profession.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-benny@2x.png" srcset="images/headshot-benny@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Alex L.</p>
+                      <p class="author-title">Paralegal Studies Certificate&nbsp;Program</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <!-- FAQ -->
+    <section class="cert-section cert-section--gold" id="faq">
+      <div class="cert-section__inner">
+            <header class="cert-section__header">
+              <h2>Frequently Asked <span class="accent">Questions</span></h2>
+            </header>
+            <div class="cert-accordion cert-accordion--faq" data-accordion-group="faq">
+
+              <details class="cert-accordion__item">
+                <summary class="cert-accordion__trigger">
+                  <span class="cert-accordion__title">What is your refund policy?</span>
+                  <span class="cert-accordion__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="cert-accordion__panel body-default">
+                  <p>You may request a refund up to 7 days from the purchase date. The registration fee will only be refunded if less than 10% of the course has been completed. Completion percentage can be viewed on the Course Progress page from within the course.</p>
+                </div>
+              </details>
+
+              <details class="cert-accordion__item">
+                <summary class="cert-accordion__trigger">
+                  <span class="cert-accordion__title">What are the admission requirements?</span>
+                  <span class="cert-accordion__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="cert-accordion__panel body-default">
+                  <p>Applicants need a bachelor's degree from an accredited institution with a minimum 2.5 overall GPA and 2.5 GPA in English courses, OR 45 college credit hours including at least 18 general education credits with the same GPA requirements. Applicants with three years of legal experience may qualify under exceptional admission with additional documentation.</p>
+                </div>
+              </details>
+
+              <details class="cert-accordion__item">
+                <summary class="cert-accordion__trigger">
+                  <span class="cert-accordion__title">Can I work while completing the program?</span>
+                  <span class="cert-accordion__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="cert-accordion__panel body-default">
+                  <p>Yes. The program is designed for working professionals with evening live-online classes. Choose the part-time track to pace courses around your schedule, or the full-time track if you can dedicate more time each semester.</p>
+                </div>
+              </details>
+
+              <details class="cert-accordion__item">
+                <summary class="cert-accordion__trigger">
+                  <span class="cert-accordion__title">Is financial aid available?</span>
+                  <span class="cert-accordion__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="cert-accordion__panel body-default">
+                  <p>This program does not qualify for federal financial aid. Private loan options may be available. Students pay per semester as they register for courses.</p>
+                </div>
+              </details>
+
+              <details class="cert-accordion__item">
+                <summary class="cert-accordion__trigger">
+                  <span class="cert-accordion__title">Can I transfer credits from another paralegal program?</span>
+                  <span class="cert-accordion__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="cert-accordion__panel body-default">
+                  <p>Applicants who have attended another ABA-approved paralegal studies program can transfer up to 10 credit hours or two non-credit paralegal legal specialty courses, at the program's discretion. No course with a grade lower than a "C" will be accepted.</p>
+                </div>
+              </details>
+
+            </div>
+      </div>
+    </section>
+
+    <!-- Enroll CTA -->
+    <section class="cert-section cert-section--purple-dark course-enroll-cta" id="register" aria-labelledby="register-heading">
+      <div class="cert-section__inner course-enroll-cta__inner">
+        <div class="course-enroll-cta__content">
+          <h2 id="register-heading">Ready to Master Accounting and Finance for Entrepreneurs?</h2>
+          <p class="body-lg course-enroll-cta__lead">Build the financial skills entrepreneurs need with LSU Continuing Education's flexible, 100% online format.</p>
+          <div class="course-enroll-cta__actions">
+            <a href="#" class="cert-btn cert-btn--secondary cert-btn--lg">Register Now</a>
+            <button type="button" class="cert-btn cert-btn--outline-white cert-btn--lg" data-syllabus-modal-open>Download Syllabus</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Syllabus download modal -->
+    <div class="cert-modal cert-syllabus-modal" id="syllabus-modal" role="dialog" aria-modal="true" aria-labelledby="syllabus-modal-title" hidden>
+      <div class="cert-modal__backdrop" data-syllabus-modal-close tabindex="-1"></div>
+      <div class="cert-modal__dialog" role="document">
+        <button type="button" class="cert-modal__close" data-syllabus-modal-close aria-label="Close download syllabus form">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="cert-modal__content">
+          <div class="cert-modal__header">
+            <h2 class="cert-modal__title" id="syllabus-modal-title">Download Syllabus</h2>
+          </div>
+          <form class="cert-syllabus-modal__form" action="#" method="post" novalidate>
+          <div class="cert-syllabus-modal__row">
+            <div class="cert-form__field">
+              <label for="syllabus-first-name">First Name <span class="cert-form__required" aria-label="required">*</span></label>
+              <input type="text" id="syllabus-first-name" name="first_name" required autocomplete="given-name" />
+            </div>
+            <div class="cert-form__field">
+              <label for="syllabus-last-name">Last Name <span class="cert-form__required" aria-label="required">*</span></label>
+              <input type="text" id="syllabus-last-name" name="last_name" required autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="cert-form__field">
+            <label for="syllabus-email">Email <span class="cert-form__required" aria-label="required">*</span></label>
+            <input type="email" id="syllabus-email" name="email" required autocomplete="email" />
+          </div>
+          <div class="cert-form__field">
+            <label for="syllabus-phone">Phone</label>
+            <input type="tel" id="syllabus-phone" name="phone" autocomplete="tel" />
+          </div>
+          <div class="cert-form__field">
+            <label for="syllabus-zip">Zip Code</label>
+            <input type="text" id="syllabus-zip" name="zip" autocomplete="postal-code" inputmode="numeric" />
+          </div>
+          <div class="cert-form__field cert-form__field--checkbox">
+            <input type="checkbox" id="syllabus-privacy" name="privacy" required />
+            <label for="syllabus-privacy">I agree to the <a href="https://online.lsu.edu/termsandconditions/" class="cert-link">Privacy Agreement</a> <span class="cert-form__required" aria-label="required">*</span></label>
+          </div>
+          <button type="submit" class="cert-btn cert-btn--primary cert-btn--md cert-syllabus-modal__submit">Download</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="certificate.js"></script>
+    <script src="course.js"></script>
+  </body>
+</html>
