@@ -3200,7 +3200,7 @@ p.body-lead {
 .cert-cohorts__list {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
   min-width: 0;
 }
 
@@ -3215,10 +3215,6 @@ p.body-lead {
 @media (min-width: 1024px) {
   .cert-cohorts__right {
     flex: 1 1 auto;
-  }
-
-  .cert-cohorts__list {
-    flex: none;
   }
 }
 
