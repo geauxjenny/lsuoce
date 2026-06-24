@@ -1411,13 +1411,14 @@ p.body-lead {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #fff;
-  border-bottom: 1px solid var(--border-color);
+  background-color: rgb(var(--purple));
+  border-top: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   transition: box-shadow var(--transition-base);
 }
 
 .cert-nav.is-scrolled {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cert-nav__inner {
@@ -1446,6 +1447,13 @@ p.body-lead {
 .cert-nav__cta {
   flex-shrink: 0;
   margin-left: var(--spacing-md);
+  background-color: rgb(var(--gold));
+  color: rgb(var(--purple));
+}
+
+.cert-nav__cta:hover {
+  background-color: var(--gold-hover);
+  color: rgb(var(--purple));
 }
 
 .cert-nav__link {
@@ -1456,7 +1464,7 @@ p.body-lead {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: rgb(var(--purple));
+  color: #fff;
   white-space: nowrap;
   border-radius: var(--border-radius);
   transition: color var(--transition-base), background-color var(--transition-base);
@@ -1469,18 +1477,18 @@ p.body-lead {
 }
 
 .cert-nav__link:hover {
-  color: rgb(var(--purple));
-  background-color: var(--gold-100);
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .cert-nav__link.is-active {
   color: rgb(var(--purple));
-  background-color: var(--gold-100);
+  background-color: rgb(var(--gold));
 }
 
 .cert-nav__link.is-active:hover {
   color: rgb(var(--purple));
-  background-color: var(--gold-100);
+  background-color: rgb(var(--gold));
 }
 
 /* Sticky enroll track */
@@ -3549,10 +3557,10 @@ p.body-lead {
   top: 0;
   bottom: auto;
   padding: 16px 0;
-  background: #fff;
-  border-top: 4px solid rgb(var(--gold));
-  border-bottom: 1px solid var(--gold-divider);
-  box-shadow: 0 8px 24px rgba(70, 29, 124, 0.1);
+  background: rgb(var(--purple));
+  border-top: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
@@ -3606,6 +3614,10 @@ p.body-lead {
   white-space: nowrap;
 }
 
+.cert-enroll-bar--top .cert-enroll-bar__title {
+  color: #fff;
+}
+
 .cert-enroll-bar__highlights {
   display: flex;
   flex-wrap: wrap;
@@ -3633,6 +3645,14 @@ p.body-lead {
   height: 12px;
   margin-inline: 10px;
   background: var(--gold-divider);
+}
+
+.cert-enroll-bar--top .cert-enroll-bar__highlights li {
+  color: var(--purple-200);
+}
+
+.cert-enroll-bar--top .cert-enroll-bar__highlights li:not(:last-child)::after {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .cert-enroll-bar__urgency {
@@ -3669,6 +3689,13 @@ p.body-lead {
 .cert-enroll-bar--top .cert-enroll-bar__cta {
   flex-shrink: 0;
   margin-left: auto;
+  background-color: rgb(var(--gold));
+  color: rgb(var(--purple));
+}
+
+.cert-enroll-bar--top .cert-enroll-bar__cta:hover {
+  background-color: var(--gold-hover);
+  color: rgb(var(--purple));
 }
 
 @media (min-width: 1200px) {
@@ -4076,6 +4103,10 @@ body.cert-modal-open {
 .cert-accordion__trigger:focus-visible {
   outline: 2px solid rgb(var(--purple));
   outline-offset: 4px;
+}
+
+.cert-nav__link:focus-visible {
+  outline-color: rgb(var(--gold));
 }
 
 .cert-btn--outline-dark:focus-visible {
