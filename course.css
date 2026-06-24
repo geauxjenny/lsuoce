@@ -298,15 +298,61 @@
   border-radius: var(--border-radius);
 }
 
-/* Outcomes — single-column list for long course objectives */
+/* Outcomes — stacked layout: two-column learn list, full-width skills below */
 
-.cert-outcomes__panel--single {
+.cert-outcomes__panel--stacked {
   grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.cert-outcomes__panel--stacked .cert-outcomes__column + .cert-outcomes__column {
+  border-left: none;
+  border-top: 1px solid var(--border-color);
+  padding-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .cert-outcomes__panel--stacked {
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .cert-outcomes__panel--stacked .cert-outcomes__column {
+    padding: 0;
+  }
+
+  .cert-outcomes__panel--stacked .cert-outcomes__column + .cert-outcomes__column {
+    padding-top: 40px;
+  }
+}
+
+.course-outcomes__columns {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.course-outcomes__columns > .cert-outcomes__list {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .course-outcomes__columns {
+    flex-direction: row;
+    gap: 40px;
+  }
 }
 
 .course-outcomes__list {
+  display: block;
   columns: 1;
   column-gap: 40px;
+}
+
+.course-outcomes__list li {
+  break-inside: avoid;
+  margin-bottom: 16px;
 }
 
 @media (min-width: 768px) {
