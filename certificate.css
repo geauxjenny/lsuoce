@@ -2974,12 +2974,17 @@ p.body-lead {
   }
 
   .cert-pricing__media {
-    min-height: 100%;
-    height: 100%;
+    position: relative;
+    min-height: 0;
+    height: auto;
   }
 
   .cert-pricing__photo {
-    min-height: 100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
   }
 
   .cert-pricing__card {
@@ -3021,22 +3026,21 @@ p.body-lead {
   border-bottom: 1px solid var(--gold-divider);
 }
 
-.cert-pricing__lead {
-  margin: 0;
-  width: 100%;
-}
-
 .cert-pricing__label {
   margin: 0;
 }
 
 .cert-pricing__price-row {
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5em;
   width: 100%;
+}
+
+.cert-pricing__price-row .cert-pricing__notes {
+  width: auto;
 }
 
 .cert-pricing__price {
@@ -3049,19 +3053,6 @@ p.body-lead {
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
   color: rgb(var(--purple));
-}
-
-.cert-pricing__price-note {
-  margin: 0;
-  color: rgba(var(--grey), 0.65);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-.certificate-page .cert-pricing__price-note.body-small {
-  color: rgba(var(--grey), 0.65);
-  font-weight: 300;
 }
 
 @media (min-width: 768px) {
@@ -3084,20 +3075,19 @@ p.body-lead {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 6px;
   width: 100%;
   max-width: 100%;
 }
 
 .cert-pricing__highlights li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 0.5em;
-  padding: 14px 0;
+  gap: 0.35em;
+  padding: 0;
   color: #000;
   text-align: center;
-  border-bottom: 1px solid var(--gold-divider);
 }
 
 .cert-pricing__highlights li::before {
@@ -3105,19 +3095,8 @@ p.body-lead {
   flex-shrink: 0;
   width: 0.875em;
   height: 0.875em;
-  margin-top: 0.35em;
   background: url('images/check-circle-light-dark-purples.png') no-repeat center center;
   background-size: contain;
-}
-
-.cert-pricing__highlights li:last-child {
-  border-bottom: none;
-}
-
-@media (min-width: 768px) {
-  .cert-pricing__highlights li {
-    padding: 16px 0;
-  }
 }
 
 .cert-pricing__notes {
