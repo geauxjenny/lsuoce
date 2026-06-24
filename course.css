@@ -657,7 +657,8 @@
 }
 
 .course-requirements .cert-cohort-row__schedule,
-.course-requirements .course-requirements__equipment {
+.course-requirements .course-requirements__equipment,
+.course-requirements .course-requirements__details {
   font-family: var(--font-primary);
   font-size: 14px;
   font-weight: 400;
@@ -666,13 +667,29 @@
 
 @media (min-width: 768px) {
   .course-requirements .cert-cohort-row__schedule,
-  .course-requirements .course-requirements__equipment {
+  .course-requirements .course-requirements__equipment,
+  .course-requirements .course-requirements__details {
     font-size: 16px;
   }
 }
 
 .course-requirements .cert-cohort-row__schedule + .cert-cohort-row__schedule {
   margin-top: 12px;
+}
+
+.course-requirements__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-requirements__details li {
+  padding-left: 14px;
+}
+
+.course-requirements__details li::before {
+  width: 6px;
+  height: 6px;
 }
 
 .course-requirements__equipment {
