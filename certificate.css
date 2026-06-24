@@ -1586,6 +1586,12 @@ p.body-lead {
   color: #fff;
 }
 
+.cert-section--rfi {
+  background: url('images/background-rfi-dark.png') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+
 /* Full-bleed colored sections */
 .certificate-page .cert-section--white,
 .certificate-page .cert-section--gold,
@@ -1593,7 +1599,8 @@ p.body-lead {
 .certificate-page .cert-section--gray,
 .certificate-page .cert-section--grey,
 .certificate-page .cert-section--purple,
-.certificate-page .cert-section--purple-dark {
+.certificate-page .cert-section--purple-dark,
+.certificate-page .cert-section--rfi {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -1608,7 +1615,8 @@ p.body-lead {
   .certificate-page .cert-section--gray,
   .certificate-page .cert-section--grey,
   .certificate-page .cert-section--purple,
-  .certificate-page .cert-section--purple-dark {
+  .certificate-page .cert-section--purple-dark,
+  .certificate-page .cert-section--rfi {
     padding-block: var(--section-padding-desktop);
   }
 }
