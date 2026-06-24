@@ -2877,8 +2877,9 @@ p.body-lead {
   width: 100%;
   background: #fff;
   border: 1px solid var(--gold-divider);
-  border-radius: var(--border-radius);
+  border-radius: 0;
   overflow: hidden;
+  padding: 20px 24px;
 }
 
 .cert-admissions__trigger {
@@ -2886,11 +2887,12 @@ p.body-lead {
 }
 
 .cert-admissions__details[open] .cert-admissions__trigger {
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--gold-divider);
 }
 
 .cert-admissions__trigger.cert-accordion__trigger {
-  padding: 20px 24px;
+  padding: 0;
 }
 
 .cert-admissions__title {
@@ -2910,7 +2912,7 @@ p.body-lead {
 }
 
 .cert-admissions__row {
-  padding: 20px 24px;
+  padding: 16px 16px;
   border-bottom: 1px solid var(--gold-divider);
 }
 
@@ -2941,7 +2943,7 @@ p.body-lead {
 }
 
 .cert-admissions__disciplines li {
-  padding-left: 12px;
+  padding-inline: 16px;
 }
 
 .cert-admissions__disciplines li::before {
@@ -2950,8 +2952,12 @@ p.body-lead {
 }
 
 @media (min-width: 768px) {
-  .cert-admissions__trigger.cert-accordion__trigger {
+  .cert-admissions__details {
     padding: 24px 32px;
+  }
+
+  .cert-admissions__details[open] .cert-admissions__trigger {
+    padding-bottom: 24px;
   }
 
   .cert-admissions__title {
@@ -2959,7 +2965,7 @@ p.body-lead {
   }
 
   .cert-admissions__row {
-    padding: 24px 32px;
+    padding: 16px 16px;
   }
 
   .cert-admissions__row--or {
