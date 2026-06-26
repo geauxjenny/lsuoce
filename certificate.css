@@ -635,8 +635,6 @@
 .cert-link {
   color: rgb(var(--purple));
   font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 .cert-link:hover {
@@ -2864,6 +2862,59 @@ p.body-lead {
   margin-top: 16px;
 }
 
+.cert-credential__content .cert-link {
+  text-decoration: none;
+}
+
+.cert-credential__content .cert-link:hover {
+  color: var(--purple-hover);
+}
+
+/* Learning pathways */
+
+.cert-pathway__header {
+  width: 100%;
+  @media (min-width: 768px) {
+    max-width: 488px;
+  }
+}
+
+.cert-pathway__header .body-intro {
+  line-height: 180%;
+}
+
+.cert-pathways__content {
+  max-width: 52rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+.cert-pathways__content p {
+  margin: 0;
+}
+
+.cert-pathways__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cert-pathways__note {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.cert-pathways .cert-link {
+  text-decoration: none;
+}
+
+.cert-pathways .cert-link:hover {
+  color: var(--purple-hover);
+}
+
 /* Admissions criteria */
 
 .cert-admissions {
@@ -2971,6 +3022,43 @@ p.body-lead {
   .cert-admissions__row--or {
     font-size: 16px;
   }
+}
+
+/* Pathways */
+.cert-pathway {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: top;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: top;
+    gap: 64px;
+  }
+}
+
+.cert-pathway__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  background-color: white;
+  padding: 56px;
+  border: 1px solid var(--gold-divider);
+}
+
+.cert-pathway__cta {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.cert-pathway__content .body-lead {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 160%;
+  margin: 0;
 }
 
 /* Pricing — image + card panel */
@@ -3662,7 +3750,7 @@ p.body-lead {
 }
 
 .cert-enroll-bar--top .cert-enroll-bar__highlights li {
-  color: var(--purple-200);
+  color: #F7F1FF;
 }
 
 .cert-enroll-bar--top .cert-enroll-bar__highlights li:not(:last-child)::after {
