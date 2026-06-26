@@ -18,6 +18,7 @@
           <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
         </a>
 
+        <div class="cert-site-header__cluster">
         <div class="cert-site-header__nav-tools">
           <button type="button" class="cert-site-header__browse" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle>
             <span>Browse</span>
@@ -33,9 +34,17 @@
           </form>
         </div>
 
+        <a href="https://ce.lsu.edu/corporate/coursebasket/publicCourseBasket.do?method=load&amp;corporateGroupId=51819353" class="cert-site-header__cart" aria-label="Shopping cart, 0 items">
+          <svg class="cert-site-header__cart-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span class="cert-site-header__cart-count" data-cart-count hidden>0</span>
+        </a>
+
+        <span class="cert-site-header__divider" aria-hidden="true"></span>
+
         <div class="cert-site-header__actions">
           <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-site-header__sign-in">Sign In</a>
           <a href="https://ce.lsu.edu/portal/applications/applicationProfile.do?method=loadApplicationIndex&amp;applicationProfileId=1267675" class="cert-btn cert-btn--sm cert-site-header__apply">Register Now</a>
+        </div>
         </div>
 
         <button type="button" class="cert-site-header__menu-toggle" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle aria-label="Open menu">
@@ -52,6 +61,7 @@
             <ul class="cert-browse-panel__links">
               <li><a href="https://ce.lsu.edu/professional-development/">Professional Development</a></li>
               <li><a href="https://ce.lsu.edu/online-distance-learning/">Online College Credit</a></li>
+              <li><a href="https://online.lsu.edu/online-degree-programs/">Degree Programs</a></li>
               <li><a href="certificate-paralegal.html">Paralegal Studies</a></li>
               <li><a href="https://ce.lsu.edu/olli/">OLLI — Lifelong Learning (50+)</a></li>
               <li><a href="https://ce.lsu.edu/professional-development/custom-onsite-professional-development/">Custom &amp; On-Site Training</a></li>
@@ -65,9 +75,11 @@
                 <li><a href="course.html" class="cert-browse-panel__box">Professional Courses</a></li>
                 <li><a href="course-college-credit.html" class="cert-browse-panel__box">Online College Credit Courses</a></li>
                 <li><a href="https://ce.lsu.edu/search/publicCourseAdvancedSearch.do?method=doPaginatedSearch&showInternal=false&courseSearch.courseDescriptionKeyword=&courseSearch.courseCategoryStringArray=0&courseSearch.programAreaStringArray=1007426&courseSearch.deliveryMethodString=&courseSearch.filterString=availforreg" class="cert-browse-panel__box">OLLI Courses</a></li>
+                <li><a href="courses.html" class="cert-browse-panel__box">Browse All Courses</a></li>
               </ul>
             </div>
             <div class="cert-browse-panel__group cert-browse-panel__group--mobile-actions">
+              <a href="https://ce.lsu.edu/corporate/coursebasket/publicCourseBasket.do?method=load&amp;corporateGroupId=51819353" class="cert-browse-panel__pill">View Cart</a>
               <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-browse-panel__pill">Sign In</a>
               <a href="https://ce.lsu.edu/portal/applications/applicationProfile.do?method=loadApplicationIndex&amp;applicationProfileId=1267675" class="cert-btn cert-btn--secondary cert-btn--sm">Register Now</a>
             </div>
@@ -599,6 +611,7 @@
       </div>
     </div>
 
+    <script src="cart.js"></script>
     <script src="certificate.js"></script>
   </body>
 </html>
