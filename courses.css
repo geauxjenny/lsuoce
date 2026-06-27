@@ -57,6 +57,12 @@
   z-index: 3;
 }
 
+/* Catalog page — cart + add-to-cart cards are the primary actions; no header enroll CTA */
+.courses-page .cert-site-header__apply,
+.courses-page .cert-browse-panel__group--mobile-actions .cert-btn {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .courses-page .cert-browse-panel {
     z-index: 130;
@@ -126,7 +132,7 @@
 .courses-filters__header h2 {
   margin: 0;
   font-family: var(--font-headline);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
   color: rgb(var(--purple));
 }
@@ -295,7 +301,7 @@
 .courses-results__count {
   margin: 0;
   font-family: var(--font-headline);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: normal;
@@ -311,7 +317,7 @@
 .courses-results__sort label {
   margin: 0;
   font-family: var(--font-headline);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: normal;
@@ -454,7 +460,7 @@
 
 .courses-card__meta li {
   padding: 4px 7px;
-  background: #f8f2ff;
+  background: #F1EDDB;
   border-radius: 0;
   font-family: var(--font-button);
   font-size: 12px;
@@ -464,10 +470,6 @@
   text-transform: uppercase;
   color: rgb(var(--purple));
   white-space: nowrap;
-}
-
-.courses-card__meta li.is-available {
-  background: rgba(70, 29, 124, 0.08);
 }
 
 .courses-card__actions {

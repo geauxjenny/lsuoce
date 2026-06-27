@@ -110,4 +110,13 @@
     buildDots();
     updateCarousel();
   }
+
+  if (window.LsuCeCart) {
+    document.querySelectorAll('[data-add-to-cart]').forEach(function (button) {
+      var courseId = button.getAttribute('data-course-id');
+      if (courseId && window.LsuCeCart.has(courseId)) {
+        window.LsuCeCart.markAdded(button);
+      }
+    });
+  }
 })();

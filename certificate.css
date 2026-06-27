@@ -452,7 +452,7 @@
 .cert-browse-panel__boxes {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 14px 0 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1266,7 +1266,7 @@
   }
 
   .cert-hero__eyebrow {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--purple-200);
   }
