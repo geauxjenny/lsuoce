@@ -298,13 +298,25 @@
   margin-bottom: 32px;
 }
 
-.courses-results__count {
+.courses-results__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.courses-results__heading {
   margin: 0;
   font-family: var(--font-headline);
   font-size: 18px;
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: normal;
+  color: rgb(var(--purple));
+}
+
+.courses-results__count {
+  font-size: 16px;
+  line-height: 180%;
   color: rgb(var(--purple));
 }
 

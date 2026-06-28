@@ -24,8 +24,6 @@
   function cardMatches(card) {
     var query = searchInput ? searchInput.value.trim().toLowerCase() : '';
     var subjects = getActiveFilters('subject');
-    var methods = getActiveFilters('method');
-    var availability = getActiveFilters('availability');
 
     if (query) {
       var haystack = (
@@ -37,17 +35,6 @@
     }
 
     if (subjects.length && subjects.indexOf(card.getAttribute('data-subject')) === -1) {
-      return false;
-    }
-
-    if (methods.length && methods.indexOf(card.getAttribute('data-method')) === -1) {
-      return false;
-    }
-
-    if (
-      availability.length &&
-      availability.indexOf(card.getAttribute('data-availability')) === -1
-    ) {
       return false;
     }
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Online College Credit Courses | LSU Continuing Education</title>
-    <meta name="description" content="Browse LSU Continuing Education online college credit courses. Filter by subject area, instruction method, and availability, then add courses to your cart." />
+    <meta name="description" content="Browse LSU Continuing Education online college credit courses. Filter by subject area, then add courses to your cart." />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="certificate.css" />
     <link rel="stylesheet" href="courses.css" />
@@ -62,7 +62,6 @@
               <li><a href="https://ce.lsu.edu/professional-development/">Professional Development</a></li>
               <li><a href="https://ce.lsu.edu/online-distance-learning/">Online College Credit</a></li>
               <li><a href="https://online.lsu.edu/online-degree-programs/">Degree Programs</a></li>
-              <li><a href="certificate-paralegal.html">Paralegal Studies</a></li>
               <li><a href="https://ce.lsu.edu/olli/">OLLI — Lifelong Learning (50+)</a></li>
               <li><a href="https://ce.lsu.edu/professional-development/custom-onsite-professional-development/">Custom &amp; On-Site Training</a></li>
             </ul>
@@ -72,6 +71,7 @@
               <p class="cert-browse-panel__label">Courses &amp; Certificates</p>
               <ul class="cert-browse-panel__boxes">
                 <li><a href="certificate.html" class="cert-browse-panel__box">Certificates &amp; Bootcamps</a></li>
+                <li><a href="certificate-paralegal.html" class="cert-browse-panel__box">Paralegal Studies Certificate</a></li>
                 <li><a href="course.html" class="cert-browse-panel__box">Professional Courses</a></li>
                 <li><a href="courses.html" class="cert-browse-panel__box">College Credit Courses</a></li>
                 <li><a href="https://ce.lsu.edu/search/publicCourseAdvancedSearch.do?method=doPaginatedSearch&amp;showInternal=false&amp;courseSearch.courseDescriptionKeyword=&amp;courseSearch.courseCategoryStringArray=1007426&amp;courseSearch.deliveryMethodString=&amp;courseSearch.filterString=availforreg" class="cert-browse-panel__box">OLLI Courses</a></li>
@@ -91,7 +91,7 @@
           <div class="cert-hero__content">
             <p class="cert-hero__eyebrow">Browse Courses</p>
             <h1 class="cert-hero__title">Online College Credit Courses</h1>
-            <p class="cert-hero__lead body-lead">Explore LSU online college credit courses. Use the filters to narrow by subject area, instruction method, and availability, then add courses to your cart to register.</p>
+            <p class="cert-hero__lead body-lead">Explore LSU online college credit courses. Use the filters to narrow by subject area, then add courses to your cart to register.</p>
           </div>
         </div>
       </section>
@@ -123,28 +123,14 @@
               <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="science-mathematics" data-courses-filter /> Science &amp; Mathematics <span class="courses-filters__count">(4)</span></label></li>
             </ul>
           </div>
-
-          <div class="courses-filters__group">
-            <p class="courses-filters__label">Instruction method</p>
-            <ul class="courses-filters__options">
-              <li><label class="courses-filters__option"><input type="checkbox" name="method" value="self-paced" data-courses-filter /> Online Self-Paced</label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="method" value="term-based" data-courses-filter /> Online Term-Based</label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="method" value="none" data-courses-filter /> View course for details</label></li>
-            </ul>
-          </div>
-
-          <div class="courses-filters__group">
-            <p class="courses-filters__label">Availability</p>
-            <ul class="courses-filters__options">
-              <li><label class="courses-filters__option"><input type="checkbox" name="availability" value="available" data-courses-filter /> Available</label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="availability" value="learn-more" data-courses-filter /> View course to learn more</label></li>
-            </ul>
-          </div>
         </aside>
 
         <div class="courses-results">
           <div class="courses-results__toolbar">
-            <p class="courses-results__count" data-courses-count>25 courses</p>
+            <div class="courses-results__intro">
+              <p class="courses-results__heading">Online College Credit Courses</p>
+              <p class="courses-results__count body-default" data-courses-count>25 courses</p>
+            </div>
             <div class="courses-results__sort">
               <label for="courses-sort">Sort by</label>
               <select id="courses-sort" data-courses-sort>
