@@ -1888,7 +1888,7 @@ p.body-lead {
 @media (min-width: 768px) {
   .cert-curriculum__table-head {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 240px) 100px;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px) 100px;
     gap: 24px;
     align-items: center;
     padding: 14px 32px;
@@ -1970,7 +1970,7 @@ p.body-lead {
 
 @media (min-width: 768px) {
   .cert-curriculum-module__heading {
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 240px) 100px;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px) 100px;
     gap: 24px;
     align-items: center;
   }

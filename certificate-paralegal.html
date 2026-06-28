@@ -130,7 +130,6 @@
             </ul>
             <div class="cert-hero__actions">
               <a href="#request-info" class="cert-btn cert-btn--secondary cert-btn--lg">Request Info</a>
-              <button type="button" class="cert-btn cert-btn--outline-dark cert-btn--lg" data-syllabus-modal-open>Download Syllabus</button>
             </div>
           </div>
 
@@ -900,51 +899,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Syllabus download modal -->
-    <div class="cert-modal cert-syllabus-modal" id="syllabus-modal" role="dialog" aria-modal="true" aria-labelledby="syllabus-modal-title" hidden>
-      <div class="cert-modal__backdrop" data-syllabus-modal-close tabindex="-1"></div>
-      <div class="cert-modal__dialog" role="document">
-        <button type="button" class="cert-modal__close" data-syllabus-modal-close aria-label="Close download syllabus form">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="cert-modal__content">
-          <div class="cert-modal__header">
-            <h2 class="cert-modal__title" id="syllabus-modal-title">Download Syllabus</h2>
-          </div>
-          <form class="cert-syllabus-modal__form" action="#" method="post" novalidate>
-          <div class="cert-syllabus-modal__row">
-            <div class="cert-form__field">
-              <label for="syllabus-first-name">First Name <span class="cert-form__required" aria-label="required">*</span></label>
-              <input type="text" id="syllabus-first-name" name="first_name" required autocomplete="given-name" />
-            </div>
-            <div class="cert-form__field">
-              <label for="syllabus-last-name">Last Name <span class="cert-form__required" aria-label="required">*</span></label>
-              <input type="text" id="syllabus-last-name" name="last_name" required autocomplete="family-name" />
-            </div>
-          </div>
-          <div class="cert-form__field">
-            <label for="syllabus-email">Email <span class="cert-form__required" aria-label="required">*</span></label>
-            <input type="email" id="syllabus-email" name="email" required autocomplete="email" />
-          </div>
-          <div class="cert-form__field">
-            <label for="syllabus-phone">Phone</label>
-            <input type="tel" id="syllabus-phone" name="phone" autocomplete="tel" />
-          </div>
-          <div class="cert-form__field">
-            <label for="syllabus-zip">Zip Code</label>
-            <input type="text" id="syllabus-zip" name="zip" autocomplete="postal-code" inputmode="numeric" />
-          </div>
-          <div class="cert-form__field cert-form__field--checkbox">
-            <input type="checkbox" id="syllabus-privacy" name="privacy" required />
-            <label for="syllabus-privacy">I agree to the <a href="https://online.lsu.edu/termsandconditions/" class="cert-link">Privacy Agreement</a> <span class="cert-form__required" aria-label="required">*</span></label>
-          </div>
-          <button type="submit" class="cert-btn cert-btn--primary cert-btn--md cert-syllabus-modal__submit">Download</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
     <script src="cart.js"></script>
     <script src="certificate.js"></script>
   </body>
