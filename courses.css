@@ -141,7 +141,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
+  padding: 6px 10px;
   border: none;
   border-radius: 4px;
   background: rgb(var(--gold));

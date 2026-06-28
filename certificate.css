@@ -2177,10 +2177,8 @@ p.body-lead {
   margin-top: 24px;
   padding-top: 0;
   border-top: none;
-  max-width: 720px;
-  margin-inline: auto;
-  text-align: center;
   color: #000;
+  text-align: center;
 }
 
 /* Course syllabus */
