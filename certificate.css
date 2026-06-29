@@ -620,6 +620,10 @@
   gap: 24px;
 }
 
+.cert-browse-panel__group .cert-browse-panel__boxes {
+  padding-top: 0;
+}
+
 .cert-browse-panel__boxes {
   list-style: none;
   margin: 0;
