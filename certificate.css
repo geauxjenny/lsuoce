@@ -175,7 +175,7 @@
     display: none;
   }
 
-  .cert-site-header__search:not(:focus-within) {
+  .cert-site-header__search:not(.is-search-open):not(:focus-within) {
     order: 1;
     margin-left: auto;
   }
@@ -292,7 +292,7 @@
     order: 1;
   }
 
-  .cert-site-header__search:not(:focus-within) {
+  .cert-site-header__search:not(.is-search-open):not(:focus-within) {
     order: 2;
     margin-left: auto;
     position: relative;
@@ -308,7 +308,7 @@
     overflow: visible;
   }
 
-  .cert-site-header__search:not(:focus-within)::after {
+  .cert-site-header__search:not(.is-search-open):not(:focus-within)::after {
     content: '';
     position: absolute;
     right: 0;
@@ -362,7 +362,7 @@
     opacity: 1;
   }
 
-  .cert-site-header__search:not(:focus-within) .cert-site-header__search-input {
+  .cert-site-header__search:not(.is-search-open):not(:focus-within) .cert-site-header__search-input {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -374,7 +374,7 @@
     border: 0;
   }
 
-  .cert-site-header__search:focus-within {
+  .cert-site-header__search:is(.is-search-open, :focus-within) {
     position: absolute;
     left: var(--cert-container-inline);
     right: var(--cert-container-inline);
@@ -383,15 +383,15 @@
     z-index: 2;
     width: auto;
     min-height: 48px;
-    padding: 0 16px;
-    gap: 12px;
+    padding: 0 8px 0 16px;
+    gap: 8px;
     border: 1px solid rgba(255, 255, 255, 0.65);
     border-radius: var(--border-radius);
     background: rgba(255, 255, 255, 0.1);
     overflow: visible;
   }
 
-  .cert-site-header__search:focus-within .cert-site-header__search-input {
+  .cert-site-header__search:is(.is-search-open, :focus-within) .cert-site-header__search-input {
     position: static;
     width: 100%;
     height: auto;
@@ -400,12 +400,16 @@
     overflow: visible;
   }
 
-  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__brand,
-  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__browse,
-  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__actions,
-  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__cart,
-  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__divider,
-  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__menu-toggle {
+  .cert-site-header__search:is(.is-search-open, :focus-within) .cert-site-header__search-close {
+    display: inline-flex;
+  }
+
+  .cert-site-header__bar:has(.cert-site-header__search:is(.is-search-open, :focus-within)) .cert-site-header__brand,
+  .cert-site-header__bar:has(.cert-site-header__search:is(.is-search-open, :focus-within)) .cert-site-header__browse,
+  .cert-site-header__bar:has(.cert-site-header__search:is(.is-search-open, :focus-within)) .cert-site-header__actions,
+  .cert-site-header__bar:has(.cert-site-header__search:is(.is-search-open, :focus-within)) .cert-site-header__cart,
+  .cert-site-header__bar:has(.cert-site-header__search:is(.is-search-open, :focus-within)) .cert-site-header__divider,
+  .cert-site-header__bar:has(.cert-site-header__search:is(.is-search-open, :focus-within)) .cert-site-header__menu-toggle {
     opacity: 0;
     pointer-events: none;
   }
@@ -430,6 +434,33 @@
 
 .cert-site-header__search-input::placeholder {
   color: rgba(255, 255, 255, 0.55);
+}
+
+.cert-site-header__search-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.cert-site-header__search-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgb(var(--gold));
+}
+
+@media (min-width: 1240px) {
+  .cert-site-header__search-close {
+    display: none !important;
+  }
 }
 
 .cert-site-header__cart {
@@ -4643,6 +4674,7 @@ body.cert-modal-open {
 .cert-site-header__cart:focus-visible,
 .cert-site-header__sign-in:focus-visible,
 .cert-site-header__search-toggle:focus-visible,
+.cert-site-header__search-close:focus-visible,
 .cert-accordion__trigger:focus-visible {
   outline: 2px solid rgb(var(--purple));
   outline-offset: 4px;

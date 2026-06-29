@@ -100,6 +100,70 @@
     });
   }
 
+  const searchForm = document.querySelector('.cert-site-header__search');
+  const searchInput = document.querySelector('.cert-site-header__search-input');
+  const searchToggle = document.querySelector('.cert-site-header__search-toggle');
+  const searchClose = document.querySelector('.cert-site-header__search-close');
+  const compactSearchQuery = window.matchMedia('(max-width: 1239px)');
+
+  function isCompactSearch() {
+    return compactSearchQuery.matches;
+  }
+
+  function isSearchOpen() {
+    return searchForm && searchForm.classList.contains('is-search-open');
+  }
+
+  function openSearch() {
+    if (!searchForm || !isCompactSearch()) return;
+    searchForm.classList.add('is-search-open');
+    closeBrowsePanel();
+  }
+
+  function closeSearch() {
+    if (!searchForm || !searchInput) return;
+    searchForm.classList.remove('is-search-open');
+    searchInput.blur();
+    if (searchClose) searchClose.blur();
+  }
+
+  if (searchForm && searchInput) {
+    searchInput.addEventListener('focus', openSearch);
+
+    if (searchToggle) {
+      searchToggle.addEventListener('click', function () {
+        window.setTimeout(openSearch, 0);
+      });
+    }
+
+    if (searchClose) {
+      searchClose.addEventListener('mousedown', function (event) {
+        event.preventDefault();
+      });
+
+      searchClose.addEventListener('click', function (event) {
+        event.preventDefault();
+        closeSearch();
+      });
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && isSearchOpen()) {
+        closeSearch();
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!isSearchOpen()) return;
+      if (searchForm.contains(event.target)) return;
+      closeSearch();
+    });
+
+    compactSearchQuery.addEventListener('change', function () {
+      if (!isCompactSearch()) closeSearch();
+    });
+  }
+
   window.addEventListener('resize', function () {
     positionBrowsePanel();
     setStickyOffsets();
