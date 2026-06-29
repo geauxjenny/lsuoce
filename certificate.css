@@ -77,6 +77,10 @@
   .cert-site-header__bar {
     gap: 32px;
   }
+
+  .cert-site-header__brand {
+    margin-right: 16px;
+  }
 }
 
 .cert-site-header__brand {
@@ -257,8 +261,8 @@
     flex: 0 1 auto;
     margin-left: auto;
     min-width: 0;
-    width: 640px;
-    max-width: 640px;
+    width: 480px;
+    max-width: 480px;
     min-height: 48px;
     padding: 0 16px;
     border: 1px solid rgba(255, 255, 255, 0.35);
