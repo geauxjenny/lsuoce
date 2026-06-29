@@ -512,6 +512,36 @@
   display: none;
 }
 
+@media (max-width: 380px) {
+  .cert-site-header__bar {
+    gap: 8px;
+  }
+
+  .cert-site-header__cart {
+    display: none;
+  }
+
+  .cert-site-header__actions {
+    order: 2;
+    margin-left: 0;
+  }
+
+  .cert-site-header__search:not(.is-search-open):not(:focus-within) {
+    order: 3;
+    margin-left: auto;
+    padding-right: 0;
+  }
+
+  .cert-site-header__menu-toggle {
+    order: 4;
+    margin-left: 0;
+  }
+
+  .cert-site-header__search:not(.is-search-open):not(:focus-within)::after {
+    display: none;
+  }
+}
+
 .cert-site-header__divider {
   display: none;
   width: 1px;
