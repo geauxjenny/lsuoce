@@ -5,6 +5,7 @@
   const browseButton = document.querySelector('.cert-site-header__browse');
   const nav = document.querySelector('.cert-nav');
   const navLinks = document.querySelectorAll('.cert-nav__link');
+  const enrollBarLinks = document.querySelectorAll('.cert-enroll-bar__link');
 
   function positionBrowsePanel() {
     if (!browsePanel || !siteHeader) return;
@@ -125,13 +126,25 @@
     factsObserver.observe(factsBar);
   }
 
-  const sections = Array.from(navLinks)
-    .map(function (link) {
-      const id = link.getAttribute('href');
-      if (!id || id.charAt(0) !== '#') return null;
-      return document.querySelector(id);
-    })
-    .filter(Boolean);
+  const anchorLinks = Array.from(navLinks).concat(Array.from(enrollBarLinks));
+  const sections = Array.from(
+    new Set(
+      anchorLinks
+        .map(function (link) {
+          const id = link.getAttribute('href');
+          if (!id || id.charAt(0) !== '#') return null;
+          return document.querySelector(id);
+        })
+        .filter(Boolean)
+    )
+  );
+
+  function setActiveAnchorLink(id) {
+    const href = '#' + id;
+    anchorLinks.forEach(function (link) {
+      link.classList.toggle('is-active', link.getAttribute('href') === href);
+    });
+  }
 
   /* Sticky nav shadow */
   window.addEventListener('scroll', function () {
@@ -140,15 +153,12 @@
   }, { passive: true });
 
   /* Active section highlighting */
-  if (sections.length && navLinks.length) {
+  if (sections.length && anchorLinks.length) {
     const observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          const id = entry.target.id;
-          navLinks.forEach(function (link) {
-            link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
-          });
+          setActiveAnchorLink(entry.target.id);
         });
       },
       { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
@@ -161,7 +171,13 @@
 
   function getScrollOffset() {
     const navHeight = nav ? nav.offsetHeight : 0;
-    return navHeight + 8;
+    if (navHeight) return navHeight + 8;
+
+    if (topEnrollBar && topEnrollBar.classList.contains('is-visible')) {
+      return topEnrollBar.offsetHeight + 8;
+    }
+
+    return 8;
   }
 
   function scrollToSection(target) {
@@ -170,7 +186,7 @@
   }
 
   /* Smooth scroll offset for sticky nav */
-  navLinks.forEach(function (link) {
+  anchorLinks.forEach(function (link) {
     link.addEventListener('click', function (event) {
       const href = link.getAttribute('href');
       if (!href || href.charAt(0) !== '#') return;
@@ -183,7 +199,7 @@
 
   ['#request-info', '#cohorts'].forEach(function (selector) {
     document.querySelectorAll('a[href="' + selector + '"]').forEach(function (link) {
-      if (link.classList.contains('cert-nav__link')) return;
+      if (link.classList.contains('cert-nav__link') || link.classList.contains('cert-enroll-bar__link')) return;
 
       link.addEventListener('click', function (event) {
         const target = document.querySelector(selector);

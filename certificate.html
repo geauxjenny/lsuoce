@@ -88,17 +88,25 @@
     </header>
 
     <!-- Desktop sticky top CTA bar (shows after scrolling past quick facts) -->
-    <div class="cert-enroll-bar cert-enroll-bar--top" aria-hidden="true">
+    <div class="cert-enroll-bar cert-enroll-bar--top cert-enroll-bar--with-nav" aria-hidden="true">
       <div class="container cert-enroll-bar__inner">
         <div class="cert-enroll-bar__program">
           <p class="cert-enroll-bar__title">AWS Cloud Practitioner Certificate</p>
           <ul class="cert-enroll-bar__highlights" aria-label="Program highlights">
-            <li>Live-Online</li>
-            <li>Starts Aug 24, 2026</li>
-            <li>From $5,810</li>
-            <li>ABA Approved</li>
+            <li>Start anytime</li>
+            <li>$1,390</li>
           </ul>
         </div>
+        <nav class="cert-enroll-bar__nav" aria-label="Page sections">
+          <ul class="cert-enroll-bar__links hide-scrollbar">
+            <li><a href="#top" class="cert-enroll-bar__link is-active">Overview</a></li>
+            <li><a href="#what-you-get" class="cert-enroll-bar__link">What You Get</a></li>
+            <li><a href="#pricing" class="cert-enroll-bar__link">Pricing</a></li>
+            <li><a href="#testimonials" class="cert-enroll-bar__link">Testimonials</a></li>
+            <li><a href="#faq" class="cert-enroll-bar__link">FAQ</a></li>
+            <li><a href="#request-info" class="cert-enroll-bar__link">Request Info</a></li>
+          </ul>
+        </nav>
         <a href="https://ce.lsu.edu/portal/applications/applicationProfile.do?method=loadApplicationIndex&amp;applicationProfileId=1267675" class="cert-btn cert-btn--primary cert-btn--sm cert-enroll-bar__cta">Enroll Now</a>
       </div>
     </div>
@@ -280,7 +288,7 @@
         </section>
 
         <!-- Course outcomes & skills -->
-        <section class="cert-section cert-section--purple cert-outcomes" id="outcomes" aria-labelledby="outcomes-heading">
+        <section class="cert-section cert-section--purple cert-outcomes" id="curriculum" aria-labelledby="outcomes-heading">
           <div class="cert-section__inner">
             <header class="cert-section__header">
               <p class="label cert-outcomes__eyebrow">What to Expect</p>
@@ -319,7 +327,7 @@
         </section>
 
         <!-- Certificate credential -->
-        <section class="cert-section cert-section--white" id="credential" aria-labelledby="credential-heading">
+        <section class="cert-section cert-section--white" id="what-you-get" aria-labelledby="credential-heading">
           <div class="cert-section__inner">
             <div class="cert-credential">
               <figure class="cert-credential__preview">
@@ -365,7 +373,7 @@
         </section>
 
         <!-- Learning Pathways -->
-        <section class="cert-section cert-section--gold" id="credential" aria-labelledby="credential-heading">
+        <section class="cert-section cert-section--gold" id="pathways" aria-labelledby="pathways-heading">
           <div class="cert-section__inner">
             <div class="cert-pathway">
               <header class="cert-pathway__header">
@@ -432,6 +440,67 @@
 
       </div>
     </div>
+
+    <!-- Testimonials (matches CE home page) -->
+    <section class="testimonials section-pad" id="testimonials">
+          <div class="container">
+            <div class="content">
+              <div class="section-title">
+                <h2 class="heading-dark">Hear From <span class="accent-dark">Our&nbsp;Learners</span></h2>
+              </div>
+              <div class="testimonials-slider-controls">
+                <button class="testimonials-slider-btn testimonials-slider-btn-prev" aria-label="Previous testimonial">
+                  <img src="images/prev-inactive.svg" alt="" />
+                </button>
+                <button class="testimonials-slider-btn testimonials-slider-btn-next" aria-label="Next testimonial">
+                  <img src="images/next-active-dark-bg.svg" alt="" />
+                </button>
+              </div>
+              <div class="testimonials-inner hide-scrollbar" id="testimonialsSlider">
+                <div class="testimonial">
+                  <p class="body-lg">It was such an easy decision. It <strong>accommodated my schedule</strong>, I was able to do it outside of my normal work hours, it was <strong>financially affordable</strong>, and at a <strong>flexible pace</strong>. I just loved the LSU&nbsp;program.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-johanna.png" srcset="images/headshot-johanna@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Johanna F.</p>
+                      <p class="author-title">AWS Cloud Practitioner Certificate</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial">
+                  <p class="body-lg">The self-paced format let me keep working full-time while <strong>building the cloud skills I needed</strong> to prepare for AWS certification. I could study on my own schedule without sacrificing instruction quality.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-logan.png" srcset="images/headshot-logan@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Jordan M.</p>
+                      <p class="author-title">AWS Cloud Practitioner Certificate</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial">
+                  <p class="body-lg">LSU's <strong>AWS Academy curriculum</strong> gave me confidence going into the certification exam. The modules connected foundational concepts to real cloud scenarios I see in my role every day.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-lisa.png" srcset="images/headshot-lisa@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Taylor R.</p>
+                      <p class="author-title">AWS Cloud Practitioner Certificate</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial">
+                  <p class="body-lg"><strong>Practical assignments and clear instruction</strong> prepared me to speak confidently about cloud services in interviews. I felt supported throughout the entire certificate program.</p>
+                  <div class="testimonial-author">
+                    <img src="images/headshot-benny@2x.png" srcset="images/headshot-benny@2x.png 2x" alt="" />
+                    <div class="testimonial-author-content">
+                      <p class="label">Alex L.</p>
+                      <p class="author-title">AWS Cloud Practitioner Certificate</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
     <!-- FAQ -->
     <section class="cert-section cert-section--white" id="faq">

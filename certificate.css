@@ -3844,6 +3844,66 @@ p.body-lead {
   gap: 24px;
 }
 
+.cert-enroll-bar--top.cert-enroll-bar--with-nav .cert-enroll-bar__inner {
+  justify-content: space-between;
+}
+
+.cert-enroll-bar--with-nav .cert-enroll-bar__program {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-enroll-bar--with-nav .cert-enroll-bar__nav {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.cert-enroll-bar--with-nav .cert-enroll-bar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+.cert-enroll-bar--with-nav .cert-enroll-bar__link {
+  display: block;
+  padding: 8px 14px;
+  font-family: var(--font-button);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+.cert-enroll-bar--with-nav .cert-enroll-bar__link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cert-enroll-bar--with-nav .cert-enroll-bar__link.is-active,
+.cert-enroll-bar--with-nav .cert-enroll-bar__link.is-active:hover {
+  color: rgb(var(--gold));
+  background-color: transparent;
+}
+
+@media (min-width: 1200px) {
+  .cert-enroll-bar--with-nav .cert-enroll-bar__link {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .cert-enroll-bar--with-nav .cert-enroll-bar__highlights {
+    display: none;
+  }
+}
+
 .cert-enroll-bar__program {
   display: flex;
   flex-direction: column;

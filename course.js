@@ -1,15 +1,63 @@
 (function () {
   /* Course-specific in-page anchor scroll (certificate.js handles shared header/nav) */
   const nav = document.querySelector('.cert-nav');
+  const topEnrollBar = document.querySelector('.cert-enroll-bar--top');
+  const enrollBarLinks = document.querySelectorAll('.cert-enroll-bar__link');
 
   function getScrollOffset() {
     const navHeight = nav ? nav.offsetHeight : 0;
-    return navHeight + 8;
+    if (navHeight) return navHeight + 8;
+
+    if (topEnrollBar && topEnrollBar.classList.contains('is-visible')) {
+      return topEnrollBar.offsetHeight + 8;
+    }
+
+    return 8;
   }
 
   function scrollToSection(target) {
     const top = target.getBoundingClientRect().top + window.scrollY - getScrollOffset();
     window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+
+  enrollBarLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const href = link.getAttribute('href');
+      if (!href || href.charAt(0) !== '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      event.preventDefault();
+      scrollToSection(target);
+    });
+  });
+
+  if (enrollBarLinks.length) {
+    const sections = Array.from(enrollBarLinks)
+      .map(function (link) {
+        const id = link.getAttribute('href');
+        if (!id || id.charAt(0) !== '#') return null;
+        return document.querySelector(id);
+      })
+      .filter(Boolean);
+
+    if (sections.length) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.id;
+            enrollBarLinks.forEach(function (link) {
+              link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+            });
+          });
+        },
+        { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+      );
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    }
   }
 
   ['#register', '#description', '#preview'].forEach(function (selector) {

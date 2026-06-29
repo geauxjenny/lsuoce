@@ -20,6 +20,57 @@
   min-width: 0;
 }
 
+.course-enroll-bar--top .cert-enroll-bar__nav {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.course-enroll-bar--top .cert-enroll-bar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+.course-enroll-bar--top .cert-enroll-bar__link {
+  display: block;
+  padding: 8px 14px;
+  font-family: var(--font-button);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+.course-enroll-bar--top .cert-enroll-bar__link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.course-enroll-bar--top .cert-enroll-bar__link.is-active,
+.course-enroll-bar--top .cert-enroll-bar__link.is-active:hover {
+  color: rgb(var(--gold));
+  background-color: transparent;
+}
+
+@media (min-width: 1200px) {
+  .course-enroll-bar--top .cert-enroll-bar__link {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .course-enroll-bar--top .cert-enroll-bar__highlights {
+    display: none;
+  }
+}
+
 /* Hero card — price-forward for courses */
 
 .course-hero-card .cert-hero-card__top {
