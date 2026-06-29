@@ -19,7 +19,6 @@
           <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
         </a>
 
-        <div class="cert-site-header__cluster">
         <div class="cert-site-header__nav-tools">
           <button type="button" class="cert-site-header__browse" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle>
             <span>Browse</span>
@@ -29,8 +28,10 @@
           <form class="cert-site-header__search" action="https://ce.lsu.edu/corporate/landingPage.do" method="get" role="search">
             <input type="hidden" name="method" value="load" />
             <input type="hidden" name="corporateGroupId" value="51819353" />
-            <label class="visually-hidden" for="cert-site-search">Search certificates and courses</label>
-            <svg class="cert-site-header__search-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.75" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M13.5 13.5 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <label class="cert-site-header__search-toggle" for="cert-site-search">
+              <svg class="cert-site-header__search-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.75" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M13.5 13.5 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+              <span class="visually-hidden">Search certificates and courses</span>
+            </label>
             <input type="search" id="cert-site-search" name="searchKeyword" class="cert-site-header__search-input" placeholder="Search certificates and courses" autocomplete="off" />
           </form>
         </div>
@@ -45,7 +46,6 @@
         <div class="cert-site-header__actions">
           <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-site-header__sign-in">Sign In</a>
           <a href="courses.html" class="cert-btn cert-btn--sm cert-site-header__apply">Find Courses</a>
-        </div>
         </div>
 
         <button type="button" class="cert-site-header__menu-toggle" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle aria-label="Open menu">
@@ -81,7 +81,7 @@
             <div class="cert-browse-panel__group cert-browse-panel__group--mobile-actions">
               <a href="https://ce.lsu.edu/corporate/coursebasket/publicCourseBasket.do?method=load&amp;corporateGroupId=51819353" class="cert-browse-panel__pill">View Cart</a>
               <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-browse-panel__pill">Sign In</a>
-              <a href="courses.html" class="cert-btn cert-btn--secondary cert-btn--sm">Find Courses</a>
+              <a href="courses.html" class="cert-btn cert-btn--primary cert-btn--sm">Find Courses</a>
             </div>
           </div>
         </div>
