@@ -105,28 +105,33 @@
     <main class="courses-catalog" data-courses-catalog>
       <div class="container courses-catalog__layout">
 
-        <aside class="courses-filters" aria-label="Filter courses">
+        <aside class="courses-filters" aria-label="Filter courses" data-courses-filters>
           <div class="courses-filters__header">
-            <h2>Narrow Results</h2>
+            <button type="button" class="courses-filters__toggle" aria-expanded="false" aria-controls="courses-filters-body" data-courses-filters-toggle>
+              <span class="courses-filters__toggle-label">Narrow Results</span>
+              <svg class="courses-filters__chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M5.665 7.142L.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z" fill="currentColor"/></svg>
+            </button>
             <button type="button" class="courses-filters__clear" data-courses-clear>Clear <span class="courses-filters__clear-icon" aria-hidden="true">×</span></button>
           </div>
 
-          <div class="courses-filters__group">
-            <label class="courses-filters__label" for="courses-search">Search courses</label>
-            <input type="search" id="courses-search" class="courses-filters__search" placeholder="Course name or code" data-courses-search autocomplete="off" />
-          </div>
+          <div class="courses-filters__body" id="courses-filters-body" data-courses-filters-body>
+            <div class="courses-filters__group">
+              <label class="courses-filters__label" for="courses-search">Search courses</label>
+              <input type="search" id="courses-search" class="courses-filters__search" placeholder="Course name or code" data-courses-search autocomplete="off" />
+            </div>
 
-          <div class="courses-filters__group">
-            <p class="courses-filters__label">Subject area</p>
-            <ul class="courses-filters__options">
-              <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="business-professional" data-courses-filter /> Business &amp; Professional <span class="courses-filters__count">(6)</span></label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="education" data-courses-filter /> Education <span class="courses-filters__count">(1)</span></label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="engineering-construction" data-courses-filter /> Engineering, Construction &amp; Safety <span class="courses-filters__count">(4)</span></label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="fine-arts" data-courses-filter /> Fine Arts <span class="courses-filters__count">(1)</span></label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="human-services" data-courses-filter /> Human Services &amp; Social Work <span class="courses-filters__count">(4)</span></label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="humanities" data-courses-filter /> Humanities <span class="courses-filters__count">(5)</span></label></li>
-              <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="science-mathematics" data-courses-filter /> Science &amp; Mathematics <span class="courses-filters__count">(4)</span></label></li>
-            </ul>
+            <div class="courses-filters__group">
+              <p class="courses-filters__label">Subject area</p>
+              <ul class="courses-filters__options">
+                <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="business-professional" data-courses-filter /> Business &amp; Professional <span class="courses-filters__count">(6)</span></label></li>
+                <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="education" data-courses-filter /> Education <span class="courses-filters__count">(1)</span></label></li>
+                <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="engineering-construction" data-courses-filter /> Engineering, Construction &amp; Safety <span class="courses-filters__count">(4)</span></label></li>
+                <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="fine-arts" data-courses-filter /> Fine Arts <span class="courses-filters__count">(1)</span></label></li>
+                <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="human-services" data-courses-filter /> Human Services &amp; Social Work <span class="courses-filters__count">(4)</span></label></li>
+                <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="humanities" data-courses-filter /> Humanities <span class="courses-filters__count">(5)</span></label></li>
+                <li><label class="courses-filters__option"><input type="checkbox" name="subject" value="science-mathematics" data-courses-filter /> Science &amp; Mathematics <span class="courses-filters__count">(4)</span></label></li>
+              </ul>
+            </div>
           </div>
         </aside>
 

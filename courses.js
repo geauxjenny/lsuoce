@@ -10,6 +10,25 @@
   var grid = catalog.querySelector('[data-courses-grid]');
   var cards = grid ? Array.from(grid.querySelectorAll('.courses-card')) : [];
   var filterInputs = Array.from(catalog.querySelectorAll('[data-courses-filter]'));
+  var filtersPanel = catalog.querySelector('[data-courses-filters]');
+  var filtersToggle = catalog.querySelector('[data-courses-filters-toggle]');
+  var filtersBody = catalog.querySelector('[data-courses-filters-body]');
+  var mobileFiltersQuery = window.matchMedia('(max-width: 1023px)');
+
+  function isMobileFilters() {
+    return mobileFiltersQuery.matches;
+  }
+
+  function setFiltersOpen(open) {
+    if (!filtersPanel || !filtersToggle || !filtersBody) return;
+    filtersToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    filtersPanel.classList.toggle('is-open', open);
+    filtersBody.classList.toggle('is-open', open);
+  }
+
+  function initFiltersCollapse() {
+    setFiltersOpen(!isMobileFilters());
+  }
 
   function getActiveFilters(name) {
     return filterInputs
@@ -116,6 +135,20 @@
     clearButton.addEventListener('click', clearFilters);
   }
 
+  if (filtersToggle) {
+    filtersToggle.addEventListener('click', function () {
+      if (!isMobileFilters()) return;
+      setFiltersOpen(filtersToggle.getAttribute('aria-expanded') !== 'true');
+    });
+  }
+
+  if (mobileFiltersQuery.addEventListener) {
+    mobileFiltersQuery.addEventListener('change', initFiltersCollapse);
+  } else if (mobileFiltersQuery.addListener) {
+    mobileFiltersQuery.addListener(initFiltersCollapse);
+  }
+
+  initFiltersCollapse();
   syncCartButtons();
   updateCatalog();
 })();
