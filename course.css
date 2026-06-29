@@ -509,9 +509,21 @@
   margin: 0;
 }
 
+.course-register__details--cols-3 {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 12px;
+}
+
 @media (min-width: 640px) {
   .course-register__details {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .course-register__details--cols-3 {
+    flex-wrap: nowrap;
+    column-gap: 40px;
   }
 }
 
@@ -544,6 +556,7 @@
 }
 
 .course-register__panel .cert-cohort-row__sessions {
+  display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 16px;
@@ -554,6 +567,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
+  }
+
+  .course-register__panel .course-register__details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .course-register__panel .cert-cohort-row__action {
+    width: auto;
+    flex-shrink: 0;
+    margin-left: auto;
   }
 }
 
@@ -619,6 +644,7 @@
   min-width: 0;
   background: #fff;
   color: #000;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
 }
@@ -631,15 +657,66 @@
 
 .course-instructor__card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   padding: 24px;
+}
+
+.course-instructor__card--details {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+.course-instructor__profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.course-instructor__card--details .course-instructor__avatar {
+  width: 56px;
+  height: 56px;
+  font-size: 18px;
+}
+
+.course-instructor__detail {
+  min-width: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
 }
 
 @media (min-width: 768px) {
   .course-instructor__card {
     gap: 24px;
     padding: 32px;
+  }
+
+  .course-instructor__card--details {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .course-instructor__profile {
+    flex: 0 1 auto;
+    gap: 16px;
+  }
+
+  .course-instructor__detail {
+    flex: 0 0 auto;
+    min-width: 0;
+    padding-top: 0;
+    border-top: none;
+    padding-left: 24px;
+    border-left: 1px solid var(--border-color);
+  }
+
+  .course-instructor__card--details .course-instructor__avatar {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
   }
 
   .course-instructor__avatar {
@@ -675,6 +752,11 @@
 
 .course-instructor__name {
   margin: 0 0 4px;
+}
+
+.course-instructor__label {
+  margin: 0 0 6px;
+  color: rgba(70, 29, 124, 0.65);
 }
 
 .course-instructor__title {
@@ -1206,4 +1288,114 @@
 .course-enroll-cta .cert-btn--outline-white:focus-visible {
   outline: 2px solid rgb(var(--gold));
   outline-offset: 2px;
+}
+
+/* OLLI course template — simplified in-person layout */
+
+.course-page--olli .course-olli-eyebrow-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.course-page--olli #overview .cert-feature__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 56px;
+}
+
+.course-page--olli #overview .cert-feature__icon img {
+  display: block;
+  width: auto;
+  height: 56px;
+  max-width: none;
+  max-height: none;
+}
+
+.course-page--olli .course-olli-eyebrow-link:hover {
+  color: rgb(var(--gold));
+}
+
+.course-register .cert-cohort-row__date {
+  align-items: flex-start;
+}
+
+.course-register .cert-cohort-row__date > div {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .course-page--olli .course-register__panel .cert-cohorts__table-head,
+  .course-page--olli .course-register__panel .cert-cohort-row {
+    grid-template-columns: minmax(0, 0.85fr) minmax(340px, 1.45fr);
+  }
+}
+
+button.cert-cohort-row__enroll {
+  cursor: pointer;
+  appearance: none;
+}
+
+.course-olli-about__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .course-olli-about__layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+    gap: 48px;
+  }
+}
+
+.course-olli-about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.course-olli-about__lead {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.course-olli-about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.course-olli-about__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.course-olli-about__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 18rem;
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  background: var(--gold-100);
+  border: 1px solid var(--gold-divider);
+}
+
+.course-olli-about__badge p {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: rgb(var(--purple));
 }
