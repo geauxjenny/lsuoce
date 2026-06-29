@@ -79,6 +79,62 @@
   }
 }
 
+.cert-site-header__brand {
+  --cert-logo-height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .cert-site-header__brand {
+    --cert-logo-height: 28px;
+  }
+}
+
+@media (min-width: 801px) {
+  .cert-site-header__brand {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.cert-site-header__brand-divider {
+  display: none;
+  width: 1px;
+  height: var(--cert-logo-height);
+  background: rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+
+@media (min-width: 801px) {
+  .cert-site-header__brand-divider {
+    display: block;
+  }
+}
+
+.cert-site-header__brand-label {
+  display: block;
+  font-family: "roboto-condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: currentColor;
+  white-space: nowrap;
+}
+
+@media (min-width: 801px) {
+  .cert-site-header__brand-label {
+    font-size: 15px;
+  }
+}
+
 .cert-site-header__logo {
   display: flex;
   align-items: center;
@@ -90,13 +146,12 @@
 .cert-site-header__logo-img {
   display: block;
   width: auto;
-  height: 24px;
+  height: var(--cert-logo-height, 24px);
   max-width: 140px;
 }
 
 @media (min-width: 768px) {
   .cert-site-header__logo-img {
-    height: 28px;
     max-width: 168px;
   }
 }
@@ -196,12 +251,14 @@
   transition: border-color var(--transition-base), background-color var(--transition-base);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1240px) {
   .cert-site-header__search {
     gap: 12px;
-    flex: 1;
+    flex: 0 1 auto;
+    margin-left: auto;
     min-width: 0;
-    max-width: 480px;
+    width: 640px;
+    max-width: 640px;
     min-height: 48px;
     padding: 0 16px;
     border: 1px solid rgba(255, 255, 255, 0.35);
@@ -219,13 +276,7 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .cert-site-header__search {
-    max-width: 560px;
-  }
-}
-
-@media (max-width: 999px) {
+@media (max-width: 1239px) {
   .cert-site-header__bar {
     position: relative;
     --cert-header-cluster-gap: 16px;
@@ -349,7 +400,7 @@
     overflow: visible;
   }
 
-  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__logo,
+  .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__brand,
   .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__browse,
   .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__actions,
   .cert-site-header__bar:has(.cert-site-header__search:focus-within) .cert-site-header__cart,

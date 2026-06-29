@@ -14,9 +14,13 @@
 
     <header class="cert-site-header">
       <div class="container cert-site-header__bar">
-        <a href="https://online.lsu.edu/" class="cert-site-header__logo">
-          <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
-        </a>
+        <div class="cert-site-header__brand">
+          <a href="https://online.lsu.edu/" class="cert-site-header__logo">
+            <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
+          </a>
+          <span class="cert-site-header__brand-divider" aria-hidden="true"></span>
+          <span class="cert-site-header__brand-label">Continuing Education</span>
+        </div>
 
         <div class="cert-site-header__nav-tools">
           <button type="button" class="cert-site-header__browse" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle>
@@ -136,11 +140,11 @@
               <span class="course-hero__code-ceus">12 Contact Hours</span>
             </p>
             <ul class="cert-checklist">
-              <li>This fitness class will be blend of seated and standing movements.</li>
-              <li>A is for Abdominals — seated and standing movements.</li>
-              <li>B is for Balance — standing movements.</li>
-              <li>C is for Cardio — seated movements only.</li>
-              <li>S has two meanings — Strength and Stretching — seated and standing movements, but seated yoga will be included.</li>
+              <li>This fitness class will be a blend of seated and standing movements.</li>
+              <li><strong>A</strong> is for Abdominals — seated and standing movements.</li>
+              <li><strong>B</strong> is for Balance — standing movements.</li>
+              <li><strong>C</strong> is for Cardio — seated movements only.</li>
+              <li><strong>S</strong> has two meanings — Strength and Stretching — seated and standing movements, but seated yoga will be included.</li>
             </ul>
           </div>
 
@@ -264,19 +268,21 @@
                 <p class="body-xl cert-cohorts__lead">The following sections are available for registration.</p>
               </div>
               <div class="cert-cohorts__right">
-                <div class="cert-cohorts__list cert-cohorts__panel course-register__panel">
-                  <div class="cert-cohorts__table-head" aria-hidden="true">
+                <div class="cert-cohorts__list cert-cohorts__panel course-register__panel course-olli-cohort-grid">
+                  <div class="course-olli-cohort-grid__head cert-cohorts__table-head" aria-hidden="true">
                     <span class="cert-cohorts__table-head-dates">Section</span>
                     <span class="cert-cohorts__table-head-sessions">Schedule</span>
+                    <span class="cert-cohorts__table-head-location">Location</span>
+                    <span class="cert-cohorts__table-head-action"></span>
                   </div>
-                  <article class="cert-cohort-row cert-cohort-row--current">
+                  <article class="cert-cohort-row cert-cohort-row--current course-olli-cohort-grid__row">
                     <div class="cert-cohort-row__date">
                       <img src="images/calendar-icon.svg" alt="" width="20" height="20" class="cert-cohort-row__icon" />
                       <p class="cert-cohort-row__range">Jul 06–Jul 30, 2026</p>
                       <span class="cert-cohort-row__badge">Available</span>
                     </div>
                     <div class="cert-cohort-row__sessions">
-                      <dl class="course-register__details course-register__details--cols-3">
+                      <dl class="course-register__details course-register__details--cols-2">
                         <div>
                           <dt>Days</dt>
                           <dd>M, Th</dd>
@@ -286,9 +292,12 @@
                           <dd>9:00 AM – 10:30 AM</dd>
                         </div>
                       </dl>
-                      <div class="cert-cohort-row__action">
-                        <button type="button" class="cert-cohort-row__enroll course-register__cta" data-add-to-cart data-course-id="58877933" data-course-title="ABC's of Fitness" data-course-price="45.00" data-course-href="course-olli.html">Add to Cart</button>
-                      </div>
+                    </div>
+                    <div class="course-olli-cohort__location">
+                      <p class="course-olli-cohort__location-name">West Feliciana Parish Library</p>
+                    </div>
+                    <div class="cert-cohort-row__action course-olli-cohort__action">
+                      <button type="button" class="cert-cohort-row__enroll course-register__cta" data-add-to-cart data-course-id="58877933" data-course-title="ABC's of Fitness" data-course-price="45.00" data-course-href="course-olli.html">Add to Cart</button>
                     </div>
                   </article>
                 </div>
@@ -297,24 +306,18 @@
           </div>
         </section>
 
-        <section class="cert-section cert-section--gold course-instructor-section" id="instructor" aria-labelledby="instructor-heading">
+        <section class="cert-section cert-section--purple-dark course-instructor-section" id="instructor" aria-labelledby="instructor-heading">
           <div class="cert-section__inner">
             <div class="course-instructor__layout">
               <div class="course-instructor__intro">
-                <h2 id="instructor-heading">Instructor &amp; Location</h2>
+                <h2 id="instructor-heading" class="heading-dark">About Your <span class="accent-dark">Instructor</span></h2>
               </div>
               <div class="course-instructor__panel">
-                <div class="course-instructor__card course-instructor__card--details">
-                  <div class="course-instructor__profile">
-                    <div class="course-instructor__avatar" role="img" aria-label="Pat Heurtin">PH</div>
-                    <div class="course-instructor__content">
-                      <p class="course-instructor__label label">Instructor</p>
-                      <h3 class="course-instructor__name">Pat Heurtin</h3>
-                    </div>
-                  </div>
-                  <div class="course-instructor__detail">
-                    <p class="course-instructor__label label">Location</p>
-                    <h3 class="course-instructor__name">West Feliciana Parish Library</h3>
+                <div class="course-instructor__card">
+                  <div class="course-instructor__avatar" role="img" aria-label="Pat Heurtin">PH</div>
+                  <div class="course-instructor__content">
+                    <h3 class="course-instructor__name">Pat Heurtin</h3>
+                    <p class="course-instructor__bio body-default">Pat Heurtin holds a BA from Southeastern Louisiana University and a Master's Plus 30 hours from LSU. A retired Health and Physical Education teacher and a former Physical Director of the YMCA of Lake Charles, she has been teaching for OLLI for over 10 years.</p>
                   </div>
                 </div>
               </div>
