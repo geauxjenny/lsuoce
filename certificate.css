@@ -58,6 +58,7 @@
   min-height: var(--cert-site-header-height);
   padding-block: 0;
   --cert-header-item-gap: 24px;
+  --cert-header-control-height: 48px;
 }
 
 .certificate-page .cert-site-header__bar.container,
@@ -84,7 +85,7 @@
 }
 
 .cert-site-header__brand {
-  --cert-logo-height: 24px;
+  --cert-logo-height: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -95,7 +96,7 @@
 
 @media (min-width: 768px) {
   .cert-site-header__brand {
-    --cert-logo-height: 28px;
+    --cert-logo-height: 24px;
   }
 }
 
@@ -150,13 +151,13 @@
 .cert-site-header__logo-img {
   display: block;
   width: auto;
-  height: var(--cert-logo-height, 24px);
-  max-width: 140px;
+  height: var(--cert-logo-height, 20px);
+  max-width: 120px;
 }
 
 @media (min-width: 768px) {
   .cert-site-header__logo-img {
-    max-width: 168px;
+    max-width: 145px;
   }
 }
 
@@ -212,11 +213,17 @@
 .cert-site-header__browse {
   display: none;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   flex-shrink: 0;
-  padding: 8px 0;
-  border: none;
-  background: none;
+  box-sizing: border-box;
+  height: var(--cert-header-control-height);
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--border-radius);
+  background: rgba(39, 17, 69, 0.22);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
   color: #fff;
   font-family: var(--font-button);
   font-size: 18px;
@@ -225,7 +232,10 @@
   text-transform: none;
   width: auto;
   cursor: pointer;
-  transition: color var(--transition-base);
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base);
 }
 
 @media (min-width: 768px) {
@@ -237,6 +247,8 @@
 .cert-site-header__browse:hover,
 .cert-site-header__browse[aria-expanded="true"] {
   color: rgb(var(--gold));
+  background: rgba(39, 17, 69, 0.32);
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
 .cert-site-header__chevron {
@@ -263,7 +275,7 @@
     min-width: 0;
     width: 480px;
     max-width: 480px;
-    min-height: 48px;
+    min-height: var(--cert-header-control-height);
     padding: 0 16px;
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: var(--border-radius);
@@ -390,7 +402,7 @@
     transform: translateY(-50%);
     z-index: 2;
     width: auto;
-    min-height: 48px;
+    min-height: var(--cert-header-control-height);
     padding: 0 8px 0 16px;
     gap: 8px;
     border: 1px solid rgba(255, 255, 255, 0.65);
