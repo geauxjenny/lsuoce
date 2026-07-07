@@ -56,6 +56,10 @@
   function setBrowseOpen(open) {
     if (!siteHeader || !browsePanel) return;
 
+    if (open) {
+      positionBrowsePanel();
+    }
+
     siteHeader.classList.toggle('is-browse-open', open);
     browsePanel.hidden = !open;
     browseToggles.forEach(function (toggle) {
@@ -63,10 +67,8 @@
     });
 
     if (open) {
-      window.setTimeout(function () {
-        positionBrowsePanel();
-        setStickyOffsets();
-      }, 0);
+      positionBrowsePanel();
+      setStickyOffsets();
     } else {
       browsePanel.style.left = '';
       browsePanel.style.width = '';
