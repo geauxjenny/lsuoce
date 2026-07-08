@@ -875,6 +875,47 @@ a.ce-offering:hover .learn-more-link .arrow,
   background: rgb(var(--gold));
 }
 
+.list-numbered-gold,
+.list-numbered-purple {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: list-numbered;
+}
+
+.list-numbered-gold li,
+.list-numbered-purple li {
+  counter-increment: list-numbered;
+  text-align: center;
+}
+
+.list-numbered-gold li::before,
+.list-numbered-purple li::before {
+  content: counter(list-numbered);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  border-radius: 999px;
+  font-family: var(--font-button);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.list-numbered-gold li::before {
+  background: rgb(var(--gold));
+  color: #000;
+}
+
+.list-numbered-purple li::before {
+  background: rgb(var(--purple));
+  color: #fff;
+}
+
 .ce-offering-image-container {
   flex-direction: row;
   align-items: flex-start;

@@ -141,36 +141,38 @@
             <div class="cert-app-main">
               <div class="cert-app-workspace" id="cert-app-workspace">
                 <aside class="cert-app-progress" aria-label="Application progress">
-                  <p class="cert-app-progress__percent"><span data-app-progress-percent>0</span>% completed</p>
-                  <div class="cert-app-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Application completion">
-                    <span class="cert-app-progress__bar-fill" data-app-progress-bar style="width: 0%"></span>
+                  <div class="cert-app-progress__form" data-app-progress-form>
+                    <p class="cert-app-progress__percent"><span data-app-progress-percent>0</span>% completed</p>
+                    <div class="cert-app-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Application completion">
+                      <span class="cert-app-progress__bar-fill" data-app-progress-bar style="width: 0%"></span>
+                    </div>
+                    <ol class="cert-app-progress__list">
+                      <li class="cert-app-progress__item" data-app-progress>
+                        <span class="cert-app-progress__marker">1</span>
+                        <span class="cert-app-progress__text">Personal information</span>
+                      </li>
+                      <li class="cert-app-progress__item" data-app-progress>
+                        <span class="cert-app-progress__marker">2</span>
+                        <span class="cert-app-progress__text">Demographics</span>
+                      </li>
+                      <li class="cert-app-progress__item" data-app-progress>
+                        <span class="cert-app-progress__marker">3</span>
+                        <span class="cert-app-progress__text">Program &amp; funding</span>
+                      </li>
+                      <li class="cert-app-progress__item" data-app-progress>
+                        <span class="cert-app-progress__marker">4</span>
+                        <span class="cert-app-progress__text">Documents</span>
+                      </li>
+                      <li class="cert-app-progress__item" data-app-progress>
+                        <span class="cert-app-progress__marker">5</span>
+                        <span class="cert-app-progress__text">Review your application</span>
+                      </li>
+                      <li class="cert-app-progress__item" data-app-progress>
+                        <span class="cert-app-progress__marker">6</span>
+                        <span class="cert-app-progress__text">Application fee ($40)</span>
+                      </li>
+                    </ol>
                   </div>
-                  <ol class="cert-app-progress__list">
-                    <li class="cert-app-progress__item" data-app-progress>
-                      <span class="cert-app-progress__marker">1</span>
-                      <span class="cert-app-progress__text">Personal information</span>
-                    </li>
-                    <li class="cert-app-progress__item" data-app-progress>
-                      <span class="cert-app-progress__marker">2</span>
-                      <span class="cert-app-progress__text">Demographics</span>
-                    </li>
-                    <li class="cert-app-progress__item" data-app-progress>
-                      <span class="cert-app-progress__marker">3</span>
-                      <span class="cert-app-progress__text">Program &amp; funding</span>
-                    </li>
-                    <li class="cert-app-progress__item" data-app-progress>
-                      <span class="cert-app-progress__marker">4</span>
-                      <span class="cert-app-progress__text">Documents</span>
-                    </li>
-                    <li class="cert-app-progress__item" data-app-progress>
-                      <span class="cert-app-progress__marker">5</span>
-                      <span class="cert-app-progress__text">Review your application</span>
-                    </li>
-                    <li class="cert-app-progress__item" data-app-progress>
-                      <span class="cert-app-progress__marker">6</span>
-                      <span class="cert-app-progress__text">Application fee ($40)</span>
-                    </li>
-                  </ol>
                 </aside>
 
                 <div class="cert-app-workspace__main">
@@ -489,26 +491,49 @@
                   <!-- Confirmation -->
                   <section class="cert-app-panel" data-app-panel="7" hidden aria-labelledby="confirm-title">
                     <div class="cert-app-confirm">
-                      <div class="cert-app-confirm__icon" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      </div>
-                      <span class="cert-app-confirm__status">Submitted</span>
-                      <h2 id="confirm-title" class="cert-app-confirm__title">Application submitted</h2>
-                      <p class="cert-app-confirm__lead">Thank you for applying to the Paralegal Studies Certificate program. A confirmation email has been sent to the address you provided.</p>
+                      <ol class="cert-app-timeline" data-app-timeline aria-label="Application status">
+                        <li class="cert-app-timeline__step" data-app-status-item="draft">
+                          <span class="cert-app-timeline__marker" aria-hidden="true"></span>
+                          <span class="cert-app-timeline__label">Draft</span>
+                        </li>
+                        <li class="cert-app-timeline__step" data-app-status-item="submitted">
+                          <span class="cert-app-timeline__marker" aria-hidden="true"></span>
+                          <span class="cert-app-timeline__label">Submitted</span>
+                        </li>
+                        <li class="cert-app-timeline__step" data-app-status-item="awaiting-transcript">
+                          <span class="cert-app-timeline__marker" aria-hidden="true"></span>
+                          <span class="cert-app-timeline__label">Awaiting Transcript</span>
+                        </li>
+                        <li class="cert-app-timeline__step" data-app-status-item="under-review">
+                          <span class="cert-app-timeline__marker" aria-hidden="true"></span>
+                          <span class="cert-app-timeline__label">Under Review</span>
+                        </li>
+                        <li class="cert-app-timeline__step" data-app-status-item="decision">
+                          <span class="cert-app-timeline__marker" aria-hidden="true"></span>
+                          <span class="cert-app-timeline__label">Decision</span>
+                        </li>
+                      </ol>
 
-                      <div class="cert-app-confirm__next">
-                        <h3>What happens next</h3>
-                        <ol>
-                          <li>Our admissions team will review your application and uploaded documents.</li>
-                          <li>If anything is missing, you'll receive automated reminders until we receive it.</li>
-                          <li>If accepted, you'll get an email with your semester schedule and a link to schedule your welcome call.</li>
-                          <li>Course registration and tuition payment happen after acceptance — not at this step.</li>
-                        </ol>
-                      </div>
+                      <div class="cert-app-overview__start">
+                        <div class="cert-app-overview__start-header">
+                          <h2 id="confirm-title" class="cert-app-overview__start-title">Application <span class="accent">submitted</span></h2>
+                          <p class="cert-app-overview__start-time">Thank you for applying to the Paralegal Studies Certificate program. A confirmation email has been sent to the address you provided.</p>
+                        </div>
 
-                      <div class="cert-app-confirm__actions">
-                        <a href="certificate-paralegal.html" class="cert-btn cert-btn--primary cert-btn--lg">Return to program page</a>
-                        <a href="mailto:aclant1@lsu.edu" class="cert-btn cert-btn--outline cert-btn--lg">Contact admissions</a>
+                        <div class="cert-app-overview__needs">
+                          <h3 id="confirm-next-title" class="cert-app-overview__needs-title">What happens next</h3>
+                          <ul class="cert-app-overview__checklist list-numbered-gold" aria-labelledby="confirm-next-title">
+                            <li>Our admissions team will review your application and uploaded documents.</li>
+                            <li>If anything is missing, you'll receive automated reminders until we receive it.</li>
+                            <li>If accepted, you'll get an email with your semester schedule and a link to schedule your welcome call.</li>
+                            <li>Course registration and tuition payment happen after acceptance — not at this step.</li>
+                          </ul>
+                        </div>
+
+                        <div class="cert-app-confirm__actions">
+                          <a href="certificate-paralegal.html" class="cert-btn cert-btn--primary cert-btn--lg">Return to Program Overview</a>
+                          <a href="mailto:aclant1@lsu.edu" class="cert-btn cert-btn--outline cert-btn--lg">Contact admissions</a>
+                        </div>
                       </div>
                     </div>
                   </section>

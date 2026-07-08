@@ -10,6 +10,7 @@
   const shell = document.querySelector('.cert-app-shell');
   const progressItems = Array.from(document.querySelectorAll('[data-app-progress]'));
   const progressAside = document.querySelector('.cert-app-progress');
+  const timelineSteps = Array.from(document.querySelectorAll('[data-app-status-item]'));
   const progressBar = document.querySelector('[data-app-progress-bar]');
   const progressPercent = document.querySelector('[data-app-progress-percent]');
   const progressBarTrack = document.querySelector('.cert-app-progress__bar');
@@ -17,7 +18,27 @@
   const stepNav = document.querySelector('[data-app-nav]');
 
   const TOTAL_STEPS = 6;
+  const APPLICATION_STATUSES = [
+    'draft',
+    'submitted',
+    'awaiting-transcript',
+    'under-review',
+    'accepted',
+    'denied'
+  ];
+
+  const STATUS_STAGE = {
+    draft: 0,
+    submitted: 1,
+    'awaiting-transcript': 2,
+    'under-review': 3,
+    accepted: 4,
+    denied: 4,
+    decision: 4
+  };
+
   let currentStep = 0;
+  let applicationStatus = 'submitted';
 
   function showPanel(step) {
     currentStep = step;
@@ -35,6 +56,7 @@
     if (progressAside) progressAside.hidden = step === 7;
 
     if (step === 7) {
+      updateApplicationStatus(applicationStatus);
       if (backBtn) backBtn.hidden = true;
       if (nextBtn) nextBtn.hidden = true;
       if (payBtn) payBtn.hidden = true;
@@ -81,6 +103,37 @@
     if (progressBar) progressBar.style.width = percent + '%';
     if (progressPercent) progressPercent.textContent = String(percent);
     if (progressBarTrack) progressBarTrack.setAttribute('aria-valuenow', String(percent));
+  }
+
+  function updateApplicationStatus(status) {
+    if (!APPLICATION_STATUSES.includes(status)) status = 'submitted';
+    applicationStatus = status;
+
+    const currentStage = STATUS_STAGE[status];
+
+    timelineSteps.forEach(function (item) {
+      const itemStatus = item.getAttribute('data-app-status-item');
+      const itemStage = STATUS_STAGE[itemStatus];
+      const isDecision = status === 'accepted' || status === 'denied';
+
+      item.classList.remove('is-active', 'is-complete', 'is-accepted', 'is-denied');
+      item.setAttribute('aria-current', 'false');
+
+      if (itemStatus === 'decision') {
+        if (isDecision) {
+          item.classList.add('is-active', 'is-complete', status === 'accepted' ? 'is-accepted' : 'is-denied');
+          item.setAttribute('aria-current', 'step');
+        }
+        return;
+      }
+
+      if (itemStage < currentStage) {
+        item.classList.add('is-complete');
+      } else if (itemStage === currentStage) {
+        item.classList.add('is-active');
+        item.setAttribute('aria-current', 'step');
+      }
+    });
   }
 
   function clearErrors(panel) {
@@ -325,5 +378,14 @@
 
   bindFileUploads();
   bindReviewEdits();
-  showPanel(0);
+
+  const devParams = new URLSearchParams(window.location.search);
+  const devStep = Number(devParams.get('step'));
+  const devStatus = devParams.get('status');
+
+  if (devStatus && APPLICATION_STATUSES.includes(devStatus)) {
+    applicationStatus = devStatus;
+  }
+
+  showPanel(devStep >= 0 && devStep <= 7 ? devStep : 0);
 })();
