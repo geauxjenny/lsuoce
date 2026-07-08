@@ -1,6 +1,12 @@
 /* Paralegal application — clean single-column flow */
 
 .application-page {
+  --cert-form-border: #999999;
+  --cert-form-border-focus: #D6D6D6;
+  --cert-form-focus-ring: #BFA0E9;
+  --cert-form-alert-bg: rgba(183, 48, 158, 0.12);
+  --cert-form-note-bg: #C7E5CA;
+  --cert-app-progress-width: 400px;
   background: #fff;
   color: rgb(var(--purple));
   padding-bottom: 0;
@@ -188,12 +194,8 @@
 
 @media (min-width: 768px) {
   .cert-app-workspace {
-    grid-template-columns: 220px minmax(0, 1fr) minmax(260px, 320px);
+    grid-template-columns: var(--cert-app-progress-width) minmax(0, 1fr);
     gap: 64px;
-  }
-
-  .cert-app-workspace--overview {
-    grid-template-columns: 220px minmax(0, 1fr);
   }
 }
 
@@ -203,13 +205,6 @@
   gap: 32px;
   min-width: 0;
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  .cert-app-workspace__aside {
-    position: sticky;
-    top: 24px;
-  }
 }
 
 @media (max-width: 767px) {
@@ -223,10 +218,6 @@
 
   .cert-app-workspace__main {
     order: 2;
-  }
-
-  .cert-app-workspace__aside {
-    order: 3;
   }
 }
 
@@ -757,7 +748,7 @@
   color: #111827;
 }
 
-/* Form within panels — single column */
+/* Form within panels — streamforms-aligned */
 
 .cert-app-form {
   display: flex;
@@ -768,73 +759,233 @@
 .cert-app-form .cert-form {
   padding: 0;
   background: transparent;
-  gap: 20px;
+  gap: 24px;
 }
 
-/* Outlined inputs — label sits on the field border */
+/* Floating-label field wrapper */
 .cert-app-form .cert-form__field:not(.cert-form__field--checkbox):not(fieldset) {
   position: relative;
   gap: 0;
-  padding-top: 8px;
+  padding-top: 0;
+  margin-bottom: 0;
+  overflow: visible;
 }
 
 .cert-app-form .cert-form__field:not(.cert-form__field--checkbox):not(fieldset) > label {
   position: absolute;
-  top: 8px;
-  left: 12px;
+  top: 0;
+  left: var(--spacing-sm);
   z-index: 1;
   padding: 0 4px;
-  background: #fff;
-  font-size: 14px;
+  background-color: #fff;
+  font-family: var(--font-primary);
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1;
   color: rgb(var(--purple));
   transform: translateY(-50%);
   pointer-events: none;
+  transition: color 0.2s ease;
 }
 
-.cert-app-form .cert-form__field:not(.cert-form__field--checkbox):not(fieldset) .cert-form__required {
-  color: rgb(183, 48, 158);
+.cert-app-form .cert-form__required,
+.cert-app-form .cert-app-upload__label .cert-form__required,
+.cert-app-form fieldset legend .cert-form__required {
+  color: #B7309E;
+  margin-left: 2px;
 }
 
-.cert-app-form .cert-form__field:not(.cert-form__field--checkbox):not(fieldset) .cert-form__hint,
+.cert-app-form .cert-form__field:not(.cert-form__field--checkbox):not(fieldset) .cert-form__hint {
+  margin-top: 8px;
+}
+
 .cert-app-form .cert-form__field:not(.cert-form__field--checkbox):not(fieldset) .cert-form__error {
   margin-top: 8px;
+}
+
+/* Text inputs */
+.cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']) {
+  width: 100%;
+  box-sizing: border-box;
+  height: 60px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--cert-form-border);
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  color: #111827;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 180%;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio'])::placeholder {
+  color: var(--text-muted, #616161);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']):focus::placeholder {
+  opacity: 1;
+}
+
+.cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']):not(:placeholder-shown)::placeholder {
+  opacity: 0;
+}
+
+.cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']):focus {
+  border: 1px solid var(--cert-form-border-focus, #D6D6D6);
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']):disabled {
+  background-color: rgb(var(--grey-light));
+  border-color: var(--cert-form-border);
+  color: var(--text-muted, #616161);
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']) {
+    font-size: 18px;
+  }
+}
+
+/* Selects */
+.cert-app-form .cert-form__field select {
+  width: 100%;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 0 44px 0 20px;
+  border: 1px solid var(--cert-form-border);
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23461D7C' d='M5.665 7.142.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #111827;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 180%;
+  cursor: pointer;
+  box-shadow: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.cert-app-form .cert-form__field select option {
+  color: #000;
+  background-color: #fff;
+}
+
+.cert-app-form .cert-form__field select option[value=''] {
+  color: var(--text-muted, #616161);
+}
+
+.cert-app-form .cert-form__field select:required:invalid {
+  color: var(--text-muted, #616161);
+}
+
+.cert-app-form .cert-form__field select:required:valid {
+  color: #111827;
+}
+
+.cert-app-form .cert-form__field select:focus {
+  border: 1px solid var(--cert-form-border-focus, #D6D6D6);
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.cert-app-form .cert-form__field select:disabled {
+  background-color: rgb(var(--grey-light));
+  color: var(--text-muted, #616161);
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .cert-app-form .cert-form__field select {
+    font-size: 18px;
+  }
 }
 
 .cert-app-form .cert-form__row {
   grid-template-columns: 1fr;
 }
 
-.cert-form__hint {
-  margin: 0;
-  font-size: 13px;
+.cert-app-form .cert-form__hint {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.45;
-  color: #6b7280;
+  color: var(--text-muted, #616161);
 }
 
 .cert-form__optional {
   font-weight: 400;
-  color: #6b7280;
+  color: var(--text-muted, #616161);
 }
 
+/* Textarea */
 .cert-app-form .cert-form__field textarea {
   width: 100%;
   min-height: 120px;
-  padding: 16px;
-  border: 1px solid var(--gray-300, #D6D6D6);
+  height: auto;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--cert-form-border);
   border-radius: var(--border-radius);
+  background-color: #fff;
+  color: #111827;
   font-family: var(--font-primary);
   font-size: 16px;
+  font-weight: 400;
+  line-height: 180%;
   resize: vertical;
   box-sizing: border-box;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.cert-app-form .cert-form__field textarea::placeholder {
+  color: var(--text-muted, #616161);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cert-app-form .cert-form__field textarea:focus::placeholder {
+  opacity: 1;
+}
+
+.cert-app-form .cert-form__field textarea:not(:placeholder-shown)::placeholder {
+  opacity: 0;
 }
 
 .cert-app-form .cert-form__field textarea:focus {
-  outline: none;
-  border-color: rgb(var(--purple));
-  box-shadow: 0 0 0 2px rgba(70, 29, 124, 0.15);
+  border: 1px solid var(--cert-form-border-focus, #D6D6D6);
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.cert-app-form .cert-form__field textarea:disabled {
+  background-color: rgb(var(--grey-light));
+  border-color: var(--cert-form-border);
+  color: var(--text-muted, #616161);
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .cert-app-form .cert-form__field textarea {
+    font-size: 18px;
+  }
 }
 
 .cert-app-form__radios {
@@ -848,7 +999,7 @@
   align-items: flex-start;
   gap: 10px;
   padding: 12px 14px;
-  border: 1px solid var(--gray-300, #D6D6D6);
+  border: 1px solid var(--cert-form-border);
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: border-color var(--transition-base), background-color var(--transition-base);
@@ -856,15 +1007,16 @@
 
 .cert-app-form__radio:has(input:checked) {
   border-color: rgb(var(--purple));
-  background: rgba(70, 29, 124, 0.04);
+  background: #F7F1FF;
 }
 
 .cert-app-form__radio input {
-  width: 18px;
-  height: 18px;
+  width: 1.25rem;
+  height: 1.25rem;
   margin-top: 2px;
   flex-shrink: 0;
   accent-color: rgb(var(--purple));
+  cursor: pointer;
 }
 
 .cert-app-form__radio span {
@@ -877,7 +1029,7 @@
   margin: 0;
   padding: 12px 14px;
   border-radius: var(--border-radius);
-  background: var(--gold-100);
+  background: var(--cert-form-note-bg);
   font-size: 14px;
   line-height: 1.5;
   color: #374151;
@@ -892,9 +1044,9 @@
 }
 
 .cert-app-upload__label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  color: #111827;
+  color: rgb(var(--purple));
 }
 
 .cert-app-upload__zone {
@@ -906,7 +1058,7 @@
   gap: 4px;
   min-height: 88px;
   padding: 20px 16px;
-  border: 1px dashed var(--gray-300, #D6D6D6);
+  border: 1px dashed var(--cert-form-border);
   border-radius: var(--border-radius);
   background: #fafafa;
   text-align: center;
@@ -922,7 +1074,7 @@
 .cert-app-upload__zone.has-file {
   border-style: solid;
   border-color: rgb(var(--purple));
-  background: rgba(70, 29, 124, 0.04);
+  background: #F7F1FF;
 }
 
 .cert-app-upload__zone input[type='file'] {
@@ -1056,8 +1208,8 @@
 
 .cert-app-payment__summary-label {
   margin: 0;
-  font-size: 14px;
-  color: #374151;
+  font-size: 16px;
+  color:black;
 }
 
 .cert-app-payment__summary-amount {
@@ -1070,15 +1222,15 @@
 
 .cert-app-payment__stripe {
   padding: 20px;
-  border: 1px solid var(--gray-300, #D6D6D6);
+  border: 1px solid #D6D6D6;
   border-radius: var(--border-radius);
   background: #fff;
 }
 
 .cert-app-payment__stripe-header {
-  margin: 0 0 16px;
-  font-size: 14px;
-  font-weight: 700;
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 800;
   color: rgb(var(--purple));
 }
 
@@ -1205,17 +1357,39 @@
 
 /* Error state */
 
-.cert-form__field.is-invalid input,
-.cert-form__field.is-invalid select,
-.cert-form__field.is-invalid textarea,
+.cert-app-form .cert-form__field.is-invalid input:not([type='checkbox']):not([type='radio']),
+.cert-app-form .cert-form__field.is-invalid select,
+.cert-app-form .cert-form__field.is-invalid textarea,
 .cert-app-upload.is-invalid .cert-app-upload__zone {
-  border-color: #dc2626;
+  border: 2px solid rgb(var(--error)) !important;
 }
 
-.cert-form__error {
-  margin: 0;
-  font-size: 13px;
-  color: #dc2626;
+.cert-app-form .cert-form__field.is-invalid input:not([type='checkbox']):not([type='radio']):focus,
+.cert-app-form .cert-form__field.is-invalid select:focus,
+.cert-app-form .cert-form__field.is-invalid textarea:focus {
+  outline: 2px solid rgb(var(--error)) !important;
+  outline-offset: 2px;
+  border-color: rgb(var(--error)) !important;
+}
+
+.cert-app-form .cert-form__field.is-invalid input[type='checkbox'],
+.cert-app-form .cert-form__field.is-invalid input[type='radio'] {
+  accent-color: rgb(var(--error));
+}
+
+.cert-app-form .cert-form__error {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-radius: var(--border-radius);
+  background: var(--cert-form-alert-bg);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgb(var(--error));
+}
+
+.cert-app-upload .cert-form__error {
+  margin-top: 8px;
 }
 
 .cert-app-form fieldset {
@@ -1224,11 +1398,28 @@
   border: none;
 }
 
-.cert-app-form fieldset legend {
-  margin-bottom: 10px;
+.cert-app-form .cert-form__field--checkbox input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: rgb(var(--purple));
+  cursor: pointer;
+}
+
+.cert-app-form .cert-form__field--checkbox label {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
+  line-height: 1.5;
   color: #111827;
+  cursor: pointer;
+}
+
+.cert-app-form fieldset legend {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(var(--purple));
 }
 
 .cert-app-form .cert-form__field--checkbox label a {

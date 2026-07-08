@@ -13,8 +13,6 @@
   const progressBar = document.querySelector('[data-app-progress-bar]');
   const progressPercent = document.querySelector('[data-app-progress-percent]');
   const progressBarTrack = document.querySelector('.cert-app-progress__bar');
-  const cohortAside = document.querySelector('.cert-app-workspace__aside');
-  const workspace = document.getElementById('cert-app-workspace');
   const overviewFacts = document.getElementById('app-overview-facts');
   const stepNav = document.querySelector('[data-app-nav]');
 
@@ -32,11 +30,9 @@
 
     if (shell) shell.hidden = step === 0;
 
-    if (overviewFacts) overviewFacts.hidden = step !== 0;
+    if (overviewFacts) overviewFacts.hidden = step === 7;
 
     if (progressAside) progressAside.hidden = step === 7;
-    if (workspace) workspace.classList.toggle('cert-app-workspace--overview', step === 0);
-    if (cohortAside) cohortAside.hidden = step === 0 || step === 7;
 
     if (step === 7) {
       if (backBtn) backBtn.hidden = true;
