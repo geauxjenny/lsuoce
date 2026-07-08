@@ -109,13 +109,13 @@
 }
 
 .cert-app-intro__breadcrumb-item a {
-  color: var(--purple-200, #9C7DC5);
+  color: rgb(var(--gold));
   text-decoration: none;
   transition: color var(--transition-base);
 }
 
 .cert-app-intro__breadcrumb-item a:hover {
-  color: rgb(var(--gold));
+  color: var(--gold-hover);
 }
 
 .cert-app-intro__breadcrumb-item[aria-current='page'] span {

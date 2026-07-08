@@ -52,6 +52,9 @@
 
     updateProgress(step);
     updateActionButtons();
+
+    if (step === 5) populateReview();
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -297,8 +300,6 @@
   if (nextBtn) {
     nextBtn.addEventListener('click', function () {
       if (!validateStep(currentStep)) return;
-
-      if (currentStep === 5) populateReview();
 
       if (currentStep < 6) showPanel(currentStep + 1);
     });
