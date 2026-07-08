@@ -487,20 +487,15 @@
 
 .cert-app-panel__lead {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.55;
-  color: black;
-}
-
-.cert-app-overview .cert-app-panel__lead {
   font-family: var(--font-primary);
-  font-size: 18px;
-  line-height: 170%;
+  font-size: 16px;
+  line-height: 180%;
+  color: #000;
 }
 
-@media (min-width: 1024px) {
-  .cert-app-overview .cert-app-panel__lead {
-    font-size: 20px;
+@media (min-width: 768px) {
+  .cert-app-panel__lead {
+    font-size: 18px;
   }
 }
 
@@ -711,7 +706,7 @@
 }
 
 .cert-app-overview__cta .cert-app-overview__checklist li {
-  color: #374151;
+  color: black;
 }
 
 .cert-app-overview__checklist li {
@@ -729,7 +724,7 @@
   margin-top: 0.25em;
 }
 
-.cert-app-overview__start .cert-app-overview__checklist li::before {
+.cert-app-panel.cert-app-overview .cert-app-overview__checklist li::before {
   content: '';
   display: inline-block;
   width: 12px;
@@ -1007,9 +1002,9 @@
 .cert-app-form__radio {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px;
   padding: 12px 14px;
-  border: 1px solid var(--cert-form-border);
+  border: 1px solid ;
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: border-color var(--transition-base), background-color var(--transition-base);
@@ -1020,13 +1015,38 @@
   background: #F7F1FF;
 }
 
-.cert-app-form__radio input {
+.cert-app-form .cert-app-form__radio input[type='radio'] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
   width: 1.25rem;
   height: 1.25rem;
+  min-width: 1.25rem;
+  max-width: 1.25rem;
+  min-height: 1.25rem;
+  padding: 0;
   margin-top: 2px;
-  flex-shrink: 0;
-  accent-color: rgb(var(--purple));
+  flex: 0 0 1.25rem;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  background: #fff;
   cursor: pointer;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.cert-app-form .cert-app-form__radio input[type='radio']:checked {
+  border: 1px solid rgb(var(--purple));
+  background: radial-gradient(circle, rgb(var(--purple)) 32%, #fff 33%);
+  box-shadow: none;
+}
+
+.cert-app-form .cert-app-form__radio input[type='radio']:focus {
+  outline: none;
+}
+
+.cert-app-form .cert-app-form__radio input[type='radio']:focus-visible {
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: 2px;
 }
 
 .cert-app-form__radio span {
@@ -1525,9 +1545,14 @@
   border-color: rgb(var(--error)) !important;
 }
 
-.cert-app-form .cert-form__field.is-invalid input[type='checkbox'],
-.cert-app-form .cert-form__field.is-invalid input[type='radio'] {
-  accent-color: rgb(var(--error));
+.cert-app-form .cert-form__field.is-invalid .cert-app-form__radio input[type='radio'] {
+  border-color: rgb(var(--error));
+}
+
+.cert-app-form .cert-form__field.is-invalid .cert-app-form__radio input[type='radio']:checked {
+  border: 1px solid rgb(var(--error));
+  background: radial-gradient(circle, rgb(var(--error)) 32%, #fff 33%);
+  box-shadow: none;
 }
 
 .cert-app-form .cert-form__error {
@@ -1551,19 +1576,65 @@
   border: none;
 }
 
-.cert-app-form .cert-form__field--checkbox input {
+.cert-app-form .cert-form__field--checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.cert-app-form .cert-form__field--checkbox input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
   width: 1.25rem;
   height: 1.25rem;
-  accent-color: rgb(var(--purple));
+  min-width: 1.25rem;
+  max-width: 1.25rem;
+  min-height: 1.25rem;
+  padding: 0;
+  margin-top: 4px;
+  flex: 0 0 1.25rem;
+  border: 1px solid #999999;
+  border-radius: var(--border-radius);
+  background: #fff;
   cursor: pointer;
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.cert-app-form .cert-form__field--checkbox input[type='checkbox']:checked {
+  border-color: rgb(var(--purple));
+  background-color: rgb(var(--purple));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1 5.5 4.5 9 11 2' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px 8px;
+}
+
+.cert-app-form .cert-form__field--checkbox input[type='checkbox']:focus {
+  outline: none;
+}
+
+.cert-app-form .cert-form__field--checkbox input[type='checkbox']:focus-visible {
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: 2px;
 }
 
 .cert-app-form .cert-form__field--checkbox label {
-  font-size: 14px;
+  font-family: var(--font-primary);
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
-  color: #111827;
+  line-height: 180%;
+  color: #000;
   cursor: pointer;
+}
+
+.cert-app-form .cert-form__field--checkbox.is-invalid input[type='checkbox'] {
+  border-color: rgb(var(--error));
+}
+
+.cert-app-form .cert-form__field--checkbox.is-invalid input[type='checkbox']:checked {
+  border-color: rgb(var(--error));
+  background-color: rgb(var(--error));
 }
 
 .cert-app-form fieldset legend {

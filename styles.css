@@ -876,7 +876,9 @@ a.ce-offering:hover .learn-more-link .arrow,
 }
 
 .list-numbered-gold,
-.list-numbered-purple {
+.list-numbered-purple,
+ol.list-numbered-gold,
+ol.list-numbered-purple {
   list-style: none;
   padding: 0;
   margin: 0;
