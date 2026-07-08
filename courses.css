@@ -14,42 +14,10 @@
 }
 
 .courses-page .cert-site-header {
-  --hero-glow: 183, 48, 158;
   position: relative;
   z-index: 110;
-  isolation: isolate;
   overflow: visible;
-  background: linear-gradient(135deg, var(--purple-dark-bg) 0%, rgb(var(--purple)) 42%, var(--purple-hover) 100%);
-}
-
-.courses-page .cert-site-header::before,
-.courses-page .cert-site-header::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.courses-page .cert-site-header::before {
-  background:
-    radial-gradient(ellipse 75% 62% at 84% 2%, rgb(var(--hero-glow)) 0%, rgba(var(--hero-glow), 0.82) 38%, rgba(var(--hero-glow), 0.15) 72%, rgba(var(--hero-glow), 0) 82%),
-    radial-gradient(ellipse 42% 38% at 100% 0%, rgb(var(--hero-glow)) 0%, rgba(var(--hero-glow), 0.55) 48%, rgba(var(--hero-glow), 0) 68%);
-  mix-blend-mode: screen;
-  opacity: 0.55;
-  z-index: 2;
-}
-
-.courses-page .cert-site-header::after {
-  background:
-    linear-gradient(
-      to right,
-      var(--purple-dark-bg) 0%,
-      rgba(39, 17, 69, 0.88) 46%,
-      rgba(70, 29, 124, 0.2) 68%,
-      transparent 88%
-    ),
-    linear-gradient(135deg, var(--purple-dark-bg) 0%, rgb(var(--purple)) 42%, var(--purple-hover) 100%);
-  z-index: 1;
+  background: var(--cert-nav-header-gradient);
 }
 
 .courses-page .cert-site-header__bar {
