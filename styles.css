@@ -39,6 +39,10 @@ html {
   --border-color: #D6D6D6;
   --text-muted: #616161;
   --text-primary: #000000;
+  --cert-form-control-height: 50px;
+  --cert-form-focus-ring: #BFA0E9;
+  --cert-form-focus-offset: 2px;
+  --cert-form-border-focus: #D6D6D6;
 
   --green: #59B161;
   --green-100: #C7E5CA;

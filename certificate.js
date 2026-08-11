@@ -368,6 +368,179 @@
     });
   }
 
+  /* Sign-in modal */
+  const loginModal = document.querySelector('#login-modal');
+  const loginModalDialog = loginModal && loginModal.querySelector('.cert-modal__dialog');
+  const loginOpeners = document.querySelectorAll('[data-login-modal-open]');
+  const loginClosers = loginModal && loginModal.querySelectorAll('[data-login-modal-close]');
+  const loginForm = loginModal && loginModal.querySelector('.cert-login-modal__form');
+  const loginEmail = loginModal && loginModal.querySelector('#login-username');
+  const loginPassword = loginModal && loginModal.querySelector('#login-password');
+  let loginModalTrigger = null;
+
+  function clearLoginFieldError(field) {
+    if (!field) return;
+    const wrapper = field.closest('.cert-form__field');
+    if (!wrapper) return;
+    wrapper.classList.remove('is-invalid');
+    const error = wrapper.querySelector('.cert-form__error');
+    if (error) error.remove();
+    field.removeAttribute('aria-invalid');
+    field.removeAttribute('aria-describedby');
+  }
+
+  function clearLoginErrors() {
+    if (!loginForm) return;
+    loginForm.querySelectorAll('input').forEach(clearLoginFieldError);
+  }
+
+  function markLoginInvalid(field, message) {
+    const wrapper = field.closest('.cert-form__field');
+    if (!wrapper) return;
+    wrapper.classList.add('is-invalid');
+    if (!wrapper.querySelector('.cert-form__error')) {
+      const error = document.createElement('p');
+      const icon = document.createElement('span');
+      const text = document.createElement('span');
+
+      error.className = 'cert-form__error';
+      error.id = field.id + '-error';
+
+      icon.className = 'cert-form__error-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M8 4.5v4M8 10.5v.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>';
+
+      text.className = 'cert-form__error-text';
+      text.textContent = message;
+
+      error.appendChild(icon);
+      error.appendChild(text);
+      field.setAttribute('aria-invalid', 'true');
+      field.setAttribute('aria-describedby', error.id);
+      wrapper.appendChild(error);
+    }
+  }
+
+  function getLoginFieldError(field) {
+    const value = field.value.trim();
+
+    if (field.type === 'email') {
+      if (!value) return 'Please enter an email address.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Please enter a valid email address.';
+      return '';
+    }
+
+    if (field.type === 'password') {
+      if (!value) return 'Please enter your password.';
+      return '';
+    }
+
+    return '';
+  }
+
+  function validateLoginForm() {
+    clearLoginErrors();
+    let valid = true;
+    let firstInvalid = null;
+
+    [loginEmail, loginPassword].forEach(function (field) {
+      if (!field) return;
+      const message = getLoginFieldError(field);
+      if (message) {
+        valid = false;
+        markLoginInvalid(field, message);
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    if (firstInvalid) firstInvalid.focus();
+    return valid;
+  }
+
+  function getLoginModalFocusables() {
+    if (!loginModalDialog) return [];
+    return Array.from(
+      loginModalDialog.querySelectorAll(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter(function (el) {
+      return el.offsetParent !== null || el === loginModalDialog.querySelector('.cert-modal__close');
+    });
+  }
+
+  function openLoginModal(trigger) {
+    if (!loginModal) return;
+    closeBrowsePanel();
+    clearLoginErrors();
+    loginModalTrigger = trigger || null;
+    loginModal.hidden = false;
+    document.body.classList.add('cert-modal-open');
+    window.setTimeout(function () {
+      const firstInput = loginModal.querySelector('#login-username');
+      if (firstInput) firstInput.focus();
+    }, 50);
+  }
+
+  function closeLoginModal() {
+    if (!loginModal) return;
+    loginModal.hidden = true;
+    document.body.classList.remove('cert-modal-open');
+    clearLoginErrors();
+    if (loginModalTrigger) loginModalTrigger.focus();
+    loginModalTrigger = null;
+  }
+
+  loginOpeners.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      if (!loginModal) return;
+      event.preventDefault();
+      openLoginModal(link);
+    });
+  });
+
+  if (loginClosers) {
+    loginClosers.forEach(function (el) {
+      el.addEventListener('click', closeLoginModal);
+    });
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', function (event) {
+      if (!validateLoginForm()) event.preventDefault();
+    });
+
+    loginForm.querySelectorAll('input').forEach(function (input) {
+      input.addEventListener('input', function () {
+        clearLoginFieldError(input);
+      });
+    });
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (!loginModal || loginModal.hidden) return;
+
+    if (event.key === 'Escape') {
+      closeLoginModal();
+      return;
+    }
+
+    if (event.key !== 'Tab' || !loginModalDialog) return;
+
+    const focusables = getLoginModalFocusables();
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
   /* Admissions countdown */
   const countdowns = document.querySelectorAll('[data-countdown-deadline]');
 

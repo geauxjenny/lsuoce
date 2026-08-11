@@ -4,6 +4,7 @@
   --cert-form-border: #999999;
   --cert-form-border-focus: #D6D6D6;
   --cert-form-focus-ring: #BFA0E9;
+  --cert-form-focus-offset: 2px;
   --cert-form-alert-bg: rgba(183, 48, 158, 0.12);
   --cert-form-note-bg: #C7E5CA;
   --cert-app-progress-width: 400px;
@@ -303,8 +304,8 @@
 
 .cert-app-progress {
   background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 4px;
+  border: none;
+  border-radius: 0;
   padding: 24px 20px;
   box-shadow: none;
 }
@@ -386,7 +387,7 @@
     min-width: 140px;
     padding: 8px 10px;
     border: 1px solid #F1EDDB;
-    border-radius: var(--border-radius);
+    border-radius: 0;
   }
 }
 
@@ -907,7 +908,7 @@
 .cert-app-form .cert-form {
   padding: 0;
   background: transparent;
-  gap: 24px;
+  gap: 32px;
 }
 
 /* Floating-label field wrapper */
@@ -922,24 +923,24 @@
 .cert-app-form .cert-form__field:not(.cert-form__field--checkbox):not(fieldset) > label {
   position: absolute;
   top: 0;
-  left: var(--spacing-sm);
+  left: 16px;
   z-index: 1;
   padding: 0 4px;
   background-color: #fff;
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1;
   color: rgb(var(--purple));
   transform: translateY(-50%);
   pointer-events: none;
-  transition: color 0.2s ease;
+  transition: color var(--transition-base);
 }
 
 .cert-app-form .cert-form__required,
 .cert-app-form .cert-app-upload__label .cert-form__required,
 .cert-app-form fieldset legend .cert-form__required {
-  color: #B7309E;
+  color: var(--pink);
   margin-left: 2px;
 }
 
@@ -955,8 +956,9 @@
 .cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']) {
   width: 100%;
   box-sizing: border-box;
-  height: 60px;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  display: block;
+  height: var(--cert-form-control-height);
+  padding: 8px 16px;
   border: 1px solid var(--cert-form-border);
   border-radius: var(--border-radius);
   background-color: #fff;
@@ -964,9 +966,8 @@
   font-family: var(--font-primary);
   font-size: 16px;
   font-weight: 400;
-  line-height: 180%;
   box-shadow: none;
-  transition: border-color 0.2s ease;
+  transition: border-color var(--transition-base), outline-color var(--transition-base);
 }
 
 .cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio'])::placeholder {
@@ -984,9 +985,9 @@
 }
 
 .cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']):focus {
-  border: 1px solid var(--cert-form-border-focus, #D6D6D6);
-  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
-  outline-offset: 2px;
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus);
   box-shadow: none;
 }
 
@@ -997,24 +998,19 @@
   cursor: not-allowed;
 }
 
-@media (min-width: 768px) {
-  .cert-app-form .cert-form__field input:not([type='checkbox']):not([type='radio']) {
-    font-size: 18px;
-  }
-}
-
 /* Selects */
 .cert-app-form .cert-form__field select {
   width: 100%;
   box-sizing: border-box;
-  height: 60px;
-  padding: 0 44px 0 20px;
+  display: block;
+  height: var(--cert-form-control-height);
+  padding: 8px 44px 8px 16px;
   border: 1px solid var(--cert-form-border);
   border-radius: var(--border-radius);
   background-color: #fff;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23461D7C' d='M5.665 7.142.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 20px center;
+  background-position: right 16px center;
   background-size: 12px;
   appearance: none;
   -webkit-appearance: none;
@@ -1023,10 +1019,9 @@
   font-family: var(--font-primary);
   font-size: 16px;
   font-weight: 400;
-  line-height: 180%;
   cursor: pointer;
   box-shadow: none;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color var(--transition-base), outline-color var(--transition-base), color var(--transition-base);
 }
 
 .cert-app-form .cert-form__field select option {
@@ -1047,9 +1042,9 @@
 }
 
 .cert-app-form .cert-form__field select:focus {
-  border: 1px solid var(--cert-form-border-focus, #D6D6D6);
-  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
-  outline-offset: 2px;
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus);
   box-shadow: none;
 }
 
@@ -1057,12 +1052,6 @@
   background-color: rgb(var(--grey-light));
   color: var(--text-muted, #616161);
   cursor: not-allowed;
-}
-
-@media (min-width: 768px) {
-  .cert-app-form .cert-form__field select {
-    font-size: 18px;
-  }
 }
 
 .cert-app-form .cert-form__row {
@@ -1087,7 +1076,7 @@
   width: 100%;
   min-height: 120px;
   height: auto;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: 8px 16px;
   border: 1px solid var(--cert-form-border);
   border-radius: var(--border-radius);
   background-color: #fff;
@@ -1095,11 +1084,11 @@
   font-family: var(--font-primary);
   font-size: 16px;
   font-weight: 400;
-  line-height: 180%;
+  line-height: 1.5;
   resize: vertical;
   box-sizing: border-box;
   box-shadow: none;
-  transition: border-color 0.2s ease;
+  transition: border-color var(--transition-base), outline-color var(--transition-base);
 }
 
 .cert-app-form .cert-form__field textarea::placeholder {
@@ -1117,9 +1106,9 @@
 }
 
 .cert-app-form .cert-form__field textarea:focus {
-  border: 1px solid var(--cert-form-border-focus, #D6D6D6);
-  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
-  outline-offset: 2px;
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus);
   box-shadow: none;
 }
 
@@ -1128,12 +1117,6 @@
   border-color: var(--cert-form-border);
   color: var(--text-muted, #616161);
   cursor: not-allowed;
-}
-
-@media (min-width: 768px) {
-  .cert-app-form .cert-form__field textarea {
-    font-size: 18px;
-  }
 }
 
 .cert-app-form__radios {
@@ -1189,7 +1172,7 @@
 
 .cert-app-form .cert-app-form__radio input[type='radio']:focus-visible {
   outline: 2px solid var(--cert-form-focus-ring);
-  outline-offset: 2px;
+  outline-offset: var(--cert-form-focus-offset, 2px);
 }
 
 .cert-app-form__radio span {
@@ -1683,9 +1666,10 @@
 .cert-app-form .cert-form__field.is-invalid input:not([type='checkbox']):not([type='radio']):focus,
 .cert-app-form .cert-form__field.is-invalid select:focus,
 .cert-app-form .cert-form__field.is-invalid textarea:focus {
-  outline: 2px solid rgb(var(--error)) !important;
-  outline-offset: 2px;
+  outline: 2px solid rgba(183, 48, 158, 0.45) !important;
+  outline-offset: var(--cert-form-focus-offset, 2px);
   border-color: rgb(var(--error)) !important;
+  box-shadow: none !important;
 }
 
 .cert-app-form .cert-form__field.is-invalid .cert-app-form__radio input[type='radio'] {
@@ -1759,7 +1743,7 @@
 
 .cert-app-form .cert-form__field--checkbox input[type='checkbox']:focus-visible {
   outline: 2px solid var(--cert-form-focus-ring);
-  outline-offset: 2px;
+  outline-offset: var(--cert-form-focus-offset, 2px);
 }
 
 .cert-app-form .cert-form__field--checkbox label {

@@ -21,7 +21,7 @@
             <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
           </a>
           <span class="cert-site-header__brand-divider" aria-hidden="true"></span>
-          <span class="cert-site-header__brand-label">Professional Development</span>
+          <span class="cert-site-header__brand-label">Continuing Education</span>
         </div>
 
         <div class="cert-site-header__nav-tools">
@@ -45,10 +45,7 @@
         </div>
 
         <div class="cert-site-header__actions">
-          <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-site-header__sign-in">
-            <svg class="cert-site-header__sign-in-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/></svg>
-            Sign In
-          </a>
+          <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-site-header__sign-in" data-login-modal-open>Sign In</a>
         </div>
 
         <button type="button" class="cert-site-header__menu-toggle" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle aria-label="Open menu">
@@ -100,7 +97,7 @@
               </ul>
             </div>
             <div class="cert-browse-panel__group cert-browse-panel__group--mobile-actions">
-              <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-browse-panel__pill">Sign In</a>
+              <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-browse-panel__pill" data-login-modal-open>Sign In</a>
               <a href="certificate-paralegal-apply.html" class="cert-btn cert-btn--primary cert-btn--sm">Apply Now</a>
             </div>
           </div>
@@ -572,7 +569,9 @@
       </div>
     </div>
 
+    <div data-login-modal></div>
     <div data-site-footer></div>
+    <script src="login-modal.js"></script>
     <script src="certificate.js"></script>
     <script src="application.js"></script>
     <script src="footer.js"></script>

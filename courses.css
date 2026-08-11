@@ -241,7 +241,7 @@
 
 .courses-filters__search {
   width: 100%;
-  height: 48px;
+  height: var(--cert-form-control-height);
   padding: 0 16px;
   border: 1px solid #999;
   border-radius: var(--border-radius);
@@ -258,9 +258,10 @@
 }
 
 .courses-filters__search:focus {
-  outline: none;
-  border-color: var(--purple-200);
-  box-shadow: 0 0 0 3px rgba(156, 125, 197, 0.45);
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus, #D6D6D6);
+  box-shadow: none;
 }
 
 .courses-filters__options {

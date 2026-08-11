@@ -289,7 +289,8 @@
 .ds-field input:not([type='checkbox']):not([type='radio']) {
   width: 100%;
   box-sizing: border-box;
-  min-height: 48px;
+  height: var(--cert-form-control-height);
+  min-height: var(--cert-form-control-height);
   padding: 0 14px;
   border: 1px solid var(--gray);
   border-radius: var(--border-radius);
@@ -313,9 +314,9 @@
 
 .ds-field select:focus,
 .ds-field input:focus {
-  outline: 2px solid var(--purple-200);
-  outline-offset: 2px;
-  border-color: var(--gray-300);
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus, #D6D6D6);
 }
 
 .ds-field--checkbox label {

@@ -43,10 +43,7 @@
         </div>
 
         <div class="cert-site-header__actions">
-          <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-site-header__sign-in">
-            <svg class="cert-site-header__sign-in-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/></svg>
-            Sign In
-          </a>
+          <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-site-header__sign-in" data-login-modal-open>Sign In</a>
         </div>
 
         <button type="button" class="cert-site-header__menu-toggle" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle aria-label="Open menu">
@@ -98,7 +95,7 @@
               </ul>
             </div>
             <div class="cert-browse-panel__group cert-browse-panel__group--mobile-actions">
-              <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-browse-panel__pill">Sign In</a>
+              <a href="https://ce.lsu.edu/portal/logon.do?method=load" class="cert-browse-panel__pill" data-login-modal-open>Sign In</a>
             </div>
           </div>
         </div>
@@ -145,7 +142,7 @@
 
         <section class="cert-hero" id="top">
           <div class="cert-hero__content">
-            <p class="cert-hero__eyebrow">Certificates &amp; Bootcamps</p>
+            <p class="cert-hero__eyebrow"><a href="certificate.html" class="cert-hero__eyebrow-link">Certificates &amp; Bootcamps</a></p>
             <h1 class="cert-hero__title">Paralegal Studies Certificate</h1>
             <p class="cert-hero__lead body-lead">Earn Louisiana's only ABA-approved non-credit paralegal credential and advance your legal career.</p>
             <ul class="cert-checklist">
@@ -894,26 +891,26 @@
           </div>
           <form class="cert-form" action="#" method="post" novalidate>
             <div class="cert-form__row">
-              <div class="cert-form__field">
+              <div class="cert-form__field cert-form__field--outlined">
                 <label for="first-name">First Name <span class="cert-form__required" aria-label="required">*</span></label>
-                <input type="text" id="first-name" name="first_name" required autocomplete="given-name" />
+                <input type="text" id="first-name" name="first_name" required autocomplete="given-name" placeholder="First Name" />
               </div>
-              <div class="cert-form__field">
+              <div class="cert-form__field cert-form__field--outlined">
                 <label for="last-name">Last Name <span class="cert-form__required" aria-label="required">*</span></label>
-                <input type="text" id="last-name" name="last_name" required autocomplete="family-name" />
+                <input type="text" id="last-name" name="last_name" required autocomplete="family-name" placeholder="Last Name" />
               </div>
             </div>
-            <div class="cert-form__field">
+            <div class="cert-form__field cert-form__field--outlined">
               <label for="email">Email <span class="cert-form__required" aria-label="required">*</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" />
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="Email" />
             </div>
-            <div class="cert-form__field">
+            <div class="cert-form__field cert-form__field--outlined">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" />
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Phone" />
             </div>
-            <div class="cert-form__field">
+            <div class="cert-form__field cert-form__field--outlined">
               <label for="zip">Zip Code</label>
-              <input type="text" id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" />
+              <input type="text" id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder="Zip Code" />
             </div>
             <div class="cert-form__field cert-form__field--checkbox">
               <input type="checkbox" id="privacy" name="privacy" required />
@@ -925,7 +922,9 @@
         </div>
       </div>
     </section>
+    <div data-login-modal></div>
     <div data-site-footer></div>
+    <script src="login-modal.js"></script>
     <script src="certificate.js"></script>
     <script src="footer.js"></script>
   </body>

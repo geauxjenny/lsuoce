@@ -3,6 +3,9 @@
 .certificate-page {
   --font-headline: var(--font-primary); /* Roboto Black — all headings */
   --font-stats: var(--font-heading); /* Jubilat — stats & display numbers only */
+  --cert-form-focus-ring: #BFA0E9;
+  --cert-form-focus-offset: 2px;
+  --cert-form-border-focus: #D6D6D6;
   --cert-site-header-height: 100px;
   --cert-hero-header-gap: 24px;
   --cert-nav-height: 68px;
@@ -584,9 +587,6 @@
 }
 
 .cert-site-header__sign-in {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   font-family: var(--font-button);
   font-size: 18px;
   font-weight: 700;
@@ -597,21 +597,8 @@
   transition: color var(--transition-base);
 }
 
-.cert-site-header__sign-in-icon {
-  flex-shrink: 0;
-}
-
-.cert-site-header__sign-in-icon path {
-  fill: #BFA0E9;
-  transition: fill var(--transition-base);
-}
-
 .cert-site-header__sign-in:hover {
   color: rgb(var(--gold));
-}
-
-.cert-site-header__sign-in:hover .cert-site-header__sign-in-icon path {
-  fill: rgb(var(--gold));
 }
 
 .cert-site-header__menu-toggle {
@@ -1339,15 +1326,25 @@
   margin: 0;
   text-align: center;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.35;
-  color: rgb(var(--purple));
+  color: var(--text-primary);
 }
 
 .cert-countdown__ended a {
+  font-weight: 700;
   color: rgb(var(--purple));
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.cert-countdown__ended a::after {
+  content: "\203A";
+  margin-left: 0.15em;
+}
+
+.cert-countdown__ended a:hover {
+  color: var(--purple-hover);
 }
 
 .cert-countdown.is-ended .cert-countdown__heading,
@@ -1399,9 +1396,9 @@
 .cert-countdown--bar .cert-countdown__ended {
   margin: 0;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   white-space: nowrap;
-  color: rgb(var(--purple));
+  color: var(--text-primary);
 }
 
 .cert-countdown--bar.is-ended .cert-countdown__ended {
@@ -1552,6 +1549,16 @@
   color: var(--purple-200);
   font-size: 14px;
   margin-bottom: 8px;
+}
+
+.cert-hero__eyebrow-link {
+  color: rgb(var(--gold));
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.cert-hero__eyebrow-link:hover {
+  color: var(--gold-hover);
 }
 
 .cert-hero__alt-link {
@@ -2016,6 +2023,11 @@ p.body-lead {
 .certificate-page .cert-section--purple + .cert-section--purple,
 .certificate-page .cert-section--purple-dark + .cert-section--purple-dark {
   padding-top: 0;
+}
+
+.cert-section--rfi .cert-section__panel {
+  border: none;
+  border-radius: 0;
 }
 
 /* White content panel on dark sections */
@@ -4551,8 +4563,274 @@ body.cert-modal-open {
   box-sizing: border-box;
 }
 
+/* Sign-in modal */
+
+.cert-login-modal .cert-modal__close {
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius);
+  background: transparent;
+  font-size: 36px;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .cert-login-modal .cert-modal__close {
+    top: 8px;
+    right: 12px;
+  }
+}
+
+.cert-login-modal .cert-modal__close:hover {
+  background: var(--gold-100);
+  color: rgb(var(--purple));
+  border-radius: var(--border-radius);
+}
+
+.cert-login-modal__lead {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.cert-login-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cert-login-modal__form .cert-form__field {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.cert-login-modal__form .cert-form__field--outlined {
+  position: relative;
+  gap: 0;
+  padding-top: 0;
+}
+
+.cert-login-modal__form .cert-form__field--outlined + .cert-form__field--outlined {
+  margin-top: 32px;
+}
+
+.cert-login-modal__form .cert-form__field--outlined > label {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  z-index: 1;
+  padding: 0 4px;
+  background: #fff;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgb(var(--purple));
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.cert-login-modal__form .cert-form__field--outlined .cert-form__required {
+  color: var(--pink);
+}
+
+.cert-login-modal__form .cert-form__field--outlined input {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  height: var(--cert-form-control-height);
+  padding: 8px 16px;
+  border: 1px solid #999999;
+  border-radius: var(--border-radius);
+  background: #fff;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  color: #111827;
+  box-shadow: none;
+  transition: border-color var(--transition-base), outline-color var(--transition-base);
+}
+
+.cert-login-modal__form .cert-form__field--outlined input::placeholder {
+  color: var(--text-muted, #616161);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cert-login-modal__form .cert-form__field--outlined input:focus::placeholder {
+  opacity: 1;
+}
+
+.cert-login-modal__form .cert-form__field--outlined input:not(:placeholder-shown)::placeholder {
+  opacity: 0;
+}
+
+.cert-login-modal__form .cert-form__field--outlined input:focus {
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus, #D6D6D6);
+}
+
+.cert-login-modal__help {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.cert-login-modal__help .cert-link {
+  font-size: inherit;
+  font-weight: 700;
+  color: rgb(var(--purple));
+}
+
+.cert-login-modal__help .cert-link:hover {
+  color: var(--purple-hover);
+}
+
+.cert-login-modal__submit {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  margin: 32px 0 0;
+  box-sizing: border-box;
+}
+
+.cert-login-modal__register {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  margin: 20px 0 0;
+}
+
+.cert-login-modal__register-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 64px;
+  padding: 0 32px;
+  border: 2px solid rgb(var(--purple));
+  border-radius: 4px;
+  background: transparent;
+  color: rgb(var(--purple));
+  font-family: var(--font-button);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.cert-login-modal__register-btn:hover {
+  background-color: rgb(var(--purple));
+  color: #fff;
+}
+
+.cert-login-modal__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.cert-login-modal__brand-logo {
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.cert-login-modal__brand-logo-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 110px;
+}
+
+.cert-login-modal__brand-divider {
+  align-self: center;
+  width: 1px;
+  height: 20px;
+  background: var(--purple-200, #9C7DC5);
+  flex-shrink: 0;
+}
+
+.cert-login-modal__brand-label {
+  font-family: "roboto-condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgb(var(--purple));
+  white-space: nowrap;
+}
+
+.cert-login-modal__form .cert-form__required {
+  color: var(--pink);
+}
+
+.cert-login-modal__form .cert-form__field--outlined.is-invalid input {
+  border: 2px solid var(--pink);
+}
+
+.cert-login-modal__form .cert-form__field--outlined.is-invalid input:focus {
+  outline: 2px solid rgba(183, 48, 158, 0.45);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--pink);
+}
+
+.cert-login-modal__form .cert-form__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--pink);
+}
+
+.cert-login-modal__form .cert-form__error-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  margin-top: 1px;
+  color: var(--pink);
+}
+
+.cert-login-modal__form .cert-form__error-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .cert-modal__close:focus-visible,
-.cert-syllabus-modal__submit:focus-visible {
+.cert-syllabus-modal__submit:focus-visible,
+.cert-login-modal .cert-modal__close:focus-visible,
+.cert-login-modal__submit:focus-visible {
   outline: 2px solid rgb(var(--purple));
   outline-offset: 4px;
 }
@@ -4614,19 +4892,28 @@ body.cert-modal-open {
   gap: 8px;
 }
 
+.cert-form:has(.cert-form__field--outlined) {
+  gap: 32px;
+}
+
+.cert-form__row:has(.cert-form__field--outlined) {
+  gap: 32px;
+}
+
 .cert-form__field--outlined {
   position: relative;
   gap: 0;
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .cert-form__field--outlined label {
   position: absolute;
-  top: 8px;
-  left: 12px;
+  top: 0;
+  left: 16px;
   z-index: 1;
   padding: 0 4px;
   background: #fff;
+  font-family: var(--font-primary);
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -4636,7 +4923,37 @@ body.cert-modal-open {
 }
 
 .cert-form__field--outlined .cert-form__required {
-  color: rgb(183, 48, 158);
+  color: var(--pink);
+}
+
+.cert-form__field--outlined input {
+  display: block;
+  height: var(--cert-form-control-height);
+  padding: 8px 16px;
+  border: 1px solid #999999;
+  box-shadow: none;
+  transition: border-color var(--transition-base), outline-color var(--transition-base);
+}
+
+.cert-form__field--outlined input::placeholder {
+  color: var(--text-muted, #616161);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cert-form__field--outlined input:focus::placeholder {
+  opacity: 1;
+}
+
+.cert-form__field--outlined input:not(:placeholder-shown)::placeholder {
+  opacity: 0;
+}
+
+.cert-form__field--outlined input:focus {
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus, #D6D6D6);
+  box-shadow: none;
 }
 
 .cert-form__field label {
@@ -4653,7 +4970,7 @@ body.cert-modal-open {
 .cert-form__field select {
   width: 100%;
   box-sizing: border-box;
-  height: 48px;
+  height: var(--cert-form-control-height);
   padding: 0 16px;
   border: 1px solid var(--gray-300, #D6D6D6);
   border-radius: var(--border-radius);
@@ -4678,9 +4995,10 @@ body.cert-modal-open {
 
 .cert-form__field input:focus,
 .cert-form__field select:focus {
-  outline: none;
-  border-color: rgb(var(--purple));
-  box-shadow: 0 0 0 2px rgba(70, 29, 124, 0.15);
+  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
+  outline-offset: var(--cert-form-focus-offset, 2px);
+  border-color: var(--cert-form-border-focus, #D6D6D6);
+  box-shadow: none;
 }
 
 .cert-form__field--checkbox {
