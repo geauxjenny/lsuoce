@@ -1,7 +1,6 @@
 /* Learner account page — extends design-system.css */
 
 .account-page {
-  --account-btn-height: 60px;
   padding-bottom: 0;
 }
 
@@ -51,17 +50,9 @@
 }
 
 .account-header__logout {
-  min-height: var(--account-btn-height);
+  min-height: var(--cert-header-control-height, 48px);
   padding-inline: 20px;
-}
-
-.account-page .cert-btn {
-  font-family: var(--font-button);
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  min-height: var(--account-btn-height);
+  font-size: 14px;
 }
 
 .account-page .cert-site-header__actions {
