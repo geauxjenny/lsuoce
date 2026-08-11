@@ -1,0 +1,354 @@
+/*
+ * LSU Online Design System — CSS utilities
+ * Reference: https://online.lsu.edu/design-system/
+ * Maps DS tokens/mixins to plain CSS for static mockups.
+ * Load after styles.css, before page-specific CSS.
+ */
+
+/* ── Typography (DS scale) ── */
+
+.headline-lg {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 110%;
+}
+
+.headline-md {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 120%;
+}
+
+.headline-sm {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 130%;
+}
+
+.headline-xs {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.headline-xxs {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgb(var(--purple));
+}
+
+.body-micro {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  line-height: 140%;
+}
+
+.label-sm {
+  font-family: "roboto-condensed", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(var(--purple));
+}
+
+@media (min-width: 768px) {
+  .headline-lg {
+    font-size: 40px;
+  }
+
+  .headline-md {
+    font-size: 30px;
+  }
+
+  .headline-sm,
+  .headline-xs {
+    font-size: 25px;
+  }
+
+  .headline-xxs {
+    font-size: 18px;
+  }
+
+  .label-sm {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .headline-lg {
+    font-size: 56px;
+  }
+
+  .headline-md {
+    font-size: 40px;
+  }
+
+  .headline-sm {
+    font-size: 30px;
+  }
+
+  .headline-xs,
+  .headline-xxs {
+    font-size: 20px;
+  }
+
+  .label-sm {
+    font-size: 18px;
+  }
+}
+
+/* ── Links (DS link-primary) ── */
+
+.link-primary {
+  color: rgb(var(--purple));
+  font-weight: 700;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.link-primary:hover {
+  color: var(--purple-hover);
+}
+
+.link-underline {
+  color: rgb(var(--purple));
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link-underline:hover {
+  color: var(--purple-hover);
+}
+
+/* ── Cards (DS article-card pattern) ── */
+
+.ds-card {
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .ds-card {
+    padding: var(--spacing-md) 36px;
+  }
+}
+
+.ds-card__title {
+  margin: 0 0 var(--spacing-sm);
+}
+
+/* ── Tables (DS table-article-style, light) ── */
+
+.ds-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ds-table thead {
+  background: rgb(var(--purple));
+  color: #fff;
+}
+
+.ds-table th {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  font-family: "roboto-condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ds-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  color: var(--text-primary);
+}
+
+.ds-table tbody tr {
+  transition: background-color var(--transition-base);
+}
+
+.ds-table tbody tr:hover {
+  background: var(--gold-100);
+}
+
+.ds-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Status badges ── */
+
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: var(--font-button);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.ds-badge--success {
+  background: var(--green-100);
+  color: var(--green);
+}
+
+.ds-badge--purple {
+  background: var(--purple-100);
+  color: rgb(var(--purple));
+}
+
+.ds-badge--gold {
+  background: rgba(var(--gold), 0.35);
+  color: rgb(var(--purple));
+}
+
+.ds-badge--pink {
+  background: var(--pink-100);
+  color: var(--pink);
+}
+
+/* ── Notifications (DS site banner) ── */
+
+.ds-notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px var(--spacing-sm);
+  background: var(--pink);
+  color: #fff;
+}
+
+.ds-notification--warning {
+  background: rgb(var(--gold));
+  color: rgb(var(--purple));
+}
+
+.ds-notification__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-notification__title {
+  margin: 0 0 4px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.ds-notification__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ── Streamform-aligned fields (DS forms) ── */
+
+.ds-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ds-field > label {
+  font-family: "roboto-condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(var(--purple));
+}
+
+.ds-field select,
+.ds-field input:not([type='checkbox']):not([type='radio']) {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--gray);
+  border-radius: var(--border-radius);
+  background: #fff;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  transition:
+    border-color var(--transition-base),
+    outline-color var(--transition-base);
+}
+
+.ds-field select {
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23461D7C' d='M5.665 7.142.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  appearance: none;
+}
+
+.ds-field select:focus,
+.ds-field input:focus {
+  outline: 2px solid var(--purple-200);
+  outline-offset: 2px;
+  border-color: var(--gray-300);
+}
+
+.ds-field--checkbox label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.ds-field--checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: rgb(var(--purple));
+}
+
+.ds-status--success {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.ds-status--missing {
+  color: var(--pink);
+  font-weight: 500;
+}
+
+.ds-status--muted {
+  color: var(--gray-900);
+  font-weight: 500;
+}

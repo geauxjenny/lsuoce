@@ -139,9 +139,29 @@
 
 .cert-app-intro__meta {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (min-width: 768px) {
+  .cert-app-intro__meta {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cert-app-intro__meta {
+    font-size: 20px;
+  }
+}
+
+.cert-app-intro__meta-name,
+.cert-app-intro__meta strong {
+  font-weight: 900;
+  color: #fff;
 }
 
 /* Application layout — centered form column */
@@ -751,6 +771,129 @@
   margin: 2px 0 0;
   font-size: 15px;
   color: #111827;
+}
+
+/* App pages — override marketing heading scale from certificate.css
+   (scoped to white content areas; cert-app-intro stays white on purple header) */
+
+.application-page.certificate-page .cert-app-layout h1,
+.application-page.certificate-page .cert-app-layout h2,
+.application-page.certificate-page .cert-app-layout h3,
+.account-page.certificate-page .account-main h1,
+.account-page.certificate-page .account-main h2,
+.account-page.certificate-page .account-main h3,
+.mockup-map-page.certificate-page .mockup-map__main h2,
+.mockup-map-page.certificate-page .mockup-map__main h3 {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  color: rgb(var(--purple));
+}
+
+.application-page.certificate-page .cert-app-layout h1,
+.account-page.certificate-page .account-main h1 {
+  font-size: 30px;
+  line-height: 110%;
+}
+
+.application-page.certificate-page .cert-app-layout h2,
+.account-page.certificate-page .account-main h2,
+.mockup-map-page.certificate-page .mockup-map__main h2 {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.application-page.certificate-page .cert-app-layout h3,
+.account-page.certificate-page .account-main h3,
+.mockup-map-page.certificate-page .mockup-map__main h3 {
+  font-size: 14px;
+  line-height: 140%;
+}
+
+@media (min-width: 768px) {
+  .application-page.certificate-page .cert-app-layout h1,
+  .account-page.certificate-page .account-main h1 {
+    font-size: 40px;
+  }
+
+  .application-page.certificate-page .cert-app-layout h2,
+  .account-page.certificate-page .account-main h2,
+  .mockup-map-page.certificate-page .mockup-map__main h2 {
+    font-size: 18px;
+  }
+
+  .application-page.certificate-page .cert-app-layout h3,
+  .account-page.certificate-page .account-main h3,
+  .mockup-map-page.certificate-page .mockup-map__main h3 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .application-page.certificate-page .cert-app-layout h1,
+  .account-page.certificate-page .account-main h1 {
+    font-size: 48px;
+  }
+
+  .application-page.certificate-page .cert-app-layout h2,
+  .account-page.certificate-page .account-main h2,
+  .mockup-map-page.certificate-page .mockup-map__main h2 {
+    font-size: 20px;
+  }
+}
+
+/* Intro block on purple header — always light text */
+
+.application-page .cert-app-intro h1,
+.application-page .cert-app-intro .cert-app-intro__title,
+.account-page .cert-app-intro h1,
+.account-page .cert-app-intro .cert-app-intro__title {
+  color: #fff;
+}
+
+.application-page .cert-app-intro .cert-app-intro__meta,
+.account-page .cert-app-intro .cert-app-intro__meta,
+.admin-page .cert-app-intro .cert-app-intro__meta {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.application-page .cert-app-intro .cert-app-intro__meta-name,
+.application-page .cert-app-intro .cert-app-intro__meta strong,
+.account-page .cert-app-intro .cert-app-intro__meta-name,
+.account-page .cert-app-intro .cert-app-intro__meta strong,
+.admin-page .cert-app-intro .cert-app-intro__meta-name,
+.admin-page .cert-app-intro .cert-app-intro__meta strong {
+  color: #fff;
+}
+
+.cert-app-intro__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-app-intro__title-row .cert-app-intro__title {
+  margin-bottom: 0;
+}
+
+.cert-app-intro__title-row .cert-app-intro__meta {
+  margin: 0;
+  flex-shrink: 0;
+  max-width: none;
+  text-align: right;
+}
+
+@media (max-width: 639px) {
+  .cert-app-intro__title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cert-app-intro__title-row .cert-app-intro__meta {
+    text-align: left;
+  }
 }
 
 /* Form within panels — streamforms-aligned */

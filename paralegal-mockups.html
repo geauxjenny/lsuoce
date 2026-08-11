@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paralegal Mockup Map | LSU Continuing Education</title>
+    <meta name="description" content="Navigation map for Paralegal Certificate application mockups." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="design-system.css" />
+    <link rel="stylesheet" href="certificate.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="site-footer.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/gfh4svy.css" />
+  </head>
+  <body class="certificate-page mockup-map-page">
+
+    <header class="mockup-map__header">
+      <div class="container">
+        <h1 class="mockup-map__title">Paralegal Application Mockups</h1>
+        <p class="mockup-map__lead">How the screens connect — aligned with the <a href="https://online.lsu.edu/design-system/" class="link-primary">LSU Online design system</a>. Click any link to open that mockup.</p>
+      </div>
+    </header>
+
+    <main class="mockup-map__main container">
+
+      <section class="mockup-map__section" aria-labelledby="map-applicant-heading">
+        <h2 id="map-applicant-heading" class="mockup-map__section-title">Applicant (learner) flow</h2>
+        <ol class="mockup-map__flow">
+          <li><a href="certificate-paralegal.html">Paralegal certificate landing page</a></li>
+          <li><a href="certificate-paralegal-apply.html">Application form</a> → submits application &amp; pays fee</li>
+          <li><a href="account.html">My Account</a> — learner profile (Test Applicant)</li>
+        </ol>
+      </section>
+
+      <section class="mockup-map__section" aria-labelledby="map-admin-heading">
+        <h2 id="map-admin-heading" class="mockup-map__section-title">Admin flow</h2>
+        <ol class="mockup-map__flow">
+          <li><a href="certificate-paralegal-admin-pipeline.html"><strong>Application pipeline</strong></a> — list of all applications</li>
+        </ol>
+
+        <div class="mockup-map__grid">
+          <article class="mockup-map__card">
+            <h3 class="mockup-map__card-title">Tammy Sanchez</h3>
+            <p class="mockup-map__card-meta">Under Review · Paid · Missing docs</p>
+            <a href="certificate-paralegal-admin-under-review.html" class="mockup-map__card-link">Open detail →</a>
+            <p class="mockup-map__card-note">Uses under-review layout (same as Test Applicant)</p>
+          </article>
+
+          <article class="mockup-map__card">
+            <h3 class="mockup-map__card-title">Reminder Tester</h3>
+            <p class="mockup-map__card-meta">Awaiting Transcript · Unpaid</p>
+            <a href="certificate-paralegal-admin-awaiting-transcript.html" class="mockup-map__card-link">Open detail →</a>
+            <p class="mockup-map__card-note">Transcript reminders, upload, record receipt</p>
+          </article>
+
+          <article class="mockup-map__card mockup-map__card--highlight">
+            <h3 class="mockup-map__card-title">Test Applicant</h3>
+            <p class="mockup-map__card-meta">Primary demo path · PLG-2026-425E7B</p>
+            <ol class="mockup-map__card-steps">
+              <li><a href="certificate-paralegal-admin-under-review.html">Under review</a></li>
+              <li><a href="certificate-paralegal-admin.html">Accepted</a> (acceptance email failed)</li>
+            </ol>
+          </article>
+
+          <article class="mockup-map__card">
+            <h3 class="mockup-map__card-title">Brenda Dean</h3>
+            <p class="mockup-map__card-meta">Under Review · Paid · Missing statement</p>
+            <a href="certificate-paralegal-admin-under-review.html" class="mockup-map__card-link">Open detail →</a>
+            <p class="mockup-map__card-note">Uses under-review layout (same as Test Applicant)</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mockup-map__section" aria-labelledby="map-email-heading">
+        <h2 id="map-email-heading" class="mockup-map__section-title">Transactional email</h2>
+        <p class="mockup-map__text">Emails appear in the <strong>Communication log</strong> on admin detail pages. When an application moves to under review, the applicant receives:</p>
+        <p><a href="email-under-review.html" class="mockup-map__email-link">Under review email preview</a></p>
+        <p class="mockup-map__text mockup-map__text--muted">Linked from the communication log on the under-review detail page.</p>
+      </section>
+
+      <section class="mockup-map__section mockup-map__diagram" aria-labelledby="map-diagram-heading">
+        <h2 id="map-diagram-heading" class="mockup-map__section-title">Status lifecycle</h2>
+        <pre class="mockup-map__ascii">Applicant submits (apply page)
+        │
+        ▼
+Submitted — Awaiting Transcript  ← Reminder Tester
+        │  (transcript reminders sent)
+        ▼
+Under Review  ← Test Applicant, Tammy, Brenda
+        │  (under review email sent → <a href="email-under-review.html">email preview</a>)
+        ▼
+Accepted  ← Test Applicant (after admin clicks Accept)
+        │  (acceptance email — failed in demo)
+        ▼
+Welcome call scheduled</pre>
+      </section>
+
+    </main>
+
+    <div data-site-footer></div>
+    <script src="footer.js"></script>
+  </body>
+</html>

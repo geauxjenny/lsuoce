@@ -1,0 +1,221 @@
+/* Learner account page — extends design-system.css */
+
+.account-page {
+  padding-bottom: 0;
+}
+
+.account-header__account {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--cert-header-control-height, 48px);
+  font-family: var(--font-button);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-base);
+}
+
+.account-header__account-icon {
+  flex-shrink: 0;
+}
+
+.account-header__account-icon path {
+  fill: #BFA0E9;
+  transition: fill var(--transition-base);
+}
+
+.account-header__account:hover {
+  color: rgb(var(--gold));
+}
+
+.account-header__account:hover .account-header__account-icon path {
+  fill: rgb(var(--gold));
+}
+
+.account-header__account--panel {
+  min-height: auto;
+  color: rgb(var(--purple));
+}
+
+.account-header__account--panel:hover {
+  color: var(--purple-hover);
+}
+
+.account-header__account--panel:hover .account-header__account-icon path {
+  fill: var(--purple-hover);
+}
+
+.account-header__logout {
+  min-height: var(--cert-header-control-height, 48px);
+  padding-inline: 20px;
+}
+
+.account-page .cert-btn {
+  font-family: var(--font-button);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.account-page .cert-site-header__actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 32px;
+}
+
+.account-page .cert-site-header__brand-label {
+  color: #fff;
+}
+
+/* Intro title — headline-md scale (matches admin pages) */
+
+.account-page .cert-app-intro .cert-app-intro__title {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 120%;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .account-page .cert-app-intro .cert-app-intro__title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .account-page .cert-app-intro .cert-app-intro__title {
+    font-size: 40px;
+  }
+}
+
+.account-page .cert-app-intro .cert-app-intro__meta {
+  font-size: 13px;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .account-page .cert-app-intro .cert-app-intro__meta {
+    font-size: 14px;
+  }
+}
+
+.account-page .cert-app-intro .cert-app-intro__meta-name {
+  font-weight: 700;
+  color: rgb(var(--gold));
+}
+
+.account-page .cert-app-intro a.cert-app-intro__meta-name {
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.account-page .cert-app-intro a.cert-app-intro__meta-name:hover {
+  color: var(--gold-hover);
+}
+
+.account-main {
+  padding: var(--spacing-lg) 0 var(--spacing-2xl);
+  background: var(--gold-100);
+  min-height: 60vh;
+  color: var(--text-primary);
+}
+
+/* Sidebar + main workspace */
+
+.account-workspace {
+  --cert-app-progress-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .account-workspace {
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .account-workspace {
+    --cert-app-progress-width: 320px;
+    gap: 48px;
+  }
+}
+
+.account-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .account-sidebar {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+.account-sidebar__card {
+  margin-bottom: 0;
+}
+
+.account-content {
+  gap: 20px;
+}
+
+.account-panel {
+  margin-bottom: 0;
+}
+
+.account-panel__title {
+  margin: 0 0 20px;
+}
+
+.account-info {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.account-info__label {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(var(--purple));
+}
+
+.account-info__dl {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.account-info__row dt {
+  font-size: 13px;
+  color: var(--gray-900);
+}
+
+.account-info__row dd {
+  margin: 2px 0 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.account-panel__edit {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+}
+
+.account-panel__placeholder {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}

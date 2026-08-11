@@ -220,7 +220,7 @@
   box-sizing: border-box;
   height: var(--cert-header-control-height);
   padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 2px solid var(--purple-400, #683DA0);
   border-radius: var(--border-radius);
   background: rgba(39, 17, 69, 0.22);
   backdrop-filter: blur(12px) saturate(130%);
@@ -249,7 +249,7 @@
 .cert-site-header__browse[aria-expanded="true"] {
   color: rgb(var(--gold));
   background: rgba(39, 17, 69, 0.32);
-  border-color: rgba(255, 255, 255, 0.24);
+  border-color: rgb(var(--gold));
 }
 
 .cert-site-header__chevron {
@@ -584,6 +584,9 @@
 }
 
 .cert-site-header__sign-in {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-button);
   font-size: 18px;
   font-weight: 700;
@@ -594,8 +597,21 @@
   transition: color var(--transition-base);
 }
 
+.cert-site-header__sign-in-icon {
+  flex-shrink: 0;
+}
+
+.cert-site-header__sign-in-icon path {
+  fill: #BFA0E9;
+  transition: fill var(--transition-base);
+}
+
 .cert-site-header__sign-in:hover {
   color: rgb(var(--gold));
+}
+
+.cert-site-header__sign-in:hover .cert-site-header__sign-in-icon path {
+  fill: rgb(var(--gold));
 }
 
 .cert-site-header__menu-toggle {

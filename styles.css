@@ -9,25 +9,41 @@ html {
 }
 
 :root {
-  /* Colors */
-  --purple: 70, 29, 124;
+  /* Colors — aligned with online.lsu.edu/design-system */
+  --purple: 70, 29, 124;           /* purple #461D7C */
+  --purple-100: #F7F1FF;
+  --purple-200: #9C7DC5;           /* DS purple-300 */
+  --purple-300: #9C7DC5;
   --purple-light: 125, 112, 145;
-  --purple-200: #9C7DC5;
-  --purple-hover: #683DA0;
-  --purple-dark-bg: #271145;
+  --purple-hover: #683DA0;         /* DS purple-400 */
+  --purple-400: #683DA0;
+  --purple-dark-bg: #271145;       /* DS purple-700 */
 
-  --gold: 253, 208, 35;
-  --gold-100: #F9F8F0;
-  --gold-divider: #F1EDDB;
+  --gold: 253, 208, 35;            /* gold #FDD023 */
+  --gold-100: #F9F8F0;             /* DS light-gold-100 */
+  --gold-divider: #F1EDDB;         /* DS light-gold */
   --gold-light: 241, 237, 219;
+  --gold-300: #FEE277;
   --gold-dark: 202, 165, 59;
+  --gold-700: #EEBD02;
+  --gold-800: #E5B800;
   --gold-hover: #EEBD02;
 
-  --grey-light: 245, 245, 245;
+  --grey-light: 245, 245, 245;     /* DS gray-100 */
+  --gray-100: #F5F5F5;
+  --gray-300: #D6D6D6;
   --grey: 118, 118, 118;
+  --gray: #999999;
   --grey-dark: 71, 71, 71;
-  --border-color: #E5E5E5;
+  --gray-900: #616161;
+  --border-color: #D6D6D6;
   --text-muted: #616161;
+  --text-primary: #000000;
+
+  --green: #59B161;
+  --green-100: #C7E5CA;
+  --pink: #B7309E;
+  --pink-100: #EEC0E6;
 
   --error: 251, 129, 129;
   --error-light: 255, 250, 250;
@@ -95,7 +111,7 @@ body {
   font-family: var(--font-primary);
   font-style: normal;
   font-weight: 400;
-  color: #111827;
+  color: var(--text-primary);
   background-color: #ffffff;
   font-size: 16px;
 

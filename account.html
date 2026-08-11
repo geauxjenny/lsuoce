@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Account | LSU Continuing Education</title>
+    <meta name="description" content="Manage your LSU Continuing Education account profile, certificates, and courses." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="design-system.css" />
+    <link rel="stylesheet" href="certificate.css" />
+    <link rel="stylesheet" href="application.css" />
+    <link rel="stylesheet" href="account.css" />
+    <link rel="stylesheet" href="site-footer.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/gfh4svy.css" />
+  </head>
+  <body class="certificate-page application-page account-page">
+
+    <header class="cert-site-header">
+      <div class="container cert-site-header__bar">
+        <div class="cert-site-header__brand">
+          <a href="https://online.lsu.edu/" class="cert-site-header__logo">
+            <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
+          </a>
+          <span class="cert-site-header__brand-divider" aria-hidden="true"></span>
+          <span class="cert-site-header__brand-label">Continuing Education</span>
+        </div>
+
+        <div class="cert-site-header__nav-tools">
+          <button type="button" class="cert-site-header__browse" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle>
+            <span>Browse</span>
+            <svg class="cert-site-header__chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M5.665 7.142L.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z" fill="currentColor"/></svg>
+          </button>
+        </div>
+
+        <div class="cert-site-header__actions">
+          <a href="account.html" class="account-header__account" aria-current="page">
+            <svg class="account-header__account-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.35 18.5C8.66 17.56 10.26 17 12 17s3.34.56 4.65 1.5c-1.31.94-2.91 1.5-4.65 1.5s-3.34-.56-4.65-1.5zm10.79-1.38C16.45 15.8 14.32 15 12 15s-4.45.8-6.14 2.12C4.7 15.73 4 13.95 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.95-.7 3.73-1.86 5.12z"/><path d="M12 6c-1.93 0-3.5 1.57-3.5 3.5S10.07 13 12 13s3.5-1.57 3.5-3.5S13.93 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"/></svg>
+            My Account
+          </a>
+          <a href="https://ce.lsu.edu/portal/logon.do?method=logout" class="cert-btn cert-btn--secondary cert-btn--sm account-header__logout">Log Out</a>
+        </div>
+
+        <button type="button" class="cert-site-header__menu-toggle" aria-expanded="false" aria-controls="cert-browse-panel" data-browse-toggle aria-label="Open menu">
+          <span class="cert-site-header__menu-bar" aria-hidden="true"></span>
+          <span class="cert-site-header__menu-bar" aria-hidden="true"></span>
+          <span class="cert-site-header__menu-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="cert-browse-panel" id="cert-browse-panel" hidden>
+        <div class="cert-browse-panel__inner">
+          <div class="cert-browse-panel__primary">
+            <p class="cert-browse-panel__label">Continuing Education</p>
+            <ul class="cert-browse-panel__links">
+              <li>
+                <a href="https://ce.lsu.edu/professional-development/">
+                  <span class="cert-browse-panel__link-title">Professional Development</span>
+                  <span class="cert-browse-panel__link-desc">Short courses and certificates to advance your career.</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://ce.lsu.edu/online-distance-learning/">
+                  <span class="cert-browse-panel__link-title">Online College Credit</span>
+                  <span class="cert-browse-panel__link-desc">Flexible online courses that earn transferable college credit.</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://ce.lsu.edu/olli/">
+                  <span class="cert-browse-panel__link-title">OLLI at LSU (Age 50+)</span>
+                  <span class="cert-browse-panel__link-desc">Non-credit classes and community for learners 50 and older.</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="cert-browse-panel__secondary">
+            <div class="cert-browse-panel__group">
+              <p class="cert-browse-panel__label">Certificates</p>
+              <ul class="cert-browse-panel__boxes">
+                <li><a href="certificate.html" class="cert-browse-panel__box">Certificates &amp; Bootcamps</a></li>
+                <li><a href="certificate-paralegal.html" class="cert-browse-panel__box">Paralegal Studies Certificate</a></li>
+              </ul>
+            </div>
+            <div class="cert-browse-panel__group">
+              <p class="cert-browse-panel__label">Courses</p>
+              <ul class="cert-browse-panel__boxes">
+                <li><a href="course.html" class="cert-browse-panel__box">Professional Courses</a></li>
+                <li><a href="courses.html" class="cert-browse-panel__box">College Credit Courses</a></li>
+                <li><a href="course-olli.html" class="cert-browse-panel__box">OLLI Courses</a></li>
+              </ul>
+            </div>
+            <div class="cert-browse-panel__group cert-browse-panel__group--mobile-actions">
+              <a href="account.html" class="account-header__account account-header__account--panel" aria-current="page">
+                <svg class="account-header__account-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.35 18.5C8.66 17.56 10.26 17 12 17s3.34.56 4.65 1.5c-1.31.94-2.91 1.5-4.65 1.5s-3.34-.56-4.65-1.5zm10.79-1.38C16.45 15.8 14.32 15 12 15s-4.45.8-6.14 2.12C4.7 15.73 4 13.95 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.95-.7 3.73-1.86 5.12z"/><path d="M12 6c-1.93 0-3.5 1.57-3.5 3.5S10.07 13 12 13s3.5-1.57 3.5-3.5S13.93 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"/></svg>
+                My Account
+              </a>
+              <a href="https://ce.lsu.edu/portal/logon.do?method=logout" class="cert-btn cert-btn--secondary cert-btn--sm account-header__logout">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-app-intro account-intro">
+        <div class="container">
+          <div class="cert-app-intro__title-row">
+            <h1 class="cert-app-intro__title">My Account</h1>
+            <p class="cert-app-intro__meta">Signed in as <span class="cert-app-intro__meta-name">Test Applicant</span></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="account-main">
+      <div class="container">
+        <div class="cert-app-workspace account-workspace">
+          <aside class="account-sidebar" aria-label="Account information">
+            <section class="ds-card account-panel account-sidebar__card" aria-labelledby="account-info-heading">
+              <h2 id="account-info-heading" class="headline-xxs account-panel__title">Account Information</h2>
+              <div class="account-info">
+                <div class="account-info__group">
+                  <h3 class="account-info__label">Personal details</h3>
+                  <dl class="account-info__dl">
+                    <div class="account-info__row"><dt>Name</dt><dd>Test Applicant</dd></div>
+                    <div class="account-info__row"><dt>Email</dt><dd>applicant@example.com</dd></div>
+                  </dl>
+                </div>
+                <div class="account-info__group">
+                  <h3 class="account-info__label">Contact details</h3>
+                  <dl class="account-info__dl">
+                    <div class="account-info__row"><dt>Phone</dt><dd>12255883608</dd></div>
+                    <div class="account-info__row"><dt>Address</dt><dd>9582 Kevel Drive, Baton Rouge, LA 70810</dd></div>
+                  </dl>
+                </div>
+              </div>
+              <a href="#" class="cert-btn cert-btn--outline cert-btn--sm account-panel__edit">
+                <svg width="24" height="24" viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-240Zm-320 40v-72q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q37 0 73 4.5t72 14.5l-67 68q-20-3-39-5t-39-2q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32h240v80H200q-17 0-28.5-11.5T160-200Zm400 40v-50q0-16 6.5-30.5T584-266l197-197q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L706-143q-11 11-25.5 17t-30.5 6h-50q-17 0-28.5-11.5T560-160Zm300-223-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19ZM367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47Zm169.5-56.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Z" fill="currentColor"/></svg>
+                Edit Profile
+              </a>
+            </section>
+          </aside>
+
+          <div class="cert-app-workspace__main account-content">
+            <section class="ds-card account-panel account-panel--placeholder" aria-labelledby="account-certs-heading">
+              <h2 id="account-certs-heading" class="headline-xxs account-panel__title">My Certificates</h2>
+              <p class="account-panel__placeholder">Certificate enrollment history will appear here once registration features are built.</p>
+            </section>
+
+            <section class="ds-card account-panel account-panel--placeholder" aria-labelledby="account-courses-heading">
+              <h2 id="account-courses-heading" class="headline-xxs account-panel__title">My Courses</h2>
+              <p class="account-panel__placeholder">Course enrollment history will appear here once registration features are built.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div data-site-footer></div>
+    <script src="certificate.js"></script>
+    <script src="footer.js"></script>
+  </body>
+</html>
