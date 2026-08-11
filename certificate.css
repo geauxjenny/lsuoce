@@ -4463,10 +4463,12 @@ body.cert-modal-open {
   text-align: center;
 }
 
-.cert-modal__title {
+/* headline-md — win over .certificate-page h2 (26→36→50) */
+.certificate-page h2.cert-modal__title,
+h2.cert-modal__title {
   margin: 0 0 12px;
   padding: 0 36px;
-  font-family: var(--font-headline);
+  font-family: var(--font-primary);
   font-size: 25px;
   font-weight: 900;
   line-height: 120%;
@@ -4474,29 +4476,34 @@ body.cert-modal-open {
 }
 
 @media (min-width: 768px) {
-  .cert-modal__title {
+  .certificate-page h2.cert-modal__title,
+  h2.cert-modal__title {
     font-size: 30px;
   }
 }
 
 @media (min-width: 1024px) {
-  .cert-modal__title {
+  .certificate-page h2.cert-modal__title,
+  h2.cert-modal__title {
     font-size: 40px;
   }
 }
 
-.cert-syllabus-modal .cert-modal__title {
+.certificate-page .cert-syllabus-modal h2.cert-modal__title,
+.cert-syllabus-modal h2.cert-modal__title {
   font-size: 20px;
 }
 
 @media (min-width: 768px) {
-  .cert-syllabus-modal .cert-modal__title {
+  .certificate-page .cert-syllabus-modal h2.cert-modal__title,
+  .cert-syllabus-modal h2.cert-modal__title {
     font-size: 22px;
   }
 }
 
 @media (min-width: 1024px) {
-  .cert-syllabus-modal .cert-modal__title {
+  .certificate-page .cert-syllabus-modal h2.cert-modal__title,
+  .cert-syllabus-modal h2.cert-modal__title {
     font-size: 24px;
   }
 }
