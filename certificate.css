@@ -2028,6 +2028,19 @@ p.body-lead {
 .cert-section--rfi .cert-section__panel {
   border: none;
   border-radius: 0;
+  padding: 40px 32px;
+}
+
+@media (min-width: 768px) {
+  .cert-section--rfi .cert-section__panel {
+    padding: 56px 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cert-section--rfi .cert-section__panel {
+    padding: 64px 56px;
+  }
 }
 
 /* White content panel on dark sections */
@@ -4913,7 +4926,7 @@ h2.cert-modal__title {
   padding-top: 0;
 }
 
-.cert-form__field--outlined label {
+.cert-form__field.cert-form__field--outlined label {
   position: absolute;
   top: 0;
   left: 16px;
@@ -4933,11 +4946,11 @@ h2.cert-modal__title {
   color: var(--pink);
 }
 
-.cert-form__field--outlined input {
+.cert-form__field.cert-form__field--outlined input {
   display: block;
   height: var(--cert-form-control-height);
   padding: 8px 16px;
-  border: 1px solid #999999;
+  border: 1px solid var(--gray);
   box-shadow: none;
   transition: border-color var(--transition-base), outline-color var(--transition-base);
 }
@@ -4956,7 +4969,7 @@ h2.cert-modal__title {
   opacity: 0;
 }
 
-.cert-form__field--outlined input:focus {
+.cert-form__field.cert-form__field--outlined input:focus {
   outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
   outline-offset: var(--cert-form-focus-offset, 2px);
   border-color: var(--cert-form-border-focus, #D6D6D6);
@@ -4979,7 +4992,7 @@ h2.cert-modal__title {
   box-sizing: border-box;
   height: var(--cert-form-control-height);
   padding: 0 16px;
-  border: 1px solid var(--gray-300, #D6D6D6);
+  border: 1px solid var(--gray);
   border-radius: var(--border-radius);
   font-family: var(--font-primary);
   font-size: 16px;
