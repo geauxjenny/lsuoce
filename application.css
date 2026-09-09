@@ -131,11 +131,23 @@
 
 .cert-app-intro__title {
   margin: 0;
-  font-family: var(--font-headline, var(--font-primary));
-  font-size: clamp(1.75rem, 4vw, 2.125rem);
+  font-family: var(--font-primary);
   font-weight: 900;
-  line-height: 1.15;
+  font-size: 25px;
+  line-height: 120%;
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .cert-app-intro__title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cert-app-intro__title {
+    font-size: 40px;
+  }
 }
 
 .cert-app-intro__meta {
@@ -844,11 +856,34 @@
 
 /* Intro block on purple header — always light text */
 
+/* headline-md — win over .certificate-page h1 (36→48→64) */
 .application-page .cert-app-intro h1,
 .application-page .cert-app-intro .cert-app-intro__title,
 .account-page .cert-app-intro h1,
 .account-page .cert-app-intro .cert-app-intro__title {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 120%;
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .application-page .cert-app-intro h1,
+  .application-page .cert-app-intro .cert-app-intro__title,
+  .account-page .cert-app-intro h1,
+  .account-page .cert-app-intro .cert-app-intro__title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .application-page .cert-app-intro h1,
+  .application-page .cert-app-intro .cert-app-intro__title,
+  .account-page .cert-app-intro h1,
+  .account-page .cert-app-intro .cert-app-intro__title {
+    font-size: 40px;
+  }
 }
 
 .application-page .cert-app-intro .cert-app-intro__meta,

@@ -223,7 +223,7 @@
 }
 
 .ds-badge--gold {
-  background: rgba(var(--gold), 0.35);
+  background: var(--gold-100);
   color: rgb(var(--purple));
 }
 

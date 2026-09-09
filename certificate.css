@@ -692,7 +692,7 @@
     padding: 24px 28px 28px;
     background: #fff;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     box-shadow: 0 16px 48px rgba(39, 17, 69, 0.18);
   }
 
@@ -1548,7 +1548,8 @@
 .cert-hero__eyebrow {
   color: var(--purple-200);
   font-size: 14px;
-  margin-bottom: 8px;
+  margin: 0 0 4px;
+  line-height: 1.2;
 }
 
 .cert-hero__eyebrow-link {
@@ -4792,14 +4793,14 @@ h2.cert-modal__title {
 .cert-login-modal__brand-divider {
   align-self: center;
   width: 1px;
-  height: 20px;
+  height: 22px;
   background: var(--purple-200, #9C7DC5);
   flex-shrink: 0;
 }
 
 .cert-login-modal__brand-label {
   font-family: "roboto-condensed", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.06em;
   line-height: 1;

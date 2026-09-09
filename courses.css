@@ -40,10 +40,17 @@
 .courses-page-header {
   position: relative;
   z-index: 3;
-  padding-top: var(--cert-hero-header-gap, 24px);
-  padding-bottom: 64px;
+  padding-top: 16px;
+  padding-bottom: 32px;
   background: transparent;
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .courses-page-header {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
 }
 
 .courses-page-header .cert-hero__content {
@@ -51,12 +58,38 @@
   max-width: none;
 }
 
-.courses-page-header .cert-hero__title {
+/* headline-md — win over .certificate-page h1 / .cert-hero__title (36→48→64) */
+.courses-page-header .cert-hero__title,
+.courses-page .courses-page-header h1.cert-hero__title {
   max-width: none;
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 120%;
 }
 
-.courses-page-header .cert-hero__lead {
+@media (min-width: 768px) {
+  .courses-page-header .cert-hero__title,
+  .courses-page .courses-page-header h1.cert-hero__title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .courses-page-header .cert-hero__title,
+  .courses-page .courses-page-header h1.cert-hero__title {
+    font-size: 40px;
+  }
+}
+
+.courses-page .courses-page-header .cert-hero__title {
+  margin-bottom: 12px;
+}
+
+.courses-page .courses-page-header .cert-hero__lead {
   max-width: none;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .courses-catalog {
@@ -71,10 +104,6 @@
 }
 
 @media (max-width: 767px) {
-  .courses-page-header {
-    padding-bottom: var(--spacing-lg);
-  }
-
   .courses-catalog {
     padding: var(--spacing-md) 0 var(--section-padding-compact);
   }

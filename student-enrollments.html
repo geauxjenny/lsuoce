@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Enrollments | LSU Continuing Education</title>
+    <meta name="description" content="View current and past section enrollments, Moodle access, waitlist status, and registration options." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="design-system.css" />
+    <link rel="stylesheet" href="certificate.css" />
+    <link rel="stylesheet" href="application.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="site-footer.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/gfh4svy.css" />
+  </head>
+  <body class="certificate-page application-page portal-page">
+
+    <header class="cert-site-header">
+      <div class="container cert-site-header__bar">
+        <div class="cert-site-header__brand">
+          <a href="https://online.lsu.edu/" class="cert-site-header__logo"><img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" /></a>
+          <span class="cert-site-header__brand-divider" aria-hidden="true"></span>
+          <span class="cert-site-header__brand-label">Continuing Education</span>
+        </div>
+        <div class="cert-site-header__actions">
+          <a href="student-communications.html" class="portal-header__notify" aria-label="Notifications, 2 unread"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22Zm7-6V11a7 7 0 1 0-14 0v5l-2 2v1h18v-1l-2-2Z" fill="currentColor"/></svg><span class="portal-header__notify-badge">2</span></a>
+          <a href="student-profile.html" class="portal-header__account"><svg class="portal-header__account-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.35 18.5C8.66 17.56 10.26 17 12 17s3.34.56 4.65 1.5c-1.31.94-2.91 1.5-4.65 1.5s-3.34-.56-4.65-1.5zm10.79-1.38C16.45 15.8 14.32 15 12 15s-4.45.8-6.14 2.12C4.7 15.73 4 13.95 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.95-.7 3.73-1.86 5.12z"/><path d="M12 6c-1.93 0-3.5 1.57-3.5 3.5S10.07 13 12 13s3.5-1.57 3.5-3.5S13.93 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"/></svg>Test Applicant</a>
+          <a href="https://ce.lsu.edu/portal/logon.do?method=logout" class="portal-header__logout">Logout<svg class="portal-header__logout-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17l5-5-5-5M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="cert-app-intro portal-intro">
+        <div class="container">
+          <nav class="cert-app-intro__eyebrow" aria-label="Breadcrumb">
+            <ol class="cert-app-intro__breadcrumb">
+              <li class="cert-app-intro__breadcrumb-item"><a href="student-dashboard.html">Dashboard</a></li>
+              <li class="cert-app-intro__breadcrumb-item" aria-current="page"><span>My Enrollments</span></li>
+            </ol>
+          </nav>
+          <h1 class="cert-app-intro__title">My Enrollments</h1>
+          <p class="portal-intro__meta">2 current · 1 completed · Paralegal Studies Certificate</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="portal-shell">
+      <nav class="portal-nav" data-portal-nav aria-label="Student portal">
+        <button type="button" class="portal-nav__toggle" data-portal-nav-toggle aria-expanded="false" aria-controls="portal-nav-list"><span>Menu</span><svg class="portal-nav__toggle-icon" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M5.665 7.142L.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z" fill="currentColor"/></svg></button>
+        <div class="portal-nav__inner" id="portal-nav-list">
+          <div class="portal-nav__context"><label class="portal-nav__context-label" for="portal-cert-context">Program context</label><select id="portal-cert-context" class="portal-nav__context-select"><option selected>Paralegal Studies · Fall 2026</option></select></div>
+          <ul class="portal-nav__list">
+            <li><a href="student-dashboard.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8.5 10 2l7 6.5V17a1 1 0 0 1-1 1h-4.5v-5.5H8.5V18H4a1 1 0 0 1-1-1V8.5Z" fill="currentColor"/></svg>Dashboard</a></li>
+            <li><a href="student-application.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm6 1.5V7h3.5M7 10h6M7 13h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>My Applications</a></li>
+            <li><a href="student-certificate.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h12v12H4V4Zm2 2v8h8V6H6Zm2 2h4v1.5H8V8Zm0 2.5h3v1.5H8v-1.5Z" fill="currentColor"/></svg>My Certificates</a></li>
+            <li><a href="student-enrollments.html" class="portal-nav__link" aria-current="page"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14v2H3V5Zm0 4h14v2H3V9Zm0 4h10v2H3v-2Z" fill="currentColor"/></svg>My Enrollments</a></li>
+            <li><a href="student-payments.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2v6h12V7H4Zm2 8h2v2H6v-2Z" fill="currentColor"/></svg>Payments &amp; Receipts</a></li>
+            <li><a href="student-documents.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 2h5l5 5v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm4.5 1.5V7H15M8 11h6M8 14h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Documents</a></li>
+            <li><a href="student-communications.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5l-2 2V5a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Communications</a></li>
+            <li><a href="student-profile.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Profile &amp; Settings</a></li>
+          </ul>
+          <div class="portal-nav__help"><a href="mailto:paralegal@lsu.edu" class="portal-nav__help-link">Contact Paralegal program office</a></div>
+        </div>
+      </nav>
+
+      <main class="portal-main">
+        <div class="portal-filters" role="search" aria-label="Filter enrollments">
+          <div class="ds-field">
+            <label for="filter-term">Term</label>
+            <select id="filter-term" name="term">
+              <option value="">All terms</option>
+              <option value="fall-2026" selected>Fall 2026</option>
+              <option value="spring-2027">Spring 2027</option>
+            </select>
+          </div>
+          <div class="ds-field">
+            <label for="filter-status">Status</label>
+            <select id="filter-status" name="status">
+              <option value="">All statuses</option>
+              <option value="current">Current</option>
+              <option value="completed">Completed</option>
+              <option value="waitlist">Waitlisted</option>
+            </select>
+          </div>
+        </div>
+
+        <section class="ds-card portal-panel" id="register" aria-labelledby="register-heading">
+          <header class="dash-card__header">
+            <div>
+              <h2 id="register-heading" class="dash-card__title">Register for Spring 2027</h2>
+              <p class="portal-panel__meta">Eligible sections for your certificate · Registration closes Jan 10, 2027</p>
+            </div>
+          </header>
+          <div class="ds-table-wrap">
+            <table class="ds-table">
+              <thead>
+                <tr>
+                  <th scope="col">Course / section</th>
+                  <th scope="col">Dates</th>
+                  <th scope="col">Modality</th>
+                  <th scope="col">Tuition</th>
+                  <th scope="col">Eligibility</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Legal Case Analysis</strong><br><span class="body-micro">PLGL-2103-A · Spring 2027</span></td>
+                  <td>Jan 13 – May 7, 2027<br><span class="body-micro">Tue &amp; Thu, 6–8 p.m.</span></td>
+                  <td>Live-online</td>
+                  <td>$645</td>
+                  <td><span class="ds-status ds-status--ok">Eligible</span></td>
+                  <td><button type="button" class="cert-btn cert-btn--primary cert-btn--sm">Add to cart</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Civil Litigation I</strong><br><span class="body-micro">PLGL-2104-A · Spring 2027</span></td>
+                  <td>Jan 13 – May 7, 2027</td>
+                  <td>Live-online</td>
+                  <td>$645</td>
+                  <td><span class="ds-status--missing">Blocked</span><br><span class="body-micro">Requires Legal Case Analysis</span></td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="ds-card portal-panel" id="plgl-2102" aria-labelledby="current-heading">
+          <header class="dash-card__header">
+            <h2 id="current-heading" class="dash-card__title">Current enrollments</h2>
+          </header>
+          <article class="dash-enroll-item" style="margin-bottom: 16px;">
+            <div class="dash-enroll-item__top">
+              <h3 class="dash-enroll-item__title">Legal Research · PLGL-2102-A</h3>
+              <span class="ds-badge ds-badge--gold">Enrolled</span>
+            </div>
+            <dl class="cert-app-review__dl admin-review__grid" style="margin: 12px 0;">
+              <div class="cert-app-review__row"><dt>Section dates</dt><dd>Aug 24 – Dec 12, 2026</dd></div>
+              <div class="cert-app-review__row"><dt>Schedule</dt><dd>Tue &amp; Thu, 6–8 p.m. CT · Live-online</dd></div>
+              <div class="cert-app-review__row"><dt>Payment</dt><dd>Paid · Self Pay · <a href="student-payments.html#rcpt-91204" class="link-primary">Receipt</a></dd></div>
+              <div class="cert-app-review__row"><dt>Grade / completion</dt><dd>In progress · Moodle sync Dec 18, 2026</dd></div>
+            </dl>
+            <div class="dash-enroll-item__actions">
+              <a href="https://moodle.lsu.edu" class="link-primary">Open Moodle</a>
+              <button type="button" class="cert-btn cert-btn--outline cert-btn--sm">Request drop</button>
+            </div>
+            <p class="body-micro" style="margin: 12px 0 0; color: var(--text-muted);">Drop requests require staff review. See refund policy before submitting. (OQ-4)</p>
+          </article>
+        </section>
+
+        <section class="ds-card portal-panel" aria-labelledby="waitlist-heading">
+          <header class="dash-card__header">
+            <h2 id="waitlist-heading" class="dash-card__title">Waitlist example</h2>
+            <p class="portal-panel__meta">Demonstrates seat-offer flow when a section is full</p>
+          </header>
+          <div class="waitlist-offer">
+            <h3 class="waitlist-offer__title">Seat available — Civil Litigation II · PLGL-2105-B</h3>
+            <p class="waitlist-offer__deadline">Respond by Jan 3, 2027 at 5:00 p.m. CT · 47 hours remaining</p>
+            <p class="body-default" style="margin: 0 0 16px;">A seat opened in your waitlisted section. Complete enrollment and payment to secure your spot.</p>
+            <div class="waitlist-offer__actions">
+              <button type="button" class="cert-btn cert-btn--primary cert-btn--sm">Complete enrollment</button>
+              <button type="button" class="cert-btn cert-btn--outline cert-btn--sm">Decline offer</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-card portal-panel" id="plgl-2101" aria-labelledby="history-heading">
+          <header class="dash-card__header">
+            <h2 id="history-heading" class="dash-card__title">Enrollment history</h2>
+          </header>
+          <div class="ds-table-wrap">
+            <table class="ds-table">
+              <thead>
+                <tr>
+                  <th scope="col">Course / section</th>
+                  <th scope="col">Term</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Grade</th>
+                  <th scope="col">Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Principles of Paralegal Studies</strong><br><span class="body-micro">PLGL-2101-A</span></td>
+                  <td>Fall 2026</td>
+                  <td><span class="ds-status ds-status--ok">Completed</span></td>
+                  <td>A</td>
+                  <td><a href="student-payments.html#rcpt-90112" class="link-primary">RCPT-2026-90112</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div data-site-footer></div>
+    <script src="certificate.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="footer.js"></script>
+  </body>
+</html>
