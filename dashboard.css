@@ -10,6 +10,8 @@
   --portal-nav-link-active-bg: var(--gray-100);
   --portal-nav-border: var(--border-color);
   --dash-card-gap: 20px;
+  --portal-notice-bg: #fff;
+  --portal-notice-border: rgba(0, 0, 0, 0.07);
 
   /* ── TYPE SCALE ──────────────────────────────────────────────
      Use plain px when you want an exact size.
@@ -27,6 +29,7 @@
   --dash-type-action: 16px;
   --dash-type-item:   15px;
   --dash-type-list:   14px;
+  --dash-type-body:   14px;
   --dash-type-label:  13px;
   --dash-type-notice: 15px;
   --dash-type-stat:   clamp(24px, 3vw, 28px);
@@ -45,6 +48,30 @@
   padding-bottom: 0;
   background: var(--gold-100);
   color: var(--text-primary);
+}
+
+/* Section cards — frosted glass over portal background */
+
+.portal-page .portal-main .ds-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: none;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .portal-page .portal-main .ds-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .portal-page .portal-main .ds-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.07);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 /* ── Heading reset ───────────────────────────────────────────
@@ -68,8 +95,7 @@
   font-size: var(--dash-type-panel);
 }
 
-.portal-page.certificate-page .portal-main h2.account-panel__title,
-.portal-page.certificate-page .portal-main h3.waitlist-offer__title {
+.portal-page.certificate-page .portal-main h2.account-panel__title {
   font-size: var(--dash-type-panel);
   font-weight: var(--dash-type-weight);
   line-height: var(--dash-type-lh);
@@ -249,8 +275,16 @@ a:hover .link-view__icon {
   gap: 3px;
 }
 
-.dash-action__cta.link-view {
-  gap: 2px;
+.link-chevron::after {
+  content: "›";
+  margin-left: 0.3em;
+  color: #BFA0E9;
+  font-weight: 700;
+  transition: color var(--transition-base);
+}
+
+.link-primary.link-chevron:hover::after {
+  color: var(--purple-200);
 }
 
 /* Intro band */
@@ -274,58 +308,23 @@ a:hover .link-view__icon {
   color: var(--dash-type-color-page);
 }
 
-.portal-page .cert-app-intro__breadcrumb {
+.portal-intro__section {
+  margin: 0 0 8px;
   font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--purple-200, #9C7DC5);
 }
 
-.portal-intro .container {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  column-gap: 24px;
-  align-items: end;
-}
-
-.portal-intro .cert-hero__eyebrow,
-.portal-intro .cert-app-intro__eyebrow {
-  grid-column: 1 / -1;
+@media (min-width: 768px) {
+  .portal-intro__section {
+    font-size: 16px;
+  }
 }
 
 .portal-intro .cert-app-intro__title {
-  grid-column: 1;
-  grid-row: 2;
   margin: 0;
-  min-width: 0;
-}
-
-.portal-intro__meta {
-  grid-column: 2;
-  grid-row: 2;
-  margin: 0;
-  text-align: right;
-  align-self: end;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.88);
-}
-
-@media (max-width: 767px) {
-  .portal-intro .container {
-    grid-template-columns: 1fr;
-  }
-
-  .portal-intro .cert-app-intro__title,
-  .portal-intro__meta {
-    grid-column: 1;
-  }
-
-  .portal-intro__meta {
-    grid-row: 3;
-    margin-top: 8px;
-    text-align: left;
-  }
-}
-
-.portal-intro__meta strong {
-  color: rgb(var(--gold));
 }
 
 /* Shell layout */
@@ -379,11 +378,11 @@ a:hover .link-view__icon {
   border: none;
   background: transparent;
   color: rgb(var(--purple));
-  font-family: var(--font-button);
+  font-family: var(--font-primary);
   font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
   cursor: pointer;
 }
 
@@ -422,39 +421,6 @@ a:hover .link-view__icon {
 .portal-nav__context {
   margin-bottom: 24px;
   padding: 0;
-}
-
-.portal-nav__context-label {
-  display: block;
-  margin-bottom: 8px;
-  font-family: var(--font-primary);
-  font-size: 12px;
-  font-weight: 600;
-  color: black;
-}
-
-.portal-nav__context-select {
-  width: 100%;
-  box-sizing: border-box;
-  height: 42px;
-  padding: 0 36px 0 12px;
-  border: 1px solid var(--gray);
-  border-radius: var(--border-radius);
-  background: #fff
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23461D7C' d='M5.665 7.142L.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z'/%3E%3C/svg%3E")
-    no-repeat right 12px center;
-  color: var(--text-primary);
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 500;
-  appearance: none;
-  cursor: pointer;
-}
-
-.portal-nav__context-select:focus {
-  outline: 2px solid var(--cert-form-focus-ring, #BFA0E9);
-  outline-offset: 2px;
-  border-color: var(--cert-form-border-focus, #D6D6D6);
 }
 
 .portal-nav__list {
@@ -503,23 +469,10 @@ a:hover .link-view__icon {
   opacity: 1;
 }
 
-.portal-nav__help {
-  margin-top: auto;
-  padding-top: 24px;
-}
-
-.portal-nav__help-link {
-  display: block;
-  padding: 12px 16px;
-  color: rgb(var(--purple));
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-.portal-nav__help-link:hover {
-  color: var(--purple-hover);
+.portal-nav__item--contact {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--portal-nav-border);
 }
 
 /* Main content */
@@ -553,12 +506,16 @@ a:hover .link-view__icon {
 
 /* Portal buttons — compact dashboard CTAs (actions only; navigation uses .link-primary) */
 
-.portal-page .cert-btn {
+.portal-page .cert-btn,
+.portal-page .dash-comm__mark-read {
   min-height: auto;
-  padding: 8px 16px;
-  font-weight: 600;
   text-transform: none;
   letter-spacing: normal;
+}
+
+.portal-page .cert-btn {
+  padding: 8px 16px;
+  font-weight: 600;
   border-width: 1px;
 }
 
@@ -616,46 +573,84 @@ a:hover .link-view__icon {
   }
 }
 
-.dash-grid--program {
-  grid-template-columns: 1fr;
+.dash-cert-summary {
   margin-top: var(--dash-card-gap);
 }
 
-@media (min-width: 1024px) {
-  .dash-grid--program {
-    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
-  }
-}
-
-.dash-enrollments-panel {
-  margin-top: var(--dash-card-gap);
+.dash-grid--2 > .ds-card {
+  height: 100%;
 }
 
 /* Certificate summary — primary dashboard focus */
 
-.dash-cert-summary .dash-card__label {
-  margin-bottom: 16px;
+.dash-cert-summary__meter {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .dash-cert-summary__meter {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
 }
 
 .dash-cert-summary__stat {
-  margin: 0 0 6px;
+  margin: 0;
   font-family: var(--dash-type-font);
   font-size: clamp(28px, 3.5vw, 36px);
   font-weight: var(--dash-type-weight-heavy);
   line-height: var(--dash-type-lh-tight);
   color: var(--dash-type-color);
+  white-space: nowrap;
+}
+
+.dash-cert-summary__meter .dash-progress {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
 }
 
 .dash-cert-summary .ds-status {
   margin-top: 16px;
 }
 
-.dash-progress--featured {
-  margin-top: 4px;
-}
-
 .dash-progress--featured .dash-progress__bar {
   height: 10px;
+}
+
+.portal-page .dash-progress__bar {
+  background: var(--gray-300);
+}
+
+.portal-page .dash-progress__fill {
+  background: linear-gradient(90deg, var(--purple-dark-bg), rgb(var(--purple)));
+}
+
+/* Internal clickable cards — white surface */
+
+.dash-action,
+.dash-enroll-item,
+.dash-account__item,
+a.doc-checklist__item--link {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.dash-action:hover,
+a.dash-enroll-item:hover,
+a.dash-account__item:hover,
+a.doc-checklist__item--link:hover {
+  border-color: var(--purple-300);
+  box-shadow: 0 0 0 1px var(--purple-300);
+  background: rgba(70, 29, 124, 0.04);
 }
 
 /* Account — compact supporting info */
@@ -666,20 +661,30 @@ a:hover .link-view__icon {
   gap: 12px;
 }
 
-@media (min-width: 480px) {
-  .dash-account__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 .dash-account__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 16px;
+  padding: 16px 40px 16px 16px;
   border-radius: var(--border-radius);
-  background: var(--gray-100);
 }
+
+a.dash-account__item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.dash-account__item:hover .dash-account__stat {
+  color: rgb(var(--purple));
+}
+
+a.dash-account__item:focus-visible {
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: 2px;
+}
+
 
 .dash-account__item--muted .dash-account__stat {
   font-size: 18px;
@@ -693,7 +698,6 @@ a:hover .link-view__icon {
 .dash-account__label {
   margin: 0 0 8px;
   font-family: var(--font-primary);
-  font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
 }
@@ -705,12 +709,11 @@ a:hover .link-view__icon {
   font-weight: var(--dash-type-weight-heavy);
   line-height: 1.2;
   color: var(--dash-type-color);
+  transition: color var(--transition-base);
 }
 
 .dash-account__detail {
   margin: 4px 0 0;
-  font-size: 13px;
-  color: var(--text-muted);
 }
 
 .dash-account__item .ds-status {
@@ -718,10 +721,70 @@ a:hover .link-view__icon {
   font-size: 13px;
 }
 
-.dash-account__link {
-  margin-top: 12px;
-  font-size: 13px;
-  font-weight: 600;
+/* Inline metadata — vertical dividers between segments */
+
+.portal-dividers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.portal-dividers > span + span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.portal-dividers > span + span::before {
+  content: '';
+  width: 1px;
+  height: 11px;
+  background: var(--border-color);
+  flex-shrink: 0;
+}
+
+/* Dashboard card supporting copy */
+
+.portal-page .dash-action__text,
+.portal-page .dash-enroll-item__dates,
+.portal-page .dash-date__text,
+.portal-page .dash-account__detail,
+.portal-page .dash-account__label,
+.portal-page .dash-card__label,
+.portal-page .portal-panel__meta,
+.portal-page .dash-comm__preview,
+.portal-page .dash-comm__when {
+  font-size: var(--dash-type-body);
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.portal-page .dash-account__label {
+  color: var(--text-muted);
+}
+
+/* Card link arrows */
+
+.dash-action__go,
+.dash-enroll-item__go,
+.dash-account__go,
+.doc-checklist__go {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  fill: rgb(var(--purple));
+  transform: translateY(-50%);
+  transition: transform var(--transition-base);
+}
+
+.dash-action:hover .dash-action__go,
+a.dash-enroll-item:hover .dash-enroll-item__go,
+a.dash-account__item:hover .dash-account__go,
+a.doc-checklist__item--link:hover .doc-checklist__go {
+  transform: translate(3px, -50%);
 }
 
 /* Required actions */
@@ -733,28 +796,19 @@ a:hover .link-view__icon {
 }
 
 .dash-action {
+  position: relative;
   flex: 1 1 280px;
   min-width: min(100%, 280px);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  align-items: start;
-  padding: 20px 24px;
-  border: 1px solid var(--border-color);
+  display: block;
+  padding: 20px 48px 20px 24px;
   border-radius: var(--border-radius);
-  background: #fff;
   text-decoration: none;
   color: inherit;
-  transition:
-    border-color var(--transition-base),
-    box-shadow var(--transition-base),
-    transform var(--transition-base);
+  cursor: pointer;
 }
 
-.dash-action:hover {
-  border-color: rgb(var(--purple));
-  box-shadow: 0 4px 20px rgba(70, 29, 124, 0.08);
-  transform: translateY(-1px);
+.dash-action:hover .dash-action__title {
+  color: rgb(var(--purple));
 }
 
 .dash-action:focus-visible {
@@ -777,13 +831,11 @@ a:hover .link-view__icon {
   font-weight: var(--dash-type-weight);
   line-height: var(--dash-type-lh);
   color: var(--dash-type-color);
+  transition: color var(--transition-base);
 }
 
 .dash-action__text {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.45;
-  color: var(--text-muted);
 }
 
 .dash-action__meta {
@@ -791,23 +843,6 @@ a:hover .link-view__icon {
   font-size: 12px;
   font-weight: 700;
   color: var(--pink);
-}
-
-.dash-action__cta {
-  flex-shrink: 0;
-  justify-self: start;
-  padding: 8px 12px 8px 0;
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: normal;
-  text-transform: none;
-  color: rgb(var(--purple));
-  white-space: nowrap;
-}
-
-.dash-action:hover .dash-action__cta {
-  color: var(--purple-hover);
 }
 
 /* Summary cards */
@@ -824,14 +859,31 @@ a:hover .link-view__icon {
 
 .dash-card__header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 16px;
 }
 
+.dash-card__header > .cert-btn {
+  flex-shrink: 0;
+}
+
 .dash-card__title {
   margin: 0;
+}
+
+.dash-card > .dash-card__title {
+  margin: 0 0 8px;
+  font-size: var(--dash-type-body);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.portal-page.certificate-page .portal-main .dash-card > h2.dash-card__title {
+  font-size: var(--dash-type-body);
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 .portal-page .account-panel > .dash-card__title {
@@ -844,13 +896,6 @@ a:hover .link-view__icon {
   }
 }
 
-.dash-card__link {
-  flex-shrink: 0;
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
 .dash-card__stat {
   margin: 0 0 4px;
   font-family: var(--dash-type-font);
@@ -861,9 +906,7 @@ a:hover .link-view__icon {
 }
 
 .dash-card__label {
-  margin: 0 0 12px;
-  font-size: 14px;
-  color: var(--text-muted);
+  margin: 8px 0 0;
 }
 
 .dash-card__badge,
@@ -920,32 +963,49 @@ a:hover .link-view__icon {
 .dash-enroll-item {
   display: grid;
   gap: 8px;
-  padding: 14px;
+  padding: 14px 40px 14px 14px;
   border-radius: var(--border-radius);
-  background: var(--gray-100);
+}
+
+a.dash-enroll-item {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.dash-enroll-item:hover .dash-enroll-item__title {
+  color: rgb(var(--purple));
+}
+
+a.dash-enroll-item:focus-visible {
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: 2px;
 }
 
 .dash-enroll-item__top {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
 }
 
 .dash-enroll-item__title {
   margin: 0;
   font-family: var(--dash-type-font);
-  font-size: var(--dash-type-item);
+  font-size: 18px;
   font-weight: var(--dash-type-weight);
   line-height: var(--dash-type-lh);
   color: var(--dash-type-color);
+  transition: color var(--transition-base);
+}
+
+.dash-enroll-item__top .ds-badge {
+  flex-shrink: 0;
 }
 
 .dash-enroll-item__dates {
   margin: 0;
-  font-size: 13px;
-  color: var(--text-muted);
 }
 
 .dash-enroll-item__actions {
@@ -953,6 +1013,174 @@ a:hover .link-view__icon {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 16px;
+}
+
+/* Enrollment detail — current enrollment card */
+
+.enroll-detail {
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: #fff;
+}
+
+.enroll-detail__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.enroll-detail__title {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--dash-type-font);
+  font-size: 18px;
+  font-weight: var(--dash-type-weight);
+  line-height: var(--dash-type-lh);
+  color: var(--dash-type-color);
+}
+
+.enroll-detail__header .ds-badge,
+.enroll-detail__header .portal-status--accepted {
+  flex-shrink: 0;
+}
+
+.account-info__label {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(var(--purple));
+}
+
+.enroll-detail .account-info__group + .account-info__group {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.enroll-detail__meta {
+  margin: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .enroll-detail__meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 16px;
+  }
+
+  .enroll-detail__meta--3col {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.enroll-detail__field {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.enroll-detail__field dt {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.enroll-detail__field dd {
+  margin: 0;
+  font-size: var(--dash-type-body);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+.enroll-detail__moodle {
+  position: relative;
+  display: block;
+  margin-top: 16px;
+  padding: 12px 40px 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.enroll-detail__moodle:hover {
+  border-color: var(--purple-300);
+  box-shadow: 0 0 0 1px var(--purple-300);
+  background: rgba(70, 29, 124, 0.04);
+}
+
+.enroll-detail__moodle:hover .enroll-detail__moodle-text {
+  color: var(--purple-hover);
+}
+
+.enroll-detail__moodle:focus-visible {
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: 2px;
+}
+
+.enroll-detail__moodle-body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.enroll-detail__moodle-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.enroll-detail__moodle-text {
+  font-size: var(--dash-type-body);
+  font-weight: 600;
+  line-height: 1.45;
+  color: rgb(var(--purple));
+  transition: color var(--transition-base);
+}
+
+.enroll-detail__moodle-go {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  fill: rgb(var(--purple));
+  transform: translateY(-50%);
+  transition: transform var(--transition-base);
+}
+
+.enroll-detail__moodle:hover .enroll-detail__moodle-go {
+  transform: translate(3px, -50%);
+}
+
+.enroll-detail__footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.enroll-detail__note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-muted);
 }
 
 /* Calendar / dates */
@@ -997,7 +1225,7 @@ a:hover .link-view__icon {
   font-family: var(--font-primary);
   font-size: 11px;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .dash-date__num {
@@ -1009,15 +1237,13 @@ a:hover .link-view__icon {
 .dash-date__title {
   margin: 0 0 2px;
   font-family: var(--dash-type-font);
-  font-size: var(--dash-type-list);
+  font-size: 18px;
   font-weight: var(--dash-type-weight);
   color: var(--text-primary);
 }
 
 .dash-date__text {
   margin: 0;
-  font-size: 13px;
-  color: var(--text-muted);
 }
 
 .dash-date--deadline .dash-date__day {
@@ -1036,7 +1262,7 @@ a:hover .link-view__icon {
 }
 
 .dash-comms > li {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .dash-comms > li:last-child {
@@ -1056,7 +1282,7 @@ a:hover .link-view__icon {
 .dash-comm__dot {
   width: 10px;
   height: 10px;
-  margin-top: 6px;
+  margin-top: 7px;
   border-radius: 50%;
   background: transparent;
   flex-shrink: 0;
@@ -1067,11 +1293,16 @@ a:hover .link-view__icon {
 }
 
 .dash-comm__title {
-  margin: 0 0 2px;
+  margin: 0;
   font-family: var(--dash-type-font);
   font-size: var(--dash-type-list);
   font-weight: var(--dash-type-weight);
   color: var(--dash-type-color);
+}
+
+.dash-comms .dash-comm__title {
+  font-size: 18px;
+  line-height: 1.35;
 }
 
 .dash-comm--unread .dash-comm__title {
@@ -1080,15 +1311,89 @@ a:hover .link-view__icon {
 
 .dash-comm__preview {
   margin: 0;
-  font-size: 13px;
-  line-height: 1.45;
-  color: var(--text-muted);
 }
 
 .dash-comm__when {
-  font-size: 12px;
-  color: var(--gray-900);
   white-space: nowrap;
+}
+
+/* Communications detail — full notice list */
+
+.dash-comms--notices {
+  gap: 12px;
+}
+
+.dash-comms--notices > li {
+  border-bottom: none;
+}
+
+.dash-comm--detail {
+  grid-template-columns: auto minmax(0, 1fr);
+  padding: 20px;
+  border: 1px solid var(--portal-notice-border);
+  border-radius: var(--border-radius);
+  background: var(--portal-notice-bg);
+  cursor: default;
+}
+
+.dash-comm__body {
+  min-width: 0;
+}
+
+.dash-comm__head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.dash-comm__head .dash-comm__title {
+  margin: 0;
+}
+
+.dash-comm__mark-read {
+  flex-shrink: 0;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  font-family: inherit;
+  font-size: var(--dash-type-body);
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dash-comm__mark-read:hover {
+  color: var(--purple-hover);
+}
+
+.dash-comm__mark-read:focus-visible {
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.portal-page .dash-comm__meta {
+  margin: 0 0 8px;
+  font-size: var(--dash-type-body);
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.dash-comm__action {
+  margin: 12px 0 0;
+  font-size: var(--dash-type-body);
+  line-height: 1.5;
+}
+
+.dash-comm__action .link-primary {
+  font-size: inherit;
+  font-weight: 600;
 }
 
 /* Empty state */
@@ -1138,8 +1443,17 @@ a:hover .link-view__icon {
 
 .portal-panel__meta {
   margin: 4px 0 0;
-  font-size: 14px;
-  color: var(--text-muted);
+}
+
+.portal-page .portal-panel__copy {
+  margin: 0;
+  font-size: var(--dash-type-body);
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.portal-page .portal-panel__copy--footnote {
+  margin-top: 20px;
 }
 
 /* Success status — check icon + label (replaces green badge pills) */
@@ -1163,9 +1477,21 @@ a:hover .link-view__icon {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M7 10.5 9 12.5 13.5 8' fill='none' stroke='%2359B161' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.portal-page .ds-table .ds-status,
-.portal-page .progress-map__course-status.ds-status {
+.portal-page .ds-table .ds-status {
   font-size: 13px;
+}
+
+.portal-page .progress-map__course-status.ds-status {
+  gap: 0;
+  font-size: 13px;
+}
+
+.portal-page .progress-map__course-status.ds-status::before {
+  width: 13px;
+  height: 18px;
+  margin-right: 1px;
+  background-position: right center;
+  background-size: 20px 20px;
 }
 
 /* Document checklist */
@@ -1180,8 +1506,8 @@ a:hover .link-view__icon {
 
 .doc-checklist__item {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 14px;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
   align-items: center;
   padding: 16px;
   border: 1px solid var(--border-color);
@@ -1189,16 +1515,42 @@ a:hover .link-view__icon {
   background: #fff;
 }
 
+a.doc-checklist__item--link {
+  position: relative;
+  padding-right: 40px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.doc-checklist__item--link:hover .doc-checklist__title {
+  color: rgb(var(--purple));
+}
+
+a.doc-checklist__item--link:focus-visible {
+  outline: 2px solid var(--cert-form-focus-ring);
+  outline-offset: 2px;
+}
+
+.doc-checklist__body {
+  min-width: 0;
+}
+
 .doc-checklist__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--gray-100);
   color: var(--gray-900);
   flex-shrink: 0;
+}
+
+.doc-checklist__icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 .doc-checklist__item--complete .doc-checklist__icon {
@@ -1223,6 +1575,7 @@ a:hover .link-view__icon {
   font-weight: var(--dash-type-weight);
   line-height: var(--dash-type-lh);
   color: var(--dash-type-color);
+  transition: color var(--transition-base);
 }
 
 .doc-checklist__desc {
@@ -1276,11 +1629,6 @@ a:hover .link-view__icon {
   box-shadow: 0 0 0 4px rgba(var(--purple), 0.1);
 }
 
-.portal-page .admin-activity__marker--muted {
-  background: var(--gray-300);
-  box-shadow: 0 0 0 4px var(--gray-100);
-}
-
 .portal-page .admin-activity__content {
   min-width: 0;
   padding: 14px 16px;
@@ -1315,6 +1663,25 @@ a:hover .link-view__icon {
   font-weight: 700;
 }
 
+.portal-page .admin-activity__change strong.portal-status--accepted {
+  color: var(--green);
+}
+
+/* Application status — brand green */
+
+.portal-status--accepted {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.dash-account__stat--accepted {
+  color: var(--green);
+}
+
+a.dash-account__item:hover .dash-account__stat--accepted {
+  color: rgb(var(--purple));
+}
+
 .portal-page .admin-activity__meta {
   margin: 0;
   font-size: 13px;
@@ -1330,23 +1697,28 @@ a:hover .link-view__icon {
 }
 
 .progress-map__summary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-@media (min-width: 640px) {
-  .progress-map__summary {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .progress-map__stat {
-  padding: 16px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  background: var(--gold-100);
+  flex: 1 1 120px;
+  min-width: 0;
+  padding: 0 20px;
   text-align: center;
+}
+
+.progress-map__stat:first-child {
+  padding-left: 0;
+}
+
+.progress-map__stat:last-child {
+  padding-right: 0;
+}
+
+.progress-map__stat + .progress-map__stat {
+  border-left: 1px solid var(--border-color);
 }
 
 .progress-map__stat-value {
@@ -1366,9 +1738,10 @@ a:hover .link-view__icon {
 
 .progress-map__group-title {
   margin: 24px 0 12px;
-  font-family: var(--dash-type-label-font);
-  font-size: var(--dash-type-label);
-  font-weight: var(--dash-type-weight);
+  font-family: var(--dash-type-font);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
   color: var(--dash-type-color);
 }
 
@@ -1416,7 +1789,7 @@ a:hover .link-view__icon {
 }
 
 .progress-map__course--in-progress .progress-map__course-marker {
-  background: rgb(var(--gold));
+  background: rgb(var(--purple));
 }
 
 .progress-map__course-name {
@@ -1431,21 +1804,54 @@ a:hover .link-view__icon {
   color: var(--text-muted);
 }
 
+.progress-map__course--complete .progress-map__course-grade {
+  color: var(--green);
+}
+
+.progress-map__course-grade.link-primary {
+  color: rgb(var(--purple));
+}
+
+.progress-map__course-grade.link-primary:hover {
+  color: var(--purple-hover);
+}
+
+/* Portal tables — purple header, horizontal row dividers only */
+
+.portal-page .ds-table-wrap {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.portal-page .ds-table thead {
+  background: rgb(var(--purple));
+  color: #fff;
+}
+
+.portal-page .ds-table th {
+  padding: 12px 16px;
+  border-bottom: none;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.portal-page .ds-table tbody tr:hover {
+  background: rgba(70, 29, 124, 0.04);
+}
+
 /* Filter bar */
 
-.portal-page .ds-table th,
 .portal-page .ds-field > label {
   font-family: var(--font-primary);
   font-weight: 700;
   letter-spacing: normal;
   text-transform: none;
-}
-
-.portal-page .ds-table th {
-  font-size: 13px;
-}
-
-.portal-page .ds-field > label {
   font-size: 14px;
 }
 
@@ -1470,7 +1876,7 @@ a:hover .link-view__icon {
   gap: 12px;
 }
 
-/* Notice banner */
+/* Notice — standard portal surface (banner + comm list items) */
 
 .portal-notice {
   display: flex;
@@ -1478,18 +1884,16 @@ a:hover .link-view__icon {
   gap: 14px;
   margin-bottom: var(--dash-card-gap);
   padding: 16px 18px;
+  border: 1px solid var(--portal-notice-border);
   border-radius: var(--border-radius);
-  background: var(--gold-divider);
-  color: rgb(var(--purple));
-}
-
-.portal-notice--info {
-  background: var(--purple-100);
+  background: var(--portal-notice-bg);
+  color: var(--text-primary);
 }
 
 .portal-notice__icon {
   flex-shrink: 0;
   margin-top: 2px;
+  color: rgb(var(--purple));
 }
 
 .portal-notice__title {
@@ -1498,43 +1902,38 @@ a:hover .link-view__icon {
   font-size: var(--dash-type-notice);
   font-weight: var(--dash-type-weight-heavy);
   line-height: var(--dash-type-lh);
+  color: var(--dash-type-color);
 }
 
 .portal-notice__text {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--dash-type-body);
   line-height: 1.5;
+  color: var(--text-primary);
 }
 
-.portal-notice__text a {
-  color: rgb(var(--purple));
-  font-weight: 700;
+.portal-notice__text .link-primary {
+  font-size: inherit;
+  font-weight: 600;
 }
 
-/* Waitlist offer card */
-
-.waitlist-offer {
-  padding: 20px;
-  border: 2px solid rgb(var(--gold));
-  border-radius: var(--border-radius);
-  background: linear-gradient(135deg, rgba(var(--gold), 0.2), #fff);
-}
-
-.waitlist-offer__title {
+.portal-notice__deadline {
   margin: 0 0 8px;
-}
-
-.waitlist-offer__deadline {
-  margin: 0 0 16px;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.45;
   color: var(--pink);
 }
 
-.waitlist-offer__actions {
+.portal-notice__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 14px;
+}
+
+.portal-panel > .portal-notice:last-child {
+  margin-bottom: 0;
 }
 
 /* Application detail — full-width status timeline */
@@ -1573,7 +1972,25 @@ a:hover .link-view__icon {
 
 @media (prefers-reduced-motion: reduce) {
   .dash-action,
+  .dash-action__go,
+  .dash-action__title,
+  a.dash-enroll-item,
+  a.dash-account__item,
+  a.doc-checklist__item--link,
+  .dash-enroll-item__go,
+  .dash-account__go,
+  .doc-checklist__go,
+  .dash-enroll-item__title,
+  .doc-checklist__title,
+  .dash-account__stat,
   .dash-progress__fill {
     transition: none;
+  }
+
+  .dash-action:hover .dash-action__go,
+  a.dash-enroll-item:hover .dash-enroll-item__go,
+  a.dash-account__item:hover .dash-account__go,
+  a.doc-checklist__item--link:hover .doc-checklist__go {
+    transform: translateY(-50%);
   }
 }

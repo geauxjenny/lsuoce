@@ -156,6 +156,18 @@
   margin-bottom: 0;
 }
 
+.account-sidebar__links {
+  display: grid;
+  gap: 8px;
+  font-size: var(--dash-type-list);
+  line-height: 1.4;
+}
+
+.account-sidebar__links .link-primary {
+  font-size: inherit;
+  font-weight: 600;
+}
+
 .account-content {
   gap: 20px;
 }
@@ -174,11 +186,9 @@
   margin-bottom: var(--spacing-md);
 }
 
-.account-info__label {
-  margin: 0 0 12px;
-  font-size: 14px;
-  font-weight: 700;
-  color: rgb(var(--purple));
+.enroll-detail__header .account-panel__edit {
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .account-info__dl {
@@ -202,8 +212,6 @@
 .account-panel__edit {
   display: inline-flex;
   align-items: center;
-  width: 100%;
-  justify-content: center;
   gap: 8px;
   font: inherit;
   cursor: pointer;

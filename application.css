@@ -1575,8 +1575,8 @@
 }
 
 .cert-app-timeline__step.is-active.is-accepted .cert-app-timeline__marker {
-  background: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+  background: var(--green);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 20%, transparent);
 }
 
 .cert-app-timeline__step.is-active.is-denied .cert-app-timeline__marker {
@@ -1610,7 +1610,7 @@
 }
 
 .cert-app-timeline__step.is-active.is-accepted .cert-app-timeline__label {
-  color: #166534;
+  color: var(--green);
 }
 
 .cert-app-timeline__step.is-active.is-denied .cert-app-timeline__label {

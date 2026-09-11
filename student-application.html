@@ -38,14 +38,8 @@
       </div>
       <div class="cert-app-intro portal-intro">
         <div class="container">
-          <nav class="cert-app-intro__eyebrow" aria-label="Breadcrumb">
-            <ol class="cert-app-intro__breadcrumb">
-              <li class="cert-app-intro__breadcrumb-item"><a href="student-dashboard.html">Dashboard</a></li>
-              <li class="cert-app-intro__breadcrumb-item" aria-current="page"><span>My Applications</span></li>
-            </ol>
-          </nav>
+          <p class="portal-intro__section">Dashboard</p>
           <h1 class="cert-app-intro__title">My Applications</h1>
-          <p class="portal-intro__meta">1 active application · Paralegal Studies Certificate</p>
         </div>
       </div>
     </header>
@@ -57,21 +51,21 @@
           <svg class="portal-nav__toggle-icon" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M5.665 7.142L.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z" fill="currentColor"/></svg>
         </button>
         <div class="portal-nav__inner" id="portal-nav-list">
-          <div class="portal-nav__context">
-            <label class="portal-nav__context-label" for="portal-cert-context">Program context</label>
-            <select id="portal-cert-context" class="portal-nav__context-select"><option selected>Paralegal Studies · Fall 2026</option></select>
+          <div class="portal-nav__context ds-field">
+            <label for="portal-cert-context">Switch program</label>
+            <select id="portal-cert-context"><option selected>Paralegal Studies · Fall 2026</option></select>
           </div>
           <ul class="portal-nav__list">
             <li><a href="student-dashboard.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8.5 10 2l7 6.5V17a1 1 0 0 1-1 1h-4.5v-5.5H8.5V18H4a1 1 0 0 1-1-1V8.5Z" fill="currentColor"/></svg>Dashboard</a></li>
             <li><a href="student-application.html" class="portal-nav__link" aria-current="page"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm6 1.5V7h3.5M7 10h6M7 13h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>My Applications</a></li>
             <li><a href="student-certificate.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h12v12H4V4Zm2 2v8h8V6H6Zm2 2h4v1.5H8V8Zm0 2.5h3v1.5H8v-1.5Z" fill="currentColor"/></svg>My Certificates</a></li>
             <li><a href="student-enrollments.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14v2H3V5Zm0 4h14v2H3V9Zm0 4h10v2H3v-2Z" fill="currentColor"/></svg>My Enrollments</a></li>
-            <li><a href="student-payments.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2v6h12V7H4Zm2 8h2v2H6v-2Z" fill="currentColor"/></svg>Payments &amp; Receipts</a></li>
+            <li><a href="student-payments.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 -960 960 960" aria-hidden="true"><path d="M200-280v-280h80v280h-80Zm240 0v-280h80v280h-80ZM80-120v-80h800v80H80Zm600-160v-280h80v280h-80ZM80-640v-80l400-200 400 200v80H80Zm178-80h444-444Zm0 0h444L480-830 258-720Z" fill="currentColor"/></svg>Payments &amp; Receipts</a></li>
             <li><a href="student-documents.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 2h5l5 5v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm4.5 1.5V7H15M8 11h6M8 14h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Documents</a></li>
             <li><a href="student-communications.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5l-2 2V5a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Communications</a></li>
             <li><a href="student-profile.html" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Profile &amp; Settings</a></li>
+            <li class="portal-nav__item--contact"><a href="mailto:paralegal@lsu.edu" class="portal-nav__link"><svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 -960 960 960" aria-hidden="true"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200Z" fill="currentColor"/></svg>Contact Paralegal program office</a></li>
           </ul>
-          <div class="portal-nav__help"><a href="mailto:paralegal@lsu.edu" class="portal-nav__help-link">Contact Paralegal program office</a></div>
         </div>
       </nav>
 
@@ -80,17 +74,13 @@
           <svg class="portal-notice__icon" width="22" height="22" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5M10 6.5h.01" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <div>
             <p class="portal-notice__title">Next step: schedule your welcome call</p>
-            <p class="portal-notice__text">Your application was accepted Jul 24, 2026. Complete onboarding before registering for certificate courses. <a href="student-communications.html#welcome-call" class="link-primary link-view">View scheduling instructions<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a></p>
+            <p class="portal-notice__text">Your application was accepted Jul 24, 2026. Complete onboarding before registering for certificate courses. <a href="student-communications.html#welcome-call" class="link-primary link-chevron">View scheduling instructions</a></p>
           </div>
         </div>
 
         <section class="ds-card portal-panel" aria-labelledby="app-detail-heading">
           <header class="dash-card__header">
-            <div>
-              <h2 id="app-detail-heading" class="dash-card__title">Paralegal Studies Certificate</h2>
-              <p class="portal-panel__meta">PLG-2026-425E7B · Fall 2026 cohort · Submitted Jul 1, 2026</p>
-            </div>
-            <span class="ds-status ds-status--ok">Accepted</span>
+            <h2 id="app-detail-heading" class="dash-card__title">Paralegal Studies Certificate</h2>
           </header>
 
           <div class="cert-app-workspace">
@@ -106,12 +96,27 @@
             </aside>
 
             <div class="cert-app-workspace__main">
-              <dl class="cert-app-review__dl admin-review__grid">
-                <div class="cert-app-review__row"><dt>Application status</dt><dd>Accepted</dd></div>
-                <div class="cert-app-review__row"><dt>Application fee</dt><dd>Paid · $40.00 · Jul 1, 2026</dd></div>
-                <div class="cert-app-review__row"><dt>Entry term / cohort</dt><dd>Fall 2026 Paralegal</dd></div>
-                <div class="cert-app-review__row"><dt>Funding source</dt><dd>Self Pay</dd></div>
-                <div class="cert-app-review__row"><dt>Last updated</dt><dd>Jul 24, 2026 10:29 AM</dd></div>
+              <dl class="enroll-detail__meta enroll-detail__meta--3col">
+                <div class="enroll-detail__field">
+                  <dt>Application status</dt>
+                  <dd class="portal-status--accepted">Accepted</dd>
+                </div>
+                <div class="enroll-detail__field">
+                  <dt>Application fee</dt>
+                  <dd class="portal-dividers"><span>Paid</span><span>$40.00</span><span>Jul 1, 2026</span></dd>
+                </div>
+                <div class="enroll-detail__field">
+                  <dt>Entry term / cohort</dt>
+                  <dd>Fall 2026 Paralegal</dd>
+                </div>
+                <div class="enroll-detail__field">
+                  <dt>Funding source</dt>
+                  <dd>Self Pay</dd>
+                </div>
+                <div class="enroll-detail__field">
+                  <dt>Last updated</dt>
+                  <dd>Jul 24, 2026 10:29 AM</dd>
+                </div>
               </dl>
             </div>
           </div>
@@ -123,28 +128,28 @@
           </header>
           <ul class="doc-checklist">
             <li class="doc-checklist__item doc-checklist__item--complete">
-              <span class="doc-checklist__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M7 10.5 9 12.5 13.5 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <div>
+              <span class="doc-checklist__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 10.5 8.5 14 15 7.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div class="doc-checklist__body">
                 <p class="doc-checklist__title">Official transcript</p>
-                <p class="doc-checklist__desc">Received Jul 24, 2026 · Sent from issuing institution</p>
+                <p class="doc-checklist__desc portal-dividers"><span>Received Jul 24, 2026</span><span>Sent from issuing institution</span></p>
               </div>
-              <span class="ds-status ds-status--ok">Complete</span>
             </li>
             <li class="doc-checklist__item doc-checklist__item--complete">
-              <span class="doc-checklist__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M7 10.5 9 12.5 13.5 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <div>
+              <span class="doc-checklist__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 10.5 8.5 14 15 7.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div class="doc-checklist__body">
                 <p class="doc-checklist__title">Personal statement</p>
-                <p class="doc-checklist__desc">Uploaded Jul 1, 2026 · personal-statement-test-applicant.pdf</p>
+                <p class="doc-checklist__desc portal-dividers"><span>Uploaded Jul 1, 2026</span><span>personal-statement-test-applicant.pdf</span></p>
               </div>
-              <span class="ds-status ds-status--ok">Complete</span>
             </li>
-            <li class="doc-checklist__item doc-checklist__item--complete">
-              <span class="doc-checklist__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M7 10.5 9 12.5 13.5 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <div>
-                <p class="doc-checklist__title">Application fee payment</p>
-                <p class="doc-checklist__desc">Paid at submission · Receipt #RCPT-2026-88421</p>
-              </div>
-              <a href="student-payments.html#rcpt-88421" class="link-primary link-view">View receipt<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
+            <li>
+              <a href="student-payments.html#rcpt-88421" class="doc-checklist__item doc-checklist__item--complete doc-checklist__item--link">
+                <svg class="doc-checklist__go" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                <span class="doc-checklist__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 10.5 8.5 14 15 7.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div class="doc-checklist__body">
+                  <p class="doc-checklist__title">Application fee payment</p>
+                  <p class="doc-checklist__desc portal-dividers"><span>Paid at submission</span><span>Receipt #RCPT-2026-88421</span></p>
+                </div>
+              </a>
             </li>
           </ul>
         </section>
@@ -158,8 +163,8 @@
               <div class="admin-activity__marker" aria-hidden="true"></div>
               <div class="admin-activity__content">
                 <p class="admin-activity__title">Application accepted</p>
-                <p class="admin-activity__change">Under Review → <strong>Accepted</strong></p>
-                <p class="admin-activity__meta">Jul 24, 2026 · <a href="student-communications.html#acceptance" class="link-primary link-view">View notice<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a></p>
+                <p class="admin-activity__change">Under Review → <strong class="portal-status--accepted">Accepted</strong></p>
+                <p class="admin-activity__meta">Jul 24, 2026 · <a href="student-communications.html#acceptance" class="link-primary link-chevron">View notice</a></p>
               </div>
             </li>
             <li class="admin-activity__item">
@@ -167,11 +172,11 @@
               <div class="admin-activity__content">
                 <p class="admin-activity__title">Moved to under review</p>
                 <p class="admin-activity__change">Submitted — Awaiting Transcript → <strong>Under Review</strong></p>
-                <p class="admin-activity__meta">Jul 24, 2026 · <a href="email-under-review.html" class="link-primary link-view">View email<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a></p>
+                <p class="admin-activity__meta">Jul 24, 2026 · <a href="email-under-review.html" class="link-primary link-chevron">View email</a></p>
               </div>
             </li>
             <li class="admin-activity__item">
-              <div class="admin-activity__marker admin-activity__marker--muted" aria-hidden="true"></div>
+              <div class="admin-activity__marker" aria-hidden="true"></div>
               <div class="admin-activity__content">
                 <p class="admin-activity__title">Application submitted</p>
                 <p class="admin-activity__meta">Jul 1, 2026</p>

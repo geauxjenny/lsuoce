@@ -40,13 +40,8 @@
 
       <div class="cert-app-intro portal-intro">
         <div class="container">
-          <nav class="cert-app-intro__eyebrow" aria-label="Breadcrumb">
-            <ol class="cert-app-intro__breadcrumb">
-              <li class="cert-app-intro__breadcrumb-item" aria-current="page"><span>Dashboard</span></li>
-            </ol>
-          </nav>
+          <p class="portal-intro__section">Dashboard</p>
           <h1 class="cert-app-intro__title">Student Dashboard</h1>
-          <p class="portal-intro__meta">Paralegal Studies Certificate · Fall 2026 cohort · <strong>2 actions need your attention</strong></p>
         </div>
       </div>
     </header>
@@ -58,9 +53,9 @@
           <svg class="portal-nav__toggle-icon" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M5.665 7.142.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z" fill="currentColor"/></svg>
         </button>
         <div class="portal-nav__inner" id="portal-nav-list">
-          <div class="portal-nav__context">
-            <label class="portal-nav__context-label" for="portal-cert-context">Program context</label>
-            <select id="portal-cert-context" class="portal-nav__context-select" aria-label="Select certificate program">
+          <div class="portal-nav__context ds-field">
+            <label for="portal-cert-context">Switch program</label>
+            <select id="portal-cert-context">
               <option value="paralegal-fall-2026" selected>Paralegal Studies · Fall 2026</option>
             </select>
           </div>
@@ -91,7 +86,7 @@
             </li>
             <li>
               <a href="student-payments.html" class="portal-nav__link">
-                <svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2v6h12V7H4Zm2 8h2v2H6v-2Z" fill="currentColor"/></svg>
+                <svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 -960 960 960" aria-hidden="true"><path d="M200-280v-280h80v280h-80Zm240 0v-280h80v280h-80ZM80-120v-80h800v80H80Zm600-160v-280h80v280h-80ZM80-640v-80l400-200 400 200v80H80Zm178-80h444-444Zm0 0h444L480-830 258-720Z" fill="currentColor"/></svg>
                 Payments &amp; Receipts
               </a>
             </li>
@@ -113,10 +108,13 @@
                 Profile &amp; Settings
               </a>
             </li>
+            <li class="portal-nav__item--contact">
+              <a href="mailto:paralegal@lsu.edu" class="portal-nav__link">
+                <svg class="portal-nav__link-icon" width="20" height="20" viewBox="0 -960 960 960" aria-hidden="true"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200Z" fill="currentColor"/></svg>
+                Contact Paralegal program office
+              </a>
+            </li>
           </ul>
-          <div class="portal-nav__help">
-            <a href="mailto:paralegal@lsu.edu" class="portal-nav__help-link">Contact Paralegal program office</a>
-          </div>
         </div>
       </nav>
 
@@ -130,44 +128,44 @@
           </header>
           <div class="dash-actions">
             <a href="student-communications.html#welcome-call" class="dash-action dash-action--urgent">
+              <svg class="dash-action__go" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
               <span class="dash-action__body">
                 <p class="dash-action__title">Schedule your welcome call</p>
                 <p class="dash-action__text">Accepted students complete a brief onboarding call with the Paralegal program office before registering for courses.</p>
                 <p class="dash-action__meta">Due before registration · Not scheduled</p>
               </span>
-              <span class="dash-action__cta link-view">Schedule<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></span>
             </a>
             <a href="student-enrollments.html#register" class="dash-action dash-action--urgent">
+              <svg class="dash-action__go" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
               <span class="dash-action__body">
                 <p class="dash-action__title">Register for Legal Case Analysis</p>
                 <p class="dash-action__text">Spring 2027 section PLGL-2103-A is open for your cohort. Review dates and add to cart before the Jan 10 registration deadline.</p>
                 <p class="dash-action__meta">Registration closes Jan 10, 2027</p>
               </span>
-              <span class="dash-action__cta link-view">View section<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></span>
             </a>
           </div>
         </section>
 
-        <div class="dash-grid dash-grid--program">
-          <section class="ds-card dash-cert-summary" aria-labelledby="dash-cert-heading">
-            <header class="dash-card__header">
-              <h2 id="dash-cert-heading" class="dash-card__title">Your certificate</h2>
-              <a href="student-certificate.html" class="link-primary link-view dash-card__link">Progress map<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
-            </header>
+        <section class="ds-card dash-cert-summary" aria-labelledby="dash-cert-heading">
+          <header class="dash-card__header">
+            <h2 id="dash-cert-heading" class="dash-card__title">Your certificate</h2>
+            <a href="student-certificate.html" class="cert-btn cert-btn--outline cert-btn--sm">Progress map</a>
+          </header>
+          <div class="dash-cert-summary__meter">
             <p class="dash-cert-summary__stat">33% complete</p>
-            <p class="dash-card__label">3 of 9 requirements · Not graduation eligible</p>
             <div class="dash-progress dash-progress--featured" role="group" aria-label="Certificate completion">
               <div class="dash-progress__bar">
                 <span class="dash-progress__fill" style="width: 33%"></span>
               </div>
             </div>
-            <span class="ds-status ds-status--ok">GPA requirement met</span>
-          </section>
+          </div>
+        </section>
 
-          <section class="ds-card" aria-labelledby="dash-dates-heading">
+        <div class="dash-grid dash-grid--2">
+          <section class="ds-card dash-dates-panel" aria-labelledby="dash-dates-heading">
             <header class="dash-card__header">
               <h2 id="dash-dates-heading" class="dash-card__title">Upcoming dates</h2>
-              <a href="student-enrollments.html" class="link-primary link-view dash-card__link">View calendar<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
+              <a href="student-enrollments.html" class="cert-btn cert-btn--outline cert-btn--sm">View calendar</a>
             </header>
             <ul class="dash-dates">
               <li class="dash-date">
@@ -202,37 +200,34 @@
               </li>
             </ul>
           </section>
-        </div>
 
-        <section class="ds-card portal-panel dash-enrollments-panel" aria-labelledby="dash-enrollments-heading">
-          <header class="dash-card__header">
-            <h2 id="dash-enrollments-heading" class="dash-card__title">Current enrollments</h2>
-            <a href="student-enrollments.html" class="link-primary link-view dash-card__link">All enrollments<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
-          </header>
-          <ul class="dash-enroll-list">
-            <li class="dash-enroll-item">
-              <div class="dash-enroll-item__top">
-                <h3 class="dash-enroll-item__title">Legal Research · PLGL-2102-A</h3>
-                <span class="ds-badge ds-badge--gold">In progress</span>
-              </div>
-              <p class="dash-enroll-item__dates">Aug 24 – Dec 12, 2026 · Tue &amp; Thu, 6–8 p.m. CT · Live-online</p>
-              <div class="dash-enroll-item__actions">
-                <a href="https://moodle.lsu.edu" class="link-primary">Open Moodle</a>
-                <a href="student-enrollments.html#plgl-2102" class="link-primary link-view">Enrollment details<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
-              </div>
-            </li>
-            <li class="dash-enroll-item">
-              <div class="dash-enroll-item__top">
-                <h3 class="dash-enroll-item__title">Principles of Paralegal Studies · PLGL-2101-A</h3>
-                <span class="ds-status ds-status--ok">Completed</span>
-              </div>
-              <p class="dash-enroll-item__dates">Completed Aug 2026 · Grade A · Moodle sync updated Dec 18, 2026</p>
-              <div class="dash-enroll-item__actions">
-                <a href="student-enrollments.html#plgl-2101" class="link-primary link-view">View record<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
-              </div>
-            </li>
-          </ul>
-        </section>
+          <section class="ds-card portal-panel dash-enrollments-panel" aria-labelledby="dash-enrollments-heading">
+            <header class="dash-card__header">
+              <h2 id="dash-enrollments-heading" class="dash-card__title">Current enrollments</h2>
+              <a href="student-enrollments.html" class="cert-btn cert-btn--outline cert-btn--sm">All enrollments</a>
+            </header>
+            <ul class="dash-enroll-list">
+              <li>
+                <a href="student-enrollments.html#plgl-2102" class="dash-enroll-item">
+                  <svg class="dash-enroll-item__go" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                  <div class="dash-enroll-item__top">
+                    <h3 class="dash-enroll-item__title">Legal Research · PLGL-2102-A</h3>
+                    <span class="ds-badge ds-badge--purple">In progress</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="student-enrollments.html#plgl-2101" class="dash-enroll-item">
+                  <svg class="dash-enroll-item__go" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                  <div class="dash-enroll-item__top">
+                    <h3 class="dash-enroll-item__title">Principles of Paralegal Studies · PLGL-2101-A</h3>
+                    <span class="ds-badge ds-badge--success">Completed</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
 
         <div class="dash-grid dash-grid--2">
           <section class="ds-card dash-account dash-account--quiet" aria-labelledby="dash-account-heading">
@@ -240,56 +235,43 @@
               <h2 id="dash-account-heading" class="dash-card__title">Account</h2>
             </header>
             <div class="dash-account__grid">
-              <article class="dash-account__item">
-                <h3 class="dash-account__label">Payments</h3>
+              <a href="student-payments.html" class="dash-account__item">
+                <svg class="dash-account__go" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                <h3 class="dash-account__label">Balance</h3>
                 <p class="dash-account__stat">$0.00</p>
-                <p class="dash-account__detail">Outstanding balance</p>
-                <span class="ds-status ds-status--ok">All current enrollments paid</span>
-                <a href="student-payments.html" class="link-primary link-view dash-account__link">View history<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-120q-138 0-240.5-91.5T122-440h82q14 104 92.5 172T480-200q117 0 198.5-81.5T760-480q0-117-81.5-198.5T480-760q-69 0-129 32t-101 88h110v80H120v-240h80v94q51-64 124.5-99T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/></svg></a>
-              </article>
-              <article class="dash-account__item dash-account__item--muted">
+              </a>
+              <a href="student-application.html" class="dash-account__item dash-account__item--muted">
+                <svg class="dash-account__go" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
                 <h3 class="dash-account__label">Application</h3>
-                <p class="dash-account__stat dash-account__stat--sm">Accepted</p>
-                <p class="dash-account__detail">PLG-2026-425E7B · Fall 2026</p>
-                <span class="ds-status ds-status--ok">All documents complete</span>
-                <a href="student-application.html" class="link-primary link-view dash-account__link">View details<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
-              </article>
+                <p class="dash-account__stat dash-account__stat--sm dash-account__stat--accepted">Accepted</p>
+              </a>
             </div>
           </section>
 
           <section class="ds-card" aria-labelledby="dash-comms-heading">
             <header class="dash-card__header">
               <h2 id="dash-comms-heading" class="dash-card__title">Recent communications</h2>
-              <a href="student-communications.html" class="link-primary link-view dash-card__link">View all<svg class="link-view__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></a>
+              <a href="student-communications.html" class="cert-btn cert-btn--outline cert-btn--sm">View all</a>
             </header>
             <ul class="dash-comms">
               <li>
                 <a href="student-communications.html#welcome-call" class="dash-comm dash-comm--unread">
                   <span class="dash-comm__dot" aria-hidden="true"></span>
-                  <span>
-                    <p class="dash-comm__title">Schedule your welcome call</p>
-                    <p class="dash-comm__preview">Congratulations on your acceptance to the Paralegal Studies Certificate…</p>
-                  </span>
+                  <p class="dash-comm__title">Schedule your welcome call</p>
                   <span class="dash-comm__when">Jul 24</span>
                 </a>
               </li>
               <li>
                 <a href="student-communications.html#registration" class="dash-comm dash-comm--unread">
                   <span class="dash-comm__dot" aria-hidden="true"></span>
-                  <span>
-                    <p class="dash-comm__title">Spring registration now open</p>
-                    <p class="dash-comm__preview">Eligible sections for your cohort are available through Jan 10…</p>
-                  </span>
+                  <p class="dash-comm__title">Spring registration now open</p>
                   <span class="dash-comm__when">Dec 1</span>
                 </a>
               </li>
               <li>
                 <a href="student-communications.html#enrollment-confirm" class="dash-comm">
                   <span class="dash-comm__dot" aria-hidden="true"></span>
-                  <span>
-                    <p class="dash-comm__title">Enrollment confirmed — Legal Research</p>
-                    <p class="dash-comm__preview">Your registration for PLGL-2102-A is confirmed. Access Moodle when…</p>
-                  </span>
+                  <p class="dash-comm__title">Enrollment confirmed — Legal Research</p>
                   <span class="dash-comm__when">Aug 20</span>
                 </a>
               </li>
