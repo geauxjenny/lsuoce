@@ -3,7 +3,7 @@
   if (!catalog) return;
 
   var searchInput = catalog.querySelector('[data-courses-search]');
-  var sortSelect = catalog.querySelector('[data-courses-sort]');
+  var sortButtons = Array.from(catalog.querySelectorAll('[data-courses-sort]'));
   var clearButton = catalog.querySelector('[data-courses-clear]');
   var countEl = catalog.querySelector('[data-courses-count]');
   var emptyState = catalog.querySelector('[data-courses-empty]');
@@ -60,8 +60,23 @@
     return true;
   }
 
+  function getSortValue() {
+    var active = sortButtons.find(function (button) {
+      return button.getAttribute('aria-pressed') === 'true';
+    });
+    return active ? active.getAttribute('data-courses-sort') : 'az';
+  }
+
+  function setSortValue(value) {
+    sortButtons.forEach(function (button) {
+      var isActive = button.getAttribute('data-courses-sort') === value;
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      button.classList.toggle('is-active', isActive);
+    });
+  }
+
   function sortCards(visibleCards) {
-    var sortValue = sortSelect ? sortSelect.value : 'az';
+    var sortValue = getSortValue();
     return visibleCards.sort(function (a, b) {
       var codeA = a.getAttribute('data-code') || '';
       var codeB = b.getAttribute('data-code') || '';
@@ -104,7 +119,7 @@
     filterInputs.forEach(function (input) {
       input.checked = false;
     });
-    if (sortSelect) sortSelect.value = 'az';
+    setSortValue('az');
     updateCatalog();
   }
 
@@ -127,9 +142,12 @@
     searchInput.addEventListener('input', updateCatalog);
   }
 
-  if (sortSelect) {
-    sortSelect.addEventListener('change', updateCatalog);
-  }
+  sortButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      setSortValue(button.getAttribute('data-courses-sort'));
+      updateCatalog();
+    });
+  });
 
   if (clearButton) {
     clearButton.addEventListener('click', clearFilters);

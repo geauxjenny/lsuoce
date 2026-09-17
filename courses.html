@@ -19,7 +19,7 @@
             <img src="images/logo-lsu-online-gold.png" alt="LSU Online" width="300" height="47" class="cert-site-header__logo-img" />
           </a>
           <span class="cert-site-header__brand-divider" aria-hidden="true"></span>
-          <span class="cert-site-header__brand-label">Continuing Education</span>
+          <span class="cert-site-header__brand-label">Online College Credit</span>
         </div>
 
         <div class="cert-site-header__nav-tools">
@@ -128,16 +128,20 @@
         <aside class="courses-filters" aria-label="Filter courses" data-courses-filters>
           <div class="courses-filters__header">
             <button type="button" class="courses-filters__toggle" aria-expanded="false" aria-controls="courses-filters-body" data-courses-filters-toggle>
-              <span class="courses-filters__toggle-label">Narrow Results</span>
+              <svg class="courses-filters__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z" fill="#BFA0E9"/></svg>
+              <span class="courses-filters__toggle-label">Filter</span>
               <svg class="courses-filters__chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M5.665 7.142L.248 1.725 1.64.333 5.665 4.358 9.69.333l1.392 1.392-5.417 5.417z" fill="currentColor"/></svg>
             </button>
-            <button type="button" class="courses-filters__clear" data-courses-clear>Clear <span class="courses-filters__clear-icon" aria-hidden="true">×</span></button>
+            <button type="button" class="courses-filters__clear" data-courses-clear>Reset</button>
           </div>
 
           <div class="courses-filters__body" id="courses-filters-body" data-courses-filters-body>
             <div class="courses-filters__group">
               <label class="courses-filters__label" for="courses-search">Search courses</label>
-              <input type="search" id="courses-search" class="courses-filters__search" placeholder="Course name or code" data-courses-search autocomplete="off" />
+              <div class="courses-filters__search-wrap">
+                <svg class="courses-filters__search-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.75" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M13.5 13.5 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                <input type="search" id="courses-search" class="courses-filters__search" placeholder="Course name or code" data-courses-search autocomplete="off" />
+              </div>
             </div>
 
             <div class="courses-filters__group">
@@ -157,16 +161,13 @@
 
         <div class="courses-results">
           <div class="courses-results__toolbar">
-            <div class="courses-results__intro">
-              <p class="courses-results__heading">Online College Credit Courses</p>
-              <p class="courses-results__count body-default" data-courses-count>25 courses</p>
-            </div>
+            <p class="courses-results__count" data-courses-count>25 courses</p>
             <div class="courses-results__sort">
-              <label for="courses-sort">Sort by</label>
-              <select id="courses-sort" data-courses-sort>
-                <option value="az">Course name (A–Z)</option>
-                <option value="za">Course name (Z–A)</option>
-              </select>
+              <span class="courses-results__sort-label" id="courses-sort-label">Sort by</span>
+              <div class="courses-results__sort-toggle" role="group" aria-labelledby="courses-sort-label">
+                <button type="button" class="courses-results__sort-option is-active" data-courses-sort="az" aria-pressed="true">A–Z</button>
+                <button type="button" class="courses-results__sort-option" data-courses-sort="za" aria-pressed="false">Z–A</button>
+              </div>
             </div>
           </div>
 
